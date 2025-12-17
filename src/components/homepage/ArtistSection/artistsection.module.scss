@@ -21,8 +21,7 @@
   position: absolute;
   inset: 0;
   z-index: 20;
-  background: url("/assets/images/twr_transparent_svg_1.svg") no-repeat center
-    center;
+  background: url("/assets/images/twr_transparent_svg_1.svg") no-repeat center center;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -99,7 +98,7 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  z-index: 1;
+  z-index: 8;
   overflow: hidden;
 }
 
@@ -109,13 +108,19 @@
   font-size: 7rem;
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
-  text-stroke: 2px rgba(255, 255, 255, 0.2);
+  -webkit-text-stroke: 2px white;
+  text-stroke: 2px white;
   font-family: "Arial Black", sans-serif;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   animation: marquee 40s linear infinite;
   will-change: transform;
+}
+
+.hero_hover:hover {
+  -webkit-text-stroke: 0;
+  text-stroke: 0;
+  color: white;
 }
 
 @keyframes marquee {
@@ -160,44 +165,6 @@
   mix-blend-mode: screen;
   z-index: 2;
   pointer-events: none;
-}
-
-.svg {
-  width: 100%;
-  height: 2000px;
-  max-width: none;
-  max-height: none;
-  transform: scale(2) translate3d(0, 0, 0);
-  transform-origin: center center;
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-.nextSection {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.nextSection h1 {
-  color: white;
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  // font-family: 'Abril Fatface', cursive;
-}
-
-.nextSection p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.5rem;
-  text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 @media (max-width: 1024px) {

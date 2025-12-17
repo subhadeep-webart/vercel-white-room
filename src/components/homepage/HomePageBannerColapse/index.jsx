@@ -22,25 +22,6 @@ const HomePageBannerColapse = ({ bannerData }) => {
       gsap.set(logo, { opacity: 0, scale: 0.5, y: 50, visibility: "hidden" });
       gsap.set(video, { opacity: 1, scale: 1, y: 0 });
 
-      // Fade out video and fade in logo on scroll
-
-      // gsap.to(bannerSectionRef.current, {
-      //   scale: 1,
-      //   y: -150,
-      //   ease: "power1.out",
-      //   duration: 0.5,
-      //   scrollTrigger: {
-      //     trigger: bannerSectionRef.current,
-      //     scroller: "body",
-      //     start: "top top",
-      //     end: "+=600",
-      //     scrub: true,
-      //     pin: true,
-      //     pinSpacing: false,
-      //     // markers: true,
-      //   },
-      // });
-
       gsap.to(video, {
         opacity: 0,
         scale: 1,

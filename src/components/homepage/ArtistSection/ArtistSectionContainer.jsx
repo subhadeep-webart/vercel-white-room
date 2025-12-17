@@ -29,9 +29,9 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
 
       tl.fromTo(
         maskRef.current,
-        { maskSize: "200px", maskPosition: "center center" },
+        { maskSize: "400px", maskPosition: "center center" },
         {
-          maskSize: "14000px",
+          maskSize: "30000px",
           maskPosition: "center center",
           ease: "none",
           duration: 1,
@@ -40,9 +40,9 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
       tl.fromTo(sectionRef.current, { opacity: 0 }, { opacity: 1 }, "-=0.5");
       tl.fromTo(
         maskRef.current,
-        { maskSize: "14000px", maskPosition: "center center" },
+        { maskSize: "30000px", maskPosition: "center center" },
         {
-          maskSize: "200px",
+          maskSize: "400px",
           maskPosition: "center center",
           ease: "none",
           duration: 1,
@@ -84,18 +84,18 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
 
         <div className={styles.textLines}>
           <h1 className={styles.heroTitle}>
-            {[...artists, ...artists]?.map((artists) => (
-              <>{artists?.artist_name}</>
+            {[...artists]?.map((artists) => (
+              <span className={styles.hero_hover}>{artists?.artist_name}</span>
             ))}
           </h1>
           <h1 className={styles.heroTitle} style={{ animationDelay: "-10s" }}>
-            {[...artists, ...artists]?.map((artists) => (
-              <>{artists?.artist_name}</>
+            {[...artists]?.map((artists) => (
+              <span className={styles.hero_hover}>{artists?.artist_name}</span>
             ))}
           </h1>
           <h1 className={styles.heroTitle} style={{ animationDelay: "-20s" }}>
-            {[...artists, ...artists]?.map((artists) => (
-              <>{artists?.artist_name}</>
+            {[...artists]?.map((artists) => (
+              <span className={styles.hero_hover}>{artists?.artist_name}</span>
             ))}
           </h1>
         </div>
@@ -119,18 +119,18 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
 
           <div className={styles.textLines}>
             <h1 className={styles.heroTitle}>
-              {[...artists, ...artists]?.map((artists) => (
-                <>{artists?.artist_name}</>
+              {[...artists]?.map((artists) => (
+                <span className={styles.hero_hover}>{artists?.artist_name}</span>
               ))}
             </h1>
             <h1 className={styles.heroTitle} style={{ animationDelay: "-10s" }}>
-              {[...artists, ...artists]?.map((artists) => (
-                <>{artists?.artist_name}</>
+              {[...artists]?.map((artists) => (
+                <span className={styles.hero_hover}>{artists?.artist_name}</span>
               ))}
             </h1>
             <h1 className={styles.heroTitle} style={{ animationDelay: "-20s" }}>
-              {[...artists, ...artists]?.map((artists) => (
-                <>{artists?.artist_name}</>
+              {[...artists]?.map((artists) => (
+                <span className={styles.hero_hover}>{artists?.artist_name}</span>
               ))}
             </h1>
           </div>
