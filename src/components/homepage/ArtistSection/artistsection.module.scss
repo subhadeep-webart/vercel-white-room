@@ -1,0 +1,277 @@
+.artist_section_image_wrapper {
+  max-width: 800px;
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery_section {
+  position: relative;
+  isolation: isolate;
+  height: 100vh;
+  background-color: black;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.centerBox {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: url("/assets/images/twr_transparent_svg_1.svg") no-repeat center
+    center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.masked_image {
+  height: 100vh;
+  width: 100%;
+  -webkit-mask-image: url("/assets/images/twr_svg_logo1.svg");
+  -webkit-mask-size: auto;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-size: auto;
+  mask-image: url("/assets/images/twr_svg_logo1.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: black;
+}
+
+.container {
+  min-height: 100vh;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+.heroSection {
+  position: relative;
+  inset: 0;
+  z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  width: 100%;
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.heroImage {
+  position: relative;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.personImage {
+  width: 600px;
+  height: auto;
+  opacity: 0.9;
+  display: block;
+}
+
+.textLines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.heroTitle {
+  width: 200%;
+  white-space: nowrap;
+  font-size: 7rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
+  text-stroke: 2px rgba(255, 255, 255, 0.2);
+  font-family: "Arial Black", sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.signupButton {
+  position: absolute;
+  bottom: 80px;
+  background: white;
+  color: black;
+  border: none;
+  padding: 20px 70px;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.signupButton:hover {
+  background: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.mask {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  mix-blend-mode: screen;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.svg {
+  width: 100%;
+  height: 2000px;
+  max-width: none;
+  max-height: none;
+  transform: scale(2) translate3d(0, 0, 0);
+  transform-origin: center center;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.nextSection {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.nextSection h1 {
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  // font-family: 'Abril Fatface', cursive;
+}
+
+.nextSection p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .svg {
+    width: 1800px;
+    height: 1800px;
+    transform: scale(3.5) translate3d(0, 0, 0);
+  }
+
+  .personImage {
+    width: 500px;
+  }
+
+  .heroTitle {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .svg {
+    width: 1600px;
+    height: 1600px;
+    transform: scale(3) translate3d(0, 0, 0);
+  }
+
+  .personImage {
+    width: 400px;
+  }
+
+  .heroTitle {
+    font-size: 4rem;
+  }
+
+  .signupButton {
+    padding: 15px 50px;
+    font-size: 1.1rem;
+    bottom: 60px;
+  }
+
+  .nextSection h1 {
+    font-size: 2.5rem;
+  }
+
+  .nextSection p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .svg {
+    width: 1400px;
+    height: 1400px;
+    transform: scale(2.5) translate3d(0, 0, 0);
+  }
+
+  .personImage {
+    width: 300px;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .signupButton {
+    padding: 12px 40px;
+    font-size: 1rem;
+    bottom: 40px;
+  }
+
+  .nextSection h1 {
+    font-size: 2rem;
+  }
+
+  .nextSection p {
+    font-size: 1rem;
+  }
+}
