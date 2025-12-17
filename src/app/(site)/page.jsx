@@ -16,12 +16,15 @@ import TrustedBySection from "@/components/homepage/TrustedBySection";
 import Preloader from "@/components/loader/Preloader";
 import { useEffect, useState } from "react";
 import ArtistSectionContainer from "@/components/homepage/ArtistSection/ArtistSectionContainer";
+import DemoSectionContainer from "@/components/homepage/ArtistSection/DemoSectionContainer";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  const { data: homePage, loading: isHomePageLoading } = useGetHomePageContent();
-  const { data: aboutPage, loading: isAboutPageLoading } = useGetAboutPageContent();
+  const { data: homePage, loading: isHomePageLoading } =
+    useGetHomePageContent();
+  const { data: aboutPage, loading: isAboutPageLoading } =
+    useGetAboutPageContent();
   console.log("Home Page====>", homePage);
   const bannerData = getComponentByType(homePage, "banner_section");
   const aboutData = getComponentByType(aboutPage, "about_us");
@@ -45,9 +48,13 @@ const Home = () => {
       {/* Main content */}
       <HomePageBannerColapse bannerData={bannerData} />
       <ArtistSectionContainer artistSectionData={artistSectionData} />
+      {/* <DemoSectionContainer /> */}
       <AboutUsSection aboutData={aboutData} aboutImages={aboutImages} />
       {/* <WRSection /> */}
-      <PressCoverageSection pressCoverageData={pressCoverageData} trustedByData={trustedByData} />
+      <PressCoverageSection
+        pressCoverageData={pressCoverageData}
+        trustedByData={trustedByData}
+      />
       <TrustedBySection trustedByData={trustedByData} />
       <ChooseUsSection reviewData={reviewData} />
     </>

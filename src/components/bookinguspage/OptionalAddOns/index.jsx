@@ -19,6 +19,7 @@ const OptionalAddOns = ({optionalAddOn}) => {
           <div>
             <div className="flex items-center justify-center">
               <Image
+                className="img_border"
                 src={optionalAddOn?.section_image_url}
                 alt=""
                 width={821}
