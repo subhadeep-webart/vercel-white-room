@@ -16,7 +16,6 @@ import TrustedBySection from "@/components/homepage/TrustedBySection";
 import Preloader from "@/components/loader/Preloader";
 import { useEffect, useState } from "react";
 import ArtistSectionContainer from "@/components/homepage/ArtistSection/ArtistSectionContainer";
-import DemoSectionContainer from "@/components/homepage/ArtistSection/DemoSectionContainer";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,10 +44,8 @@ const Home = () => {
   return (
     <>
       <Preloader loading={isLoading} />
-      {/* Main content */}
       <HomePageBannerColapse bannerData={bannerData} />
       <ArtistSectionContainer artistSectionData={artistSectionData} />
-      {/* <DemoSectionContainer /> */}
       <AboutUsSection aboutData={aboutData} aboutImages={aboutImages} />
       {/* <WRSection /> */}
       <PressCoverageSection

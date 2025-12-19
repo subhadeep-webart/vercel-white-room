@@ -76,15 +76,6 @@ const PressCoverageTable = ({ columns, data, refetch }) => {
                                             </div>
                                         ) : col.accessorKey === "poster_image" || col.accessorKey === "song_image" ? (
                                             row[col.accessorKey] ? <SmallImageCard imageUrl={row[col.accessorKey]} /> : "-"
-                                        ) : col.accessorKey === "poster_song" ? (
-                                            <audio
-                                                controls
-                                                className="w-64"
-                                                onPlay={(e) => handlePlay(e.currentTarget)}
-                                            >
-                                                <source src={row[col.accessorKey]} type="audio/mpeg" />
-                                                Your browser does not support the audio element.
-                                            </audio>
                                         ) : (
                                             row[col.accessorKey] ?? "-"
                                         )}

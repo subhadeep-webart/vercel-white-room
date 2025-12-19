@@ -15,7 +15,7 @@ const CoverageCardSwipper = ({ coverageData }) => {
         <div className="w-full mx-auto relative">
             <Swiper
                 modules={[FreeMode, Navigation]}
-                slidesPerView="auto"
+                slidesPerView={3}
                 spaceBetween={24}
                 speed={600}
                 grabCursor={true}

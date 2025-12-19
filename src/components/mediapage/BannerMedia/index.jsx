@@ -7,7 +7,7 @@ const BannerMedia = ({mediaBanner}) => {
   return (
     <>
       <div className="relative">
-        <div className="absolute top-[47px] left-[42px] md:left-[162px] w-[120px] md:w-[187px]" style={{zIndex:9999999999}}>
+        <div className="absolute top-[47px] left-[42px] md:left-[162px] w-[120px] md:w-[187px]" style={{zIndex:999}}>
           <Link href="/">
             <Image
               src="/assets/images/logo.png"

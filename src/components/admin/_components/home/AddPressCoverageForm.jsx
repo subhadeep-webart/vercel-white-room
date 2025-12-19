@@ -14,6 +14,7 @@ import dynamic from "next/dynamic";
 import { pressCoverageAddValidationSchema } from "@/utils/formValidationSchema";
 import useCreatePressCoverage from "@/hooks/useCreatePressCoverage";
 import useUpdateCoverage from "@/hooks/useUpdateCoverage";
+import { Textarea } from "@/components/ui/textarea";
 
 const CldUploadWidget = dynamic(
     () => import("next-cloudinary").then((mod) => mod.CldUploadWidget),
@@ -187,10 +188,11 @@ const AddPressCoverageForm = ({ isEdited = false, defaultValues = {} }) => {
             {/* Song Upload */}
             <div className="grid grid-cols-1 gap-6">
                 <div className="w-full relative z-0">
-                    <Label htmlFor="song_file" className="mb-1 block">
+                    <Label htmlFor="poster_song" className="mb-2 block">
                         Upload Song File
                     </Label>
-                    {typeof window !== undefined && (
+                    <Textarea placeholder="Add Song Iframe" id="poster_song" {...register("poster_song")} className={"resize-none h-40"} />
+                    {/* {typeof window !== undefined && (
                         <CldUploadWidget
                             signatureEndpoint="/api/sign-image"
                             uploadPreset="white-room-audio"
@@ -213,9 +215,9 @@ const AddPressCoverageForm = ({ isEdited = false, defaultValues = {} }) => {
                                 </Button>
                             )}
                         </CldUploadWidget>
-                    )}
-                    {errors.song_file && (
-                        <FormErrorText errorText={errors.song_file.message} />
+                    )} */}
+                    {errors.poster_song && (
+                        <FormErrorText errorText={errors.poster_song.message} />
                     )}
                 </div>
             </div>

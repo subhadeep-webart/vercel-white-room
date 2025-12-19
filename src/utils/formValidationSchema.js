@@ -13,7 +13,27 @@ export const latestConcertAddFormValidationSchema = yup.object().shape({
 export const pressCoverageAddValidationSchema = yup.object().shape({
     poster_title: yup.string().required("Poster title is required"),
     poster_image: yup.string().required("Poster image is required"),
-    poster_song: yup.string().required("Poster Song is required"),
+    poster_song: yup
+        .string()
+        .required("Song iframe is required")
+        .test(
+            "is-soundcloud-iframe",
+            "Only SoundCloud iframe is allowed",
+            (value) => {
+                if (!value) return false;
+
+                // check iframe tag
+                const isIframe = /<iframe[\s\S]*?>[\s\S]*?<\/iframe>/i.test(value);
+
+                // check SoundCloud source
+                const isSoundCloud =
+                    /src=["']https?:\/\/(w\.soundcloud\.com|api\.soundcloud\.com)/i.test(
+                        value
+                    );
+
+                return isIframe && isSoundCloud;
+            }
+        ),
 });
 
 export const addMediaFormValidationSchema = yup.object().shape({
