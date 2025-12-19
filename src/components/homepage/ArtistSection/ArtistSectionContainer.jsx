@@ -38,6 +38,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
 
     tl.to(svg, { scale: 60, duration: 1, ease: "none" }, 0)
       .to(maskEl, { opacity: 0, duration: 1, ease: "none" }, 0)
+      .to({}, { duration: 0.3 })
       .to(svg, { scale: 1, duration: 1, ease: "none" })
       .to(maskEl, { opacity: 1, duration: 1, ease: "none" }, "-=1");
   }, { scope: containerRef });

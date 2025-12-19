@@ -46,11 +46,11 @@ const HomePageBannerColapse = ({ bannerData }) => {
       tl.to(video, {
         y: () => {
           const videoRect = video.getBoundingClientRect();
-          const targetY = 40; // target from top
+          const targetY = 50; // target from top
           const currentCenter = window.innerHeight / 2;
           return -(currentCenter - targetY);
         },
-        scale: 0.2,
+        scale: 0.25,
         ease: "power2.inOut",
       });
     },
