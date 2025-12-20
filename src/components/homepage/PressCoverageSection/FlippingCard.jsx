@@ -34,20 +34,6 @@ const FlippingCard = ({ pressCoverages }) => {
             <h3 className="text-xl font-bold mb-4">
               {pressCoverages?.poster_title || "Music Player"}
             </h3>
-<<<<<<< HEAD
-=======
-            {/* {pressCoverages?.poster_song && (
-              // <audio controls className="w-4/5 mb-4">
-              //   {" "}
-              //   <source src={pressCoverages?.poster_song} type="audio/mpeg" />
-              //   Your browser does not support the audio element.
-              // </audio>
-              
-            )} */}
-            {/* <div className="w-full">
-              {pressCoverages?.poster_song}
-            </div> */}
->>>>>>> 5aa631957e53e81f47a8067857cac44c490f1192
             <div
               className="w-full"
               dangerouslySetInnerHTML={{
