@@ -1,5 +1,4 @@
 "use client";
-
 import { useRef } from "react";
 import HomeBanner from "../HomeBanner";
 import HomeVideo from "../HomeVideo";
