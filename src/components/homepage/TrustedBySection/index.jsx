@@ -24,7 +24,7 @@ const TrustedBySection = ({ trustedByData }) => {
         }
     };
     return (
-        <section className="w-full relative bg-[#0F1116]">
+        <section className="w-full relative bg-[#0F1116] commonBg">
             <div className="py-8">
                 <div className="mb-[-40px]">
                     <TickerWrapper isRight={false}>

@@ -8,51 +8,48 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 
 const CoverageCardSwipper = ({ coverageData }) => {
-    const prevRef = useRef(null);
-    const nextRef = useRef(null);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
-    return (
-        <div className="w-full mx-auto relative">
-            <Swiper
-                modules={[FreeMode, Navigation]}
-                slidesPerView="auto"
-                spaceBetween={24}
-                speed={600}
-                grabCursor={true}
-                freeMode={{
-                    enabled: true,
-                    momentum: true,
-                    momentumRatio: 0.8,
-                    momentumBounce: false,
-                }}
-                // mousewheel={true}
-                navigation={{
-                    prevEl: prevRef.current,
-                    nextEl: nextRef.current,
-                }}
-                onSwiper={(swiper) => {
-                    setTimeout(() => {
-                        if (swiper.params.navigation) {
-                            swiper.params.navigation.prevEl = prevRef.current;
-                            swiper.params.navigation.nextEl = nextRef.current;
-                            swiper.navigation.init();
-                            swiper.navigation.update();
-                        }
-                    });
-                }}
-            >
-                {coverageData?.map((item) => (
-                    <SwiperSlide
-                        key={item?._id}
-                        className="coverage_swiper_slider"
-                    >
-                        <FlippingCard pressCoverages={item} />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-            <CoverageSliderNavigation prevRef={prevRef} nextRef={nextRef} />
-        </div>
-    );
+  return (
+    <div className="w-full flex justify-center relative">
+      <Swiper
+        modules={[FreeMode, Navigation]}
+        slidesPerView={3}
+        spaceBetween={24}
+        speed={600}
+        grabCursor={true}
+        freeMode={{
+          enabled: true,
+          momentum: true,
+          momentumRatio: 0.8,
+          momentumBounce: false,
+        }}
+        // mousewheel={true}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onSwiper={(swiper) => {
+          setTimeout(() => {
+            if (swiper.params.navigation) {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }
+          });
+        }}
+      >
+        {coverageData?.map((item) => (
+          <SwiperSlide key={item?._id} className="coverage_swiper_slider">
+            <FlippingCard pressCoverages={item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <CoverageSliderNavigation prevRef={prevRef} nextRef={nextRef} />
+    </div>
+  );
 };
 
 export default CoverageCardSwipper;

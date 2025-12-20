@@ -70,7 +70,7 @@ const ForLargerShows = ({ largerShows }) => {
                 alt="Booking image"
                 width={614}
                 height={565}
-                className="w-full h-auto"
+                className="w-full h-auto img_border"
                 priority
               />
             </div>

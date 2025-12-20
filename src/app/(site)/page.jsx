@@ -20,8 +20,10 @@ import ArtistSectionContainer from "@/components/homepage/ArtistSection/ArtistSe
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  const { data: homePage, loading: isHomePageLoading } = useGetHomePageContent();
-  const { data: aboutPage, loading: isAboutPageLoading } = useGetAboutPageContent();
+  const { data: homePage, loading: isHomePageLoading } =
+    useGetHomePageContent();
+  const { data: aboutPage, loading: isAboutPageLoading } =
+    useGetAboutPageContent();
   console.log("Home Page====>", homePage);
   const bannerData = getComponentByType(homePage, "banner_section");
   const aboutData = getComponentByType(aboutPage, "about_us");
@@ -42,12 +44,14 @@ const Home = () => {
   return (
     <>
       <Preloader loading={isLoading} />
-      {/* Main content */}
       <HomePageBannerColapse bannerData={bannerData} />
       <ArtistSectionContainer artistSectionData={artistSectionData} />
       <AboutUsSection aboutData={aboutData} aboutImages={aboutImages} />
       {/* <WRSection /> */}
-      <PressCoverageSection pressCoverageData={pressCoverageData} trustedByData={trustedByData} />
+      <PressCoverageSection
+        pressCoverageData={pressCoverageData}
+        trustedByData={trustedByData}
+      />
       <TrustedBySection trustedByData={trustedByData} />
       <ChooseUsSection reviewData={reviewData} />
     </>

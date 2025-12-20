@@ -75,7 +75,7 @@ const ChooseUsSection = ({ reviewData }) => {
         className="bg-no-repeat bg-center py-12 commonBg"
         ref={sectionRef}
       >
-        <div className="mb-[-80px] !z-10 relative">
+        <div className="!z-10 relative">
           <TickerWrapper>
             <h3 className="outline_text text-4xl md:text-[150px] text-center">
               WHY CHOOSE US &nbsp; WHY CHOOSE US &nbsp;WHY CHOOSE US &nbsp;WHY CHOOSE US &nbsp;WHY CHOOSE US &nbsp;

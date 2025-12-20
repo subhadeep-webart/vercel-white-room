@@ -5,103 +5,79 @@ import HomeBanner from "../HomeBanner";
 import HomeVideo from "../HomeVideo";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import styles from "../HomeVideo/homevideo.module.scss";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HomePageBannerColapse = ({ bannerData }) => {
   const bannerRef = useRef(null);
   const videoRef = useRef(null);
-  const logoRef = useRef(null);
   const videoSectionRef = useRef(null);
 
   useGSAP(
     () => {
       const video = videoRef.current;
-      const logo = logoRef.current;
 
-      // Make sure logo is initially hidden and small
-      gsap.set(logo, { opacity: 0, scale: 0.5, y: 50, visibility: "hidden" });
-      gsap.set(video, { opacity: 1, scale: 1, y: 0 });
+      /* ---------------- INITIAL STATE ---------------- */
 
-      // Fade out video and fade in logo on scroll
-
-      // gsap.to(bannerSectionRef.current, {
-      //   scale: 1,
-      //   y: -150,
-      //   ease: "power1.out",
-      //   duration: 0.5,
-      //   scrollTrigger: {
-      //     trigger: bannerSectionRef.current,
-      //     scroller: "body",
-      //     start: "top top",
-      //     end: "+=600",
-      //     scrub: true,
-      //     pin: true,
-      //     pinSpacing: false,
-      //     // markers: true,
-      //   },
-      // });
-
-      gsap.to(video, {
-        opacity: 0,
+      gsap.set(video, {
         scale: 1,
         y: 0,
-        duration: 1.0,
-        pointerEvents: "none",
-        scrollTrigger: {
-          trigger: video,
-          scroller: "body",
-          start: "bottom top",
-          end: "+=100",
-          scrub: true,
-          // markers: true,
-        },
+        autoAlpha: 1,
+        transformOrigin: "center center",
+        force3D: true,
+        willChange: "transform",
       });
 
-      gsap.to(logo, {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        visibility: "visible",
+      /* ---------------- SCROLL TIMELINE ---------------- */
+
+      const finalY = -window.innerHeight / 2 + 60; // EXACT logo position
+
+      const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: video,
-          scroller: "body",
-          start: "bottom top",
-          end: "bottom +50%",
-          scrub: true,
-          // markers: true,
+          trigger: videoSectionRef.current,
+          start: "center center",
+          end: "+=800",
+          scrub: 1,
+          onLeave: () => video.pause(),
+          onEnterBack: () => video.play(),
         },
+      });
+      tl.to(video, {
+        y: finalY,
+        scale: 0.18,
+        ease: "power2.inOut",
       });
     },
-    { scope: bannerRef.current }
+    { scope: bannerRef }
   );
 
   return (
     <div ref={bannerRef}>
-      <div
-        className="fixed top-0 left-0 w-full h-screen overflow-hidden"
-      >
+      <div className="fixed top-0 left-0 w-full h-screen overflow-hidden">
         <HomeBanner />
       </div>
-      <div className="w-full h-screen"></div>
+      <div className="w-full h-screen" />
       <div ref={videoSectionRef} className={styles.home_video_container}>
         <HomeVideo bannerData={bannerData} />
       </div>
+
       <video
-        className={`fixed top-[335px] left-1/2 md:top-1/2 md:left-1/2 w-full md:w-full h-[50vh] md:h-full object-contain transform -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none`}
+        ref={videoRef}
         src="/assets/videos/home-logo-animation.webm"
         autoPlay
         loop
         muted
         playsInline
-        style={{ mixBlendMode: "screen" }}
-        ref={videoRef}
-      />
-      <img
-        src="/assets/images/logo.png"
-        alt="Sticky Logo"
-        className={`fixed top-5 left-1/2 transform -translate-x-1/2 transition-opacity duration-500 w-30`}
-        style={{ zIndex: 999 }}
-        ref={logoRef}
+        className="fixed left-1/2 top-1/2
+                   w-full h-full object-contain
+                   -translate-x-1/2 -translate-y-1/2
+                   pointer-events-none"
+        style={{
+          mixBlendMode: "screen",
+          zIndex: 999,
+        }}
       />
     </div>
   );

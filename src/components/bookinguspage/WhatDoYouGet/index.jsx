@@ -44,7 +44,7 @@ const WhatDoYouGet = ({ getWithBoking }) => {
                 alt=""
                 width={1010}
                 height={747}
-                className="w-full h-auto"
+                className="w-full h-auto img_border"
                 priority
               />
             </div>

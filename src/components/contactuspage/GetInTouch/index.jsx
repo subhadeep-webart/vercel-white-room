@@ -5,8 +5,8 @@ import React from 'react'
 const GetInTouch = () => {
   return (
     <>
-      <section className='bg-[#0F1116]'>
-        <NoiseComponent/>
+      <section className='bg-[#0F1116] relative overflow-hidden'>
+        <NoiseComponent />
         <div className='container'>
           <div className='py-96'>
             <div className='bg-[#1B1E25] h-[341px]'>
