@@ -70,7 +70,7 @@ const MediaSection = ({ mediaAssets }) => {
   };
 
   return (
-    <section className="pt-20 pb-20 bg-white relative overflow-hidden">
+    <section className="pt-20 pb-20 bg-black relative overflow-hidden">
       <NoiseComponent />
 
       <div className="container px-10">
@@ -101,7 +101,7 @@ const MediaSection = ({ mediaAssets }) => {
                     key={`title-${media._id}`}
                     className={getColSpanClass(isTwoCol, index)}
                   >
-                    <p className="font-bold text-sm md:text-2xl text-[#0F1116]">
+                    <p className="font-bold text-sm md:text-2xl text-white">
                       {media.title || "Untitled"}
                     </p>
                   </div>

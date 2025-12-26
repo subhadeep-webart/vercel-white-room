@@ -1,25 +1,26 @@
 import NoiseComponent from "@/components/common/NoiseComponent";
 
 const WhatTheySaySection = ({ whatTheySay }) => {
-  console.log("whatTheySay", whatTheySay)
+  console.log("whatTheySay",whatTheySay)
   return (
     <>
-      <section className="pt-20 pb-20 bg-white relative overflow-hidden">
-        <NoiseComponent />
+      <section className="pt-20 pb-20 bg-black relative overflow-hidden">
+        <NoiseComponent/>
         <div className="container">
           <div className="flex flex-col items-center gap-1">
-            <h3 className="text-[#0F1116] font-bold text-xl md:text-[45px] ">
+            <h3 className="text-white font-bold text-xl md:text-[45px] ">
               {whatTheySay?.title}
             </h3>
-            <p className="text-base md:text-xl font-normal text-[#0F1116] text-center">
+            <p className="text-base md:text-xl font-normal text-[#8F8F8F] text-center">
               {whatTheySay?.description}
             </p>
           </div>
 
           <div
             // className="flex flex-col md:flex-row space-y-2 md:space-x-2 items-center justify-between py-12 md:py-16 "
-            className={`flex flex-col md:flex-row space-y-2 md:space-x-2 items-center justify-between py-12 md:py-16 ${whatTheySay?.clients?.length <= 2 ? "justify-center" : ""
-              }`}
+            className={`flex flex-col md:flex-row space-y-2 md:space-x-2 items-center justify-between py-12 md:py-16 ${
+              whatTheySay?.clients?.length <= 2 ? "justify-center" : ""
+            }`}
           >
             {/* <div className="w-[226px] h-[54px] px-20 flex flex-col items-center">
               <p className="font-bold text-white text-xl">BBC</p>
@@ -65,18 +66,19 @@ const WhatTheySaySection = ({ whatTheySay }) => {
               return (
                 <div
                   key={index}
-                  className={` px-20 flex flex-col items-center ${isMiddle
-                    ? "py-8 w-[282px] h-[129px]"
-                    : "w-[226px] h-[54px]"
-                    }`}
+                  className={` px-20 flex flex-col items-center ${
+                    isMiddle
+                      ? "bg-[#1B1E25] py-8 w-[282px] h-[129px]"
+                      : "w-[226px] h-[54px]"
+                  }`}
                 >
                   <p
-                    className={`font-bold text-[#0F1116] text-xl whitespace-nowrap`}
+                    className={`font-bold text-white text-xl whitespace-nowrap`}
                   >
                     {client?.client_name}
                   </p>
                   <p
-                    className={`font-normal text-[15px] text-[#0F1116] whitespace-nowrap`}
+                    className={`font-normal text-[15px] text-[#8F8F8F] whitespace-nowrap`}
                   >
                     {client?.client_location}
                   </p>
@@ -86,7 +88,7 @@ const WhatTheySaySection = ({ whatTheySay }) => {
           </div>
 
           <div className="flex items-center justify-center pb-20">
-            <button onClick={() => window.open(whatTheySay?.button_url, "_blank")} className="btn-11 relative inline-block bg-white text-[#0F1116] font-medium text-[17px] w-[163px] h-[54px] overflow-hidden transition-all duration-300 hover:text-white border-1 border-[#0F1116]">
+            <button onClick={() => window.open(whatTheySay?.button_url, "_blank")} className="btn-11 relative inline-block bg-white text-[#0F1116] font-medium text-[17px] w-[163px] h-[54px] overflow-hidden transition-all duration-300 hover:text-white">
               {whatTheySay?.button_text}
             </button>
           </div>
