@@ -38,7 +38,7 @@ const RatingSection = ({ reviewData }) => {
   const reviews = reviewData?.reviews;
 
   return (
-    <section ref={containerRef} className="bg-[#0F1116] relative overflow-hidden">
+    <section ref={containerRef} className="bg-white relative overflow-hidden">
       <NoiseComponent/>
       <div className="container px-10 space-y-4 md:space-y-6">
         {reviews?.length > 0 ? (

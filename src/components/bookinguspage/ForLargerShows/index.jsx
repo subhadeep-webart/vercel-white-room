@@ -4,13 +4,13 @@ import Image from "next/image";
 const ForLargerShows = ({ largerShows }) => {
   return (
     <>
-      <section className="bg-[#0F1116] relative overflow-hidden">
+      <section className="bg-white relative overflow-hidden">
         <NoiseComponent/>
         <div className="container py-10">
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 justify-center items-center px-[65px]">
-            <div className="bg-[#1B1E25] w-[675px] md:w-[906px] h-[751px] pt-12 pl-16">
+            <div className="bg-white w-[675px] md:w-[906px] h-[751px] pt-12 pl-16">
               <div className="flex flex-col space-y-4 mb-14 pr-24">
-                <p className="font-bold text-xl md:text-4xl text-white ">
+                <p className="font-bold text-xl md:text-4xl text-[#0F1116] ">
                   {largerShows?.title}
                 </p>
                 {/* <p className="font-normal text-base md:text-lg text-[#8F8F8F] ">
@@ -24,8 +24,8 @@ const ForLargerShows = ({ largerShows }) => {
               />
               </div>
 
-              <div className="flex flex-col space-y-4 bg-[#292B2F] py-7 px-16 mb-14">
-                <p className="font-bold text-xl md:text-xl text-white ">
+              <div className="flex flex-col space-y-4 bg-white py-7 px-16 mb-14 border-1 border-[#0F1116]">
+                <p className="font-bold text-xl md:text-xl text-[#0F1116] ">
                   {largerShows?.subsection1_title}
                 </p>
                 <p className="font-normal text-sm md:text-[16px] text-[#8F8F8F] ">
@@ -33,8 +33,8 @@ const ForLargerShows = ({ largerShows }) => {
                 </p>
               </div>
 
-              <div className="flex flex-col space-y-4 bg-[#292B2F] py-7 px-16 mb-7">
-                <p className="font-bold text-xl md:text-xl text-white ">
+              <div className="flex flex-col space-y-4 bg-white py-7 px-16 mb-7 border-1 border-[#0F1116]">
+                <p className="font-bold text-xl md:text-xl text-[#0F1116] ">
                   {largerShows?.subsection2_title}
                 </p>
                 <p className="font-normal text-sm md:text-[16px] text-[#8F8F8F] ">
@@ -43,7 +43,7 @@ const ForLargerShows = ({ largerShows }) => {
               </div>
 
               <div>
-                <p className="font-normal text-base md:text-[16px] text-white ">
+                <p className="font-normal text-base md:text-[16px] text-[#0F1116] ">
                   PLEASE NOTE -{" "}
                   <span className="text-[#8F8F8F] text-sm ">
                     {" "}

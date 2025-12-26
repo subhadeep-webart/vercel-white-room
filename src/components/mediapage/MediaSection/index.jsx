@@ -70,7 +70,7 @@ const MediaSection = ({ mediaAssets }) => {
   };
 
   return (
-    <section className="pt-20 pb-20 bg-[#0F1116] relative overflow-hidden">
+    <section className="pt-20 pb-20 bg-white relative overflow-hidden">
       <NoiseComponent />
 
       <div className="container px-10">
@@ -80,7 +80,7 @@ const MediaSection = ({ mediaAssets }) => {
           return (
             <div key={groupIndex} className="mb-10">
               {/* MEDIA GRID */}
-              <div className="grid grid-cols-12 gap-4 md:gap-10 h-[257px] md:h-[476px]">
+              <div className="grid grid-cols-12 gap-4 md:gap-10 h-[180px] md:h-[350px]">
                 {group.map((media, index) => (
                   <div
                     key={media._id}
@@ -101,7 +101,7 @@ const MediaSection = ({ mediaAssets }) => {
                     key={`title-${media._id}`}
                     className={getColSpanClass(isTwoCol, index)}
                   >
-                    <p className="font-bold text-sm md:text-2xl text-white">
+                    <p className="font-bold text-sm md:text-2xl text-[#0F1116]">
                       {media.title || "Untitled"}
                     </p>
                   </div>

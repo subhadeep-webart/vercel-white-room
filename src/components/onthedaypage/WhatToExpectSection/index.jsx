@@ -61,10 +61,10 @@ const WhatToExpectSection = ({ onthedayContents }) => {
 
   return (
     <>
-      <section className="pt-20 pb-20 bg-[#0F1116] relative overflow-hidden">
+      <section className="pt-20 pb-20 bg-white relative overflow-hidden">
         <NoiseComponent/>
         <div className="container">
-          <h3 className="text-white font-bold text-xl md:text-3xl text-center py-6">
+          <h3 className="text-[#0F1116] font-bold text-xl md:text-3xl text-center py-6">
             WHAT TO EXPECT FROM A NIGHT WITH THE WHITE ROOMS
           </h3>
 
@@ -124,9 +124,9 @@ const WhatToExpectSection = ({ onthedayContents }) => {
                       // : "left-[321px] lg:left-[453px] transform -translate-x-1/2"
                       : " lg:left-[453px] lg:transform lg:-translate-x-1/2"
                   // } w-xl lg:w-[700px] py-[57px] px-10 lg:px-[91px] bg-[#1B1E25] z-10 shadow-xl`}
-                  }   lg:w-[700px] py-[57px] px-10 lg:px-[91px] bg-[#1B1E25] z-10 shadow-xl`}
+                  }   lg:w-[700px] py-[57px] px-10 lg:px-[91px] bg-white z-10 shadow-xl border-1 border-[#0F1116]`}
                 >
-                  <h3 className="text-white font-bold text-xl md:text-3xl mb-8">
+                  <h3 className="text-[#0F1116] font-bold text-xl md:text-3xl mb-8">
                     {content?.title}
                   </h3>
 

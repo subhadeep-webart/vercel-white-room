@@ -8,29 +8,29 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
 
   return (
     <>
-      <section className="pt-20 pb-20 bg-[#0F1116] relative overflow-hidden">
+      <section className="pt-20 pb-20 bg-white relative overflow-hidden">
         <NoiseComponent />
         <div className="container relative mt-10 mb-10">
           <div className="flex flex-col md:flex-row md:space-x-4">
             <div className="flex flex-col max-w-[570px] mb-[532px] md:mb-0">
-              <h3 className="text-white font-bold text-xl md:text-3xl mb-8">
+              <h3 className="text-[#0F1116] font-bold text-xl md:text-3xl mb-8">
                 {aboutData?.title}
               </h3>
               <div className="w-[546px] md:min-h-[500px]">
 
                 <div
-                  className="text-[#8F8F8F] font-normal text-base md:text-xl mb-6 leading-relaxed"
+                  className="text-[#0F1116] font-normal text-base md:text-xl mb-6 leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: aboutData?.description }}
                 />
               </div>
 
-              <p className="text-white font-normal text-base md:text-lg">
+              <p className="text-[#0F1116] font-normal text-base md:text-lg">
                 {aboutData?.footer_text}
               </p>
 
               <button
                 onClick={() => window.open(aboutData?.button_url, "_blank")}
-                className="btn-11 relative inline-block bg-white text-[#0F1116] font-medium text-sm md:text-[17px] w-[250px] py-3.5 md:py-[17px] px-10 md:px-[60px] mt-[60px] overflow-hidden transition-all duration-300 hover:text-white"
+                className="btn-11 relative inline-block bg-white text-[#0F1116] font-medium text-sm md:text-[17px] w-[250px] py-3.5 md:py-[17px] px-10 md:px-[60px] mt-[60px] overflow-hidden transition-all duration-300 hover:text-white border-1 border-[#0F1116]"
               >
                 {aboutData?.button_text}
               </button>
@@ -76,8 +76,6 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
                 />
               </div>
             </div>
-
-
           </div>
         </div>
       </section>

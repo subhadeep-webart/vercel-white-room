@@ -11,14 +11,14 @@ const TheBookingProcess = ({bookingPage, bookingProcess }) => {
 
   return (
     <>
-      <section className="pt-20 pb-20 bg-[#0F1116] relative overflow-hidden">
+      <section className="pt-20 pb-20 bg-white relative overflow-hidden">
         <NoiseComponent/>
         <div className="container">
-          <h3 className="text-white font-bold text-xl md:text-[45px] text-center mb-20">
+          <h3 className="text-[#0F1116] font-bold text-xl md:text-[45px] text-center mb-20">
            {bookingPage?.title || "WHAT YOU GET WHEN YOU BOOK THE WHITE ROOMS"}
           </h3>
           <div>
-            <h3 className="text-white font-bold text-xl md:text-[45px] text-center mb-6 text-capitalize">
+            <h3 className="text-[#0F1116] font-bold text-xl md:text-[45px] text-center mb-6 text-capitalize">
               {bookingProcess?.title || "The Booking Process"}
             </h3>
 
@@ -58,9 +58,9 @@ const TheBookingProcess = ({bookingPage, bookingProcess }) => {
                   return (
                     <div
                       key={index}
-                      className={`bg-[#1B1E25] absolute z-10 ${sideClass} ${positionClass} w-[530px] md:w-[708px] h-[120px] md:h-[124px] py-5 px-9`}
+                      className={`bg-white absolute z-10 ${sideClass} ${positionClass} w-[530px] md:w-[708px] h-[120px] md:h-[124px] py-5 px-9 border-1 border-[#0F1116] shadow-md`}
                     >
-                      <p className="text-[#8F8F8F] text-sm md:text-[18px] font-normal">
+                      <p className="text-[#0F1116] text-sm md:text-[18px] font-normal">
                         {step}
                       </p>
                     </div>

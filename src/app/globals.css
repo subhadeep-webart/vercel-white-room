@@ -597,7 +597,6 @@ body {
 }
 
 @keyframes noise {
-
   0%,
   100% {
     -webkit-transform: translate(0, 0);

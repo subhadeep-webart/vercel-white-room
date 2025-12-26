@@ -3,7 +3,7 @@
 const ExploreBrand = ({ shopContent }) => {
   return (
     <>
-      <section className="pt-20 pb-20 bg-[#0F1116]">
+      <section className="pt-20 pb-20 bg-white">
         <div className="container">
           <div className="flex justify-center items-center ">
             <div className="w-[815px] h-[132px]">
@@ -11,7 +11,7 @@ const ExploreBrand = ({ shopContent }) => {
                 {shopContent?.description}
               </p> */}
               <div
-                className="font-normal text-base md:text-xl text-white text-center"
+                className="font-normal text-base md:text-xl text-[#0F1116] text-center"
                 dangerouslySetInnerHTML={{
                   __html: shopContent?.description,
                 }}
@@ -21,7 +21,7 @@ const ExploreBrand = ({ shopContent }) => {
           <div className="flex justify-center items-center ">
             <button
               onClick={() => window.open(shopContent?.button_url, "_blank")}
-              className="btn-11 relative inline-block bg-white text-[#0F1116] font-medium text-sm md:text-[17px] w-[180px] md:w-[210px] h-[50px] md:h-[54px] overflow-hidden transition-all duration-300 hover:text-white"
+              className="btn-11 relative inline-block bg-white text-[#0F1116] font-medium text-sm md:text-[17px] w-[180px] md:w-[210px] h-[50px] md:h-[54px] overflow-hidden transition-all duration-300 hover:text-white border-1 border-[#0F1116]"
             >
               {shopContent?.button_text}
             </button>
