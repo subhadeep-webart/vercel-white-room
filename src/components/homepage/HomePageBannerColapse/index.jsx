@@ -29,16 +29,14 @@ const HomePageBannerColapse = ({ bannerData }) => {
         willChange: "transform",
       });
 
-      /* ---------------- SCROLL TIMELINE ---------------- */
-
-      const finalY = -window.innerHeight / 2 + 60; // EXACT logo position
+      const finalY = -window.innerHeight / 2 + 60;
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: videoSectionRef.current,
           start: "center center",
-          end: "+=800",
-          scrub: 1,
+          end: "+=200",
+          scrub: 3,
           onLeave: () => video.pause(),
           onEnterBack: () => video.play(),
         },
