@@ -26,11 +26,16 @@ const MediaSection = ({ mediaAssets }) => {
   const groupedMedias = groupMedias(medias);
 
   /**
-   * Return Tailwind-safe col-span classes
+   * Tailwind-safe responsive col-span classes
    */
   const getColSpanClass = (isTwoCol, index) => {
-    if (!isTwoCol) return "col-span-4";
-    return index === 0 ? "col-span-8" : "col-span-4";
+    if (!isTwoCol) {
+      return "col-span-12 md:col-span-4";
+    }
+
+    return index === 0
+      ? "col-span-12 md:col-span-8"
+      : "col-span-12 md:col-span-4";
   };
 
   /**
@@ -78,30 +83,24 @@ const MediaSection = ({ mediaAssets }) => {
           const isTwoCol = group.length === 2;
 
           return (
-            <div key={groupIndex} className="mb-10">
+            <div key={groupIndex} className="mb-12">
               {/* MEDIA GRID */}
-              <div className="grid grid-cols-12 gap-4 md:gap-10 h-[180px] md:h-[350px]">
+              <div className="grid grid-cols-12 gap-y-6 gap-x-4 md:gap-10">
                 {group.map((media, index) => (
                   <div
                     key={media._id}
-                    className={`relative h-[180px] md:h-[350px] w-full ${getColSpanClass(
+                    className={`relative w-full ${getColSpanClass(
                       isTwoCol,
                       index
                     )}`}
                   >
-                    {renderMedia(media)}
-                  </div>
-                ))}
-              </div>
+                    {/* MEDIA */}
+                    <div className="relative h-[180px] md:h-[350px]">
+                      {renderMedia(media)}
+                    </div>
 
-              {/* TITLE GRID */}
-              <div className="grid grid-cols-12 gap-4 md:gap-10 mt-4">
-                {group.map((media, index) => (
-                  <div
-                    key={`title-${media._id}`}
-                    className={getColSpanClass(isTwoCol, index)}
-                  >
-                    <p className="font-bold text-sm md:text-2xl text-white">
+                    {/* TITLE */}
+                    <p className="mt-2 font-bold text-sm md:text-2xl text-white">
                       {media.title || "Untitled"}
                     </p>
                   </div>

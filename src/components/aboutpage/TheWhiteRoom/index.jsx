@@ -16,10 +16,9 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
               <h3 className="text-white font-bold text-xl md:text-3xl mb-8">
                 {aboutData?.title}
               </h3>
-              <div className="w-[546px] md:min-h-[500px]">
-
+              <div className="w-full md:min-h-[500px]">
                 <div
-                  className="text-[#8F8F8F] font-normal text-base md:text-xl mb-6 leading-relaxed"
+                  className="text-[#8F8F8F] font-normal text-base md:text-xl mb-6 leading-relaxed wrap-break-word text-justify"
                   dangerouslySetInnerHTML={{ __html: aboutData?.description }}
                 />
               </div>
@@ -36,7 +35,7 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
               </button>
             </div>
 
-            <div >
+            <div>
               <div className="">
                 <Image
                   src={
@@ -50,7 +49,7 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
                 />
               </div>
 
-              <div>
+              <div className="">
                 <Image
                   src={
                     aboutImages?.images?.[1] ??
@@ -63,7 +62,7 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
                 />
               </div>
 
-              <div>
+              <div className="">
                 <Image
                   src={
                     aboutImages?.images?.[3] ??
@@ -76,8 +75,6 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
                 />
               </div>
             </div>
-
-
           </div>
         </div>
       </section>
