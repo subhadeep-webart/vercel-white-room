@@ -62,7 +62,7 @@ const WhatToExpectSection = ({ onthedayContents }) => {
   return (
     <>
       <section className="pt-20 pb-20 bg-black relative overflow-hidden">
-        <NoiseComponent/>
+        <NoiseComponent />
         <div className="container">
           <h3 className="text-white font-bold text-xl md:text-3xl text-center py-6">
             WHAT TO EXPECT FROM A NIGHT WITH THE WHITE ROOMS
@@ -77,7 +77,6 @@ const WhatToExpectSection = ({ onthedayContents }) => {
                   isEven ? "h-[700px]" : "h-[700px]"
                 } mb-10 lg:mb-0`}
               >
-
                 <div
                   className={`absolute ${
                     isEven ? "top-[80px]" : "top-[56px]"
@@ -95,15 +94,12 @@ const WhatToExpectSection = ({ onthedayContents }) => {
                   />
                 </div>
 
-                <div
+                {/* <div
                   className={`relative lg:absolute mb-4 lg:mb-0 ${
-                    // isEven ? "top-[0px] " : "top-[344px] lg:top-[122px]"
                     isEven ? "lg:top-[0px] " : "lg:top-[122px]"
                   } ${
-                    // isEven ? "left-10 lg:left-[113px]" : "right-[85px]"
                     isEven ? " lg:left-[113px]" : "lg:right-[85px]"
                   }  w-[428px] lg:w-[650px]`}
-                
                 >
                   <Image
                     src={content?.section_image_url}
@@ -111,6 +107,21 @@ const WhatToExpectSection = ({ onthedayContents }) => {
                     width={500}
                     height={500}
                     className="w-full h-auto img_border"
+                    priority
+                  />
+                </div> */}
+
+                   <div
+                  className={`relative lg:absolute mb-4 lg:mb-0 w-full max-w-[650px] ${
+                    isEven ? "lg:top-0 lg:left-28" : "lg:top-32 lg:right-20"
+                  }`}
+                >
+                  <Image
+                    src={content?.section_image_url}
+                    alt={content?.title}
+                    width={650}
+                    height={650}
+                    className="w-full h-auto object-cover img_border"
                     priority
                   />
                 </div>
@@ -121,9 +132,7 @@ const WhatToExpectSection = ({ onthedayContents }) => {
                   } ${
                     isEven
                       ? "lg:right-[-276px] lg:transform lg:-translate-x-1/2"
-                      // : "left-[321px] lg:left-[453px] transform -translate-x-1/2"
                       : " lg:left-[453px] lg:transform lg:-translate-x-1/2"
-                  // } w-xl lg:w-[700px] py-[57px] px-10 lg:px-[91px] bg-[#1B1E25] z-10 shadow-xl`}
                   }   lg:w-[700px] py-[57px] px-10 lg:px-[91px] bg-[#1B1E25] z-10 shadow-xl`}
                 >
                   <h3 className="text-white font-bold text-xl md:text-3xl mb-8">
@@ -131,7 +140,6 @@ const WhatToExpectSection = ({ onthedayContents }) => {
                   </h3>
 
                   <div className="text-sm md:text-lg font-normal text-[#8F8F8F]">
-  
                     {content?.description && (
                       <div
                         className="description"
