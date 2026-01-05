@@ -11,7 +11,7 @@ const TheBookingProcess = ({bookingPage, bookingProcess }) => {
 
   return (
     <>
-      <section className="pt-20 pb-20 bg-black relative overflow-hidden">
+      {/* <section className="pt-20 pb-20 bg-black relative overflow-hidden">
         <NoiseComponent/>
         <div className="container">
           <h3 className="text-white font-bold text-xl md:text-[45px] text-center mb-20">
@@ -69,7 +69,98 @@ const TheBookingProcess = ({bookingPage, bookingProcess }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <section className="pt-20 pb-20 bg-black relative overflow-hidden">
+  <NoiseComponent />
+  <div className="container px-4 md:px-0">
+    <h3 className="text-white font-bold text-xl md:text-[45px] text-center mb-20">
+      {bookingPage?.title || "WHAT YOU GET WHEN YOU BOOK THE WHITE ROOMS"}
+    </h3>
+
+    <div>
+      <h3 className="text-white font-bold text-xl md:text-[45px] text-center mb-6 text-capitalize">
+        {bookingProcess?.title || "The Booking Process"}
+      </h3>
+
+  
+      <div className="flex flex-col gap-6 lg:hidden mt-8">
+        <div className="w-full">
+          <Image
+            src="/assets/images/booking-us-img-1.png"
+            alt=""
+            width={700}
+            height={800}
+            className="w-full h-auto img_border"
+            priority
+          />
+        </div>
+
+        {bookingProcess?.booking_steps?.map((step, index) => (
+          <div key={index} className="bg-[#1B1E25] p-5 sm:p-6">
+            <p className="text-[#8F8F8F] text-sm sm:text-base leading-relaxed">
+              {step}
+            </p>
+          </div>
+        ))}
+
+        <div className="w-full">
+          <Image
+            src="/assets/images/rw-2.png"
+            alt=""
+            width={990}
+            height={990}
+            className="w-full h-auto"
+          />
+        </div>
+      </div>
+
+    
+      <div className="relative hidden lg:block h-[938px]">
+        <div className="absolute bottom-[107px] right-[108px] w-[990px]">
+          <Image
+            src="/assets/images/rw-2.png"
+            alt=""
+            width={990}
+            height={990}
+            className="w-full h-auto"
+            priority
+          />
+        </div>
+
+        <div className="absolute top-0 left-[426px] w-[700px]">
+          <Image
+            src="/assets/images/booking-us-img-1.png"
+            alt=""
+            width={700}
+            height={800}
+            className="w-full h-auto img_border"
+            priority
+          />
+        </div>
+
+        {bookingProcess?.booking_steps?.length > 0 &&
+          bookingProcess?.booking_steps?.map((step, index) => {
+            const config = stepPositions[index % stepPositions.length];
+            const isLeft = config.side === "left";
+
+            return (
+              <div
+                key={index}
+                className={`absolute z-10 bg-[#1B1E25] ${
+                  isLeft ? "left-[46px]" : "right-0"
+                } ${config.offset} w-[708px] h-[124px] py-5 px-9`}
+              >
+                <p className="text-[#8F8F8F] text-[18px] leading-relaxed">
+                  {step}
+                </p>
+              </div>
+            );
+          })}
+      </div>
+    </div>
+  </div>
+</section>
+
     </>
   );
 };

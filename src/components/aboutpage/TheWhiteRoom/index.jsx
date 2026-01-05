@@ -12,7 +12,7 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
         <NoiseComponent />
         <div className="container relative mt-10 mb-10">
           <div className="flex flex-col md:flex-row md:space-x-4">
-            <div className="flex flex-col max-w-[570px] mb-[532px] md:mb-0">
+            <div className="flex flex-col max-w-[570px] mb-16 md:mb-0">
               <h3 className="text-white font-bold text-xl md:text-3xl mb-8">
                 {aboutData?.title}
               </h3>
@@ -35,7 +35,7 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
               </button>
             </div>
 
-            <div>
+            <div className="hidden lg:block">
               <div className="">
                 <Image
                   src={
@@ -72,6 +72,47 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
                   width={340}
                   height={500}
                   className="absolute bottom-0 right-[159px] img_border"
+                />
+              </div>
+            </div>
+
+              <div className="flex flex-col gap-4 lg:hidden">
+              <div className="">
+                <Image
+                  src={
+                    aboutImages?.images?.[2] ??
+                    "/assets/images/about-us-img-2.png"
+                  }
+                  alt=""
+                  width={300}
+                  height={500}
+                 className="w-full h-auto img_border"
+                />
+              </div>
+
+              <div className="">
+                <Image
+                  src={
+                    aboutImages?.images?.[1] ??
+                    "/assets/images/about-us-img-1.png"
+                  }
+                  alt=""
+                  width={350}
+                  height={700}
+                   className="w-full h-auto img_border"
+                />
+              </div>
+
+              <div className="">
+                <Image
+                  src={
+                    aboutImages?.images?.[3] ??
+                    "/assets/images/about-us-img-3.png"
+                  }
+                  alt=""
+                  width={340}
+                  height={500}
+                  className="w-full h-auto img_border"
                 />
               </div>
             </div>

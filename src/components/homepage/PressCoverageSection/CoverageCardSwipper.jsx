@@ -25,6 +25,17 @@ const CoverageCardSwipper = ({ coverageData }) => {
           momentumRatio: 0.8,
           momentumBounce: false,
         }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
         // mousewheel={true}
         navigation={{
           prevEl: prevRef.current,

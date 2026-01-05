@@ -39,7 +39,7 @@ const RatingSection = ({ reviewData }) => {
 
   return (
     <section ref={containerRef} className="bg-black relative overflow-hidden">
-      <NoiseComponent/>
+      <NoiseComponent />
       <div className="container px-10 space-y-4 md:space-y-6">
         {reviews?.length > 0 ? (
           reviews?.map((review, index) => (
@@ -47,11 +47,9 @@ const RatingSection = ({ reviewData }) => {
               key={index}
               className={`w-full flex ${
                 index % 2 === 0 ? "justify-start" : "justify-end"
-              } items-center`}
+              } items-center rating-card`}
             >
-              <div className="rating-card">
-                <RatingCard review={review} />
-              </div>
+              <RatingCard review={review} />
             </div>
           ))
         ) : (

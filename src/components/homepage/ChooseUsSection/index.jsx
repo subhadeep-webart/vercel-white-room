@@ -92,7 +92,7 @@ const ChooseUsSection = ({ reviewData }) => {
               freeMode={true}
               style={{ alignItems: "center", display: "flex" }}
               breakpoints={{
-                380: {
+                320: {
                   slidesPerView: 1,
                 },
                 768: {
