@@ -138,7 +138,7 @@ const WhatToExpectSection = ({ onthedayContents }) => {
           })}
         </div>
       </section> */}
-      <section className="pt-20 pb-20 bg-black relative overflow-x-hidden">
+      <section className="pt-20 pb-20 bg-black relative overflow-hidden">
   <NoiseComponent />
 
   <div className="container">
