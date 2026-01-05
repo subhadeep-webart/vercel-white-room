@@ -61,7 +61,7 @@ const WhatToExpectSection = ({ onthedayContents }) => {
 
   return (
     <>
-      {/* <section className="pt-20 pb-20 bg-black relative overflow-hidden">
+      <section className="pt-20 pb-20 bg-black relative overflow-hidden">
         <NoiseComponent/>
         <div className="container">
           <h3 className="text-white font-bold text-xl md:text-3xl text-center py-6">
@@ -146,83 +146,81 @@ const WhatToExpectSection = ({ onthedayContents }) => {
             );
           })}
         </div>
-      </section> */}
-      <section className="pt-20 pb-20 bg-black relative overflow-hidden">
-  <NoiseComponent />
-  <div className="container px-4 md:px-0">
-    <h3 className="text-white font-bold text-xl md:text-3xl text-center py-6">
-      WHAT TO EXPECT FROM A NIGHT WITH THE WHITE ROOMS
-    </h3>
+      </section>
+      {/* <section className="pt-20 pb-20 bg-black relative overflow-hidden">
+        <NoiseComponent />
+        <div className="container px-4 md:px-0">
+          <h3 className="text-white font-bold text-xl md:text-3xl text-center py-6">
+            WHAT TO EXPECT FROM A NIGHT WITH THE WHITE ROOMS
+          </h3>
 
-    {onthedayContents?.contents?.map((content, index) => {
-      const isEven = index % 2 === 0;
+          {onthedayContents?.contents?.map((content, index) => {
+            const isEven = index % 2 === 0;
 
-      return (
-        <div
-          key={content?._id}
-          className={`relative flex flex-col lg:block mb-10 lg:mb-0`}
-        >
-          {/* Decorative background image */}
-          <div
-            className={`absolute top-[80px] lg:top-[116px] ${
-              isEven ? "right-8 lg:right-[55px]" : "right-5 lg:right-[55px]"
-            } w-full max-w-[578px]`}
-          >
-            <Image
-              src="/assets/images/rw-bg.png"
-              alt=""
-              width={578}
-              height={578}
-              className="w-full h-auto"
-              priority
-            />
-          </div>
-
-          {/* Main section image */}
-          <div
-            className={`relative lg:absolute mb-4 lg:mb-0 w-full max-w-[428px] lg:max-w-[650px] ${
-              isEven ? "lg:top-0 lg:left-28" : "lg:top-32 lg:right-20"
-            } mx-auto`}
-          >
-            <Image
-              src={content?.section_image_url}
-              alt={content?.title}
-              width={650}
-              height={650}
-              className="w-full h-auto object-cover img_border"
-              priority
-            />
-          </div>
-
-          {/* Content box */}
-          <div
-            className={`relative lg:absolute w-full max-w-[700px] py-10 px-6 lg:px-[91px] bg-[#1B1E25] z-10 shadow-xl mx-auto ${
-              isEven
-                ? "lg:bottom-[48px] lg:right-[-276px] lg:transform lg:-translate-x-1/2"
-                : "lg:top-[50px] lg:left-[453px] lg:transform lg:-translate-x-1/2"
-            }`}
-          >
-            <h3 className="text-white font-bold text-xl md:text-3xl mb-6 md:mb-8 text-center lg:text-left">
-              {content?.title}
-            </h3>
-
-            <div className="text-sm md:text-lg font-normal text-[#8F8F8F] text-center lg:text-left">
-              {content?.description && (
+            return (
+              <div
+                key={content?._id}
+                className={`relative flex flex-col lg:block mb-10 lg:mb-0`}
+              >
                 <div
-                  className="description"
-                  dangerouslySetInnerHTML={{
-                    __html: parseDescription(content?.description),
-                  }}
-                />
-              )}
-            </div>
-          </div>
-        </div>
-      );
-    })}
-  </div>
-</section>
+                  className={`absolute top-[80px] lg:top-[116px] ${
+                    isEven
+                      ? "right-8 lg:right-[55px]"
+                      : "right-5 lg:right-[55px]"
+                  } w-full max-w-[578px]`}
+                >
+                  <Image
+                    src="/assets/images/rw-bg.png"
+                    alt=""
+                    width={578}
+                    height={578}
+                    className="w-full h-auto"
+                    priority
+                  />
+                </div>
 
+                <div
+                  className={`relative lg:absolute mb-4 lg:mb-0 w-full max-w-[428px] lg:max-w-[650px] ${
+                    isEven ? "lg:top-0 lg:left-28" : "lg:top-32 lg:right-20"
+                  } mx-auto`}
+                >
+                  <Image
+                    src={content?.section_image_url}
+                    alt={content?.title}
+                    width={650}
+                    height={650}
+                    className="w-full h-auto object-cover img_border"
+                    priority
+                  />
+                </div>
+
+                <div
+                  className={`relative lg:absolute w-full max-w-[700px] py-10 px-6 lg:px-[91px] bg-[#1B1E25] z-10 shadow-xl mx-auto ${
+                    isEven
+                      ? "lg:bottom-[48px] lg:right-[-276px] lg:transform lg:-translate-x-1/2"
+                      : "lg:top-[50px] lg:left-[453px] lg:transform lg:-translate-x-1/2"
+                  }`}
+                >
+                  <h3 className="text-white font-bold text-xl md:text-3xl mb-6 md:mb-8 text-center lg:text-left">
+                    {content?.title}
+                  </h3>
+
+                  <div className="text-sm md:text-lg font-normal text-[#8F8F8F] text-center lg:text-left">
+                    {content?.description && (
+                      <div
+                        className="description"
+                        dangerouslySetInnerHTML={{
+                          __html: parseDescription(content?.description),
+                        }}
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section> */}
     </>
   );
 };
