@@ -87,7 +87,7 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
               dangerouslySetInnerHTML={{ __html: aboutData?.description }}
             />
           </div>
-          <div className="col-span-12 lg:col-span-7 mt-[20px] lg:mt-[204px] about-image">
+          <div className="col-span-12 lg:col-span-7 flex items-center about-image">
             <div className="w-[443px] h-[458px] md:w-[745px] lg:w-[879px] lg:h-[526px] relative">
               <Image
                 src={
@@ -101,7 +101,7 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
           </div>
         </div>
 
-        {aboutImages?.images?.length > 0 && <div className="flex items-center w-full mx-auto z-10 mt-[-36px] md:mt-[-71px]">
+        {aboutImages?.images?.length > 0 && <div className="flex items-center w-full mx-auto z-10">
           <div className="flex flex-col space-y-4 lg:mr-64 mr-6">
             <button
               onClick={scrollLeft}

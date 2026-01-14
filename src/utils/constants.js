@@ -49,13 +49,13 @@ export const ADMIN_CONFIG_DATA = {
                     url: "/admin/dashboard/home/banners",
                 },
                 {
-                    title:"Artist Section",
-                    url:"/admin/dashboard/home/artist-section",
+                    title: "Artist Section",
+                    url: "/admin/dashboard/home/artist-section",
                 },
-                {
-                    title: "About Us",
-                    url: "/admin/dashboard/home/about-us",
-                },
+                // {
+                //     title: "About Us",
+                //     url: "/admin/dashboard/home/about-us",
+                // },
                 {
                     title: "Press Coverage",
                     url: "/admin/dashboard/home/press-coverage",

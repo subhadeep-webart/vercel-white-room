@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-export function useGetAboutPageContent() {
+export function useGetAboutPageContent(type = "") {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,16 +15,16 @@ export function useGetAboutPageContent() {
       if (!res.ok) throw new Error("Failed to fetch about page");
       const page = await res.json();
 
-      //  if (type) {
-      //           console.log("Entry point")
-      //           const requiredSection = page?.components.find((c) => { console.log("aaa", c); return c.type === type });
-      //           console.log("required section==>", requiredSection);
-      //           setData(requiredSection ? requiredSection.data : page);
-      //       } else {
-      //           setData(page ?? {});
-      //       }
+      if (type) {
+        console.log("Entry point")
+        const requiredSection = page?.components.find((c) => { console.log("aaa", c); return c.type === type });
+        console.log("required section==>", requiredSection);
+        setData(requiredSection ? requiredSection.data : page);
+      } else {
+        setData(page ?? {});
+      }
 
-      setData(page);
+      // setData(page);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -37,7 +37,7 @@ export function useGetAboutPageContent() {
     refetch();
   }, [refetch]);
 
-   // Function to get a specific section by its type
+  // Function to get a specific section by its type
   // const getAboutSectionByType = (type) => {
   //   return data?.components?.find((c) => c.type === type)?.data || null;
   // };
