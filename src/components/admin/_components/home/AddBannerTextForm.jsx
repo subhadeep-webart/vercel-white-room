@@ -12,6 +12,7 @@ import dynamic from "next/dynamic";
 import { artistSectionValidationSchema, commonBannerValidationSchema } from "@/utils/formValidationSchema";
 import { toast } from "sonner";
 import { Loader } from "@/components/common/Loader";
+import { Trash2 } from "lucide-react";
 
 const CldUploadWidget = dynamic(
     () => import("next-cloudinary").then((mod) => mod.CldUploadWidget),
@@ -71,6 +72,17 @@ const AddBannerTextForm = ({ defaultValues = {}, onSubmitHandler, isLoading }) =
         }
     };
 
+    const handleRemovePicture = async (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const payload = {
+            file_url: "",
+            buttonText: defaultValues.buttonText || "",
+            buttonLink: defaultValues.buttonLink || "",
+        }
+        await onSubmit(payload);
+    }
+
     return (
         <form className="space-y-6 bg-white shadow-md px-4 py-2 rounded-md" onSubmit={handleSubmit(onSubmit)}>
             <p className="text-black py-2 text-lg font-semibold px-2">CTA CONTENT</p>
@@ -87,6 +99,9 @@ const AddBannerTextForm = ({ defaultValues = {}, onSubmitHandler, isLoading }) =
                             className="w-full max-h-52 object-contain rounded"
                         />
                     )}
+                    <button className="w-fit px-2 py-2 absolute top-2.5 right-2 z-50 bg-gray-300 rounded-full cursor-pointer shadow-2xl" type="button" onClick={handleRemovePicture} disabled={isLoading}>
+                        <Trash2 size={20} className="text-red-500" />
+                    </button>
                     {/* Upload Button absolutely centered */}
                     {typeof window !== "undefined" && (
                         <CldUploadWidget

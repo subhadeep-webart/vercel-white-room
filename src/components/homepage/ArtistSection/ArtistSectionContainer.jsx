@@ -45,14 +45,11 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
 
   const router = useRouter();
 
-  // if (!artistSectionData) {
-  //     return;
-  // }
   const {
     file_url = "",
     buttonText = "",
     buttonLink = "#",
-    artists = [{ artist_name: "Subhadeep" }],
+    artists = [],
   } = artistSectionData || {};
 
   const handleButtonClick = () => {
@@ -62,7 +59,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
   return (
     <section className="w-full h-screen relative bg-black" ref={containerRef}>
       <div className="hero">
-        <img src={file_url} alt="Hero" className="person-image" />
+        {file_url && <img src={file_url} alt="Hero" className="person-image" />}
 
         <div className="text-lines">
           <div className="scroll-container">
