@@ -36,9 +36,9 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
 
       tl.to(svg, { scale: 60, duration: 1, ease: "none" }, 0)
         .to(maskEl, { opacity: 0, duration: 1, ease: "none" }, 0)
-        .to({}, { duration: 0.3 })
-        .to(svg, { scale: 1, duration: 1, ease: "none" })
-        .to(maskEl, { opacity: 1, duration: 1, ease: "none" }, "-=1");
+      // .to({}, { duration: 0.3 })
+      // .to(svg, { scale: 1, duration: 1, ease: "none" })
+      // .to(maskEl, { opacity: 1, duration: 1, ease: "none" }, "-=1");
     },
     { scope: containerRef }
   );
@@ -57,7 +57,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
     router.push(buttonLink);
   };
   return (
-    <section className="w-full h-screen relative bg-black" ref={containerRef}>
+    <section className="w-full h-[120vh] relative bg-black overflow-hidden" ref={containerRef}>
       <div className="hero">
         {file_url && <img src={file_url} alt="Hero" className="person-image" />}
 

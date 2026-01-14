@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  height: 100vh;
+  height: 120vh;
 }
 
 .person-image {
@@ -45,16 +45,27 @@
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes scrollReverse {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.text, .text-reverse {
+.text,
+.text-reverse {
   font-size: 120px;
   font-weight: 900;
   font-family: 'Arial Black', sans-serif;
@@ -115,9 +126,19 @@
   pointer-events: none;
 }
 
-.logo { width: 250px; height: auto; }
+.logo {
+  width: 250px;
+  height: auto;
+}
 
 @media (max-width: 1024px) {
-  .person-image { width: 650px; height: auto; }
-  .text, .text-reverse { font-size: 90px; }
+  .person-image {
+    width: 650px;
+    height: auto;
+  }
+
+  .text,
+  .text-reverse {
+    font-size: 90px;
+  }
 }
