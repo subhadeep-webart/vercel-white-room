@@ -10,7 +10,7 @@ import FormErrorText from "@/components/admin/_components/forms/FormErrorText";
 import { Loader } from "@/components/common/Loader";
 import { Input } from "@/components/ui/input";
 import dynamic from "next/dynamic";
-import { forLargerShowsValidationSchema, getWithBookingFormValidationSchema } from "@/utils/formValidationSchema";
+import { forLargerShowsValidationSchema } from "@/utils/formValidationSchema";
 import useUpdateBookingPageComponent from "@/hooks/useUpdateBookingPageComponent";
 import RichTextEditor from "@/components/common/RichTextEditor";
 import { Textarea } from "@/components/ui/textarea";

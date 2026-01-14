@@ -99,9 +99,9 @@ const AddBannerTextForm = ({ defaultValues = {}, onSubmitHandler, isLoading }) =
                             className="w-full max-h-52 object-contain rounded"
                         />
                     )}
-                    <button className="w-fit px-2 py-2 absolute top-2.5 right-2 z-50 bg-gray-300 rounded-full cursor-pointer shadow-2xl" type="button" onClick={handleRemovePicture} disabled={isLoading}>
+                    {defaultValues?.file_url && <button className="w-fit px-2 py-2 absolute top-2.5 right-2 z-50 bg-gray-300 rounded-full cursor-pointer shadow-2xl" type="button" onClick={handleRemovePicture} disabled={isLoading}>
                         <Trash2 size={20} className="text-red-500" />
-                    </button>
+                    </button>}
                     {/* Upload Button absolutely centered */}
                     {typeof window !== "undefined" && (
                         <CldUploadWidget
