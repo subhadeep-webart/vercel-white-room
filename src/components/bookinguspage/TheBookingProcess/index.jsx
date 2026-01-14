@@ -1,166 +1,40 @@
 import NoiseComponent from "@/components/common/NoiseComponent";
 import Image from "next/image";
+import styles from "./bookingprocess.module.scss";
+import BookingStepsTimeline from "./BookingStepsTimeline";
 
-const TheBookingProcess = ({bookingPage, bookingProcess }) => {
-  const stepPositions = [
-    { side: "left", offset: "top-[37px]" },
-    { side: "right", offset: "top-[287px]" },
-    { side: "left", offset: "bottom-[351px]" },
-    { side: "right", offset: "bottom-[170px]" },
-  ];
+const TheBookingProcess = ({ bookingPage, bookingProcess }) => {
 
   return (
     <>
-      {/* <section className="pt-20 pb-20 bg-black relative overflow-hidden">
-        <NoiseComponent/>
-        <div className="container">
+      <section className="pt-20 pb-20 bg-black relative overflow-hidden">
+        <NoiseComponent />
+        <div className="container px-4 md:px-0">
           <h3 className="text-white font-bold text-xl md:text-[45px] text-center mb-20">
-           {bookingPage?.title || "WHAT YOU GET WHEN YOU BOOK THE WHITE ROOMS"}
+            {bookingPage?.title || "WHAT YOU GET WHEN YOU BOOK THE WHITE ROOMS"}
           </h3>
+
           <div>
             <h3 className="text-white font-bold text-xl md:text-[45px] text-center mb-6 text-capitalize">
               {bookingProcess?.title || "The Booking Process"}
             </h3>
-
-            <div className="h-[938px] relative">
-              <div className="absolute md:bottom-[107px] right-[-75px] md:right-[108px] w-[990px]">
-                <Image
-                  src="/assets/images/rw-2.png"
-                  alt=""
-                  width={990}
-                  height={990}
-                  className="w-full h-auto"
-                  priority
-                />
+            <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 ${styles.timeline_container}`}>
+              <div className="self-center">
+                <div className={`${styles.booking_us_image_container}`}>
+                  <Image
+                    src="/assets/images/booking-us-img-1.png"
+                    alt=""
+                    fill
+                    className="img_border"
+                    priority
+                  />
+                </div>
               </div>
-
-              <div className="absolute top-0 left-0 md:left-[426px] w-[620px] md:w-[700px]">
-                <Image
-                  src="/assets/images/booking-us-img-1.png"
-                  alt=""
-                  width={700}
-                  height={800}
-                  className="w-full h-auto img_border"
-                  priority
-                />
-              </div>
-
-              {bookingProcess?.booking_steps?.length > 0 &&
-                bookingProcess?.booking_steps?.map((step, index) => {
-                  const isLeft =
-                    stepPositions[index % stepPositions.length].side === "left";
-                  const positionClass =
-                    stepPositions[index % stepPositions.length].offset;
-                  const sideClass = isLeft
-                    ? "left-[-27px] md:left-[46px]"
-                    : "right-[-29px] md:right-0";
-
-                  return (
-                    <div
-                      key={index}
-                      className={`bg-[#1B1E25] absolute z-10 ${sideClass} ${positionClass} w-[530px] md:w-[708px] h-[120px] md:h-[124px] py-5 px-9`}
-                    >
-                      <p className="text-[#8F8F8F] text-sm md:text-[18px] font-normal">
-                        {step}
-                      </p>
-                    </div>
-                  );
-                })}
+              <BookingStepsTimeline bookingProcess={bookingProcess?.booking_steps ?? []} />
             </div>
           </div>
         </div>
-      </section> */}
-      <section className="pt-20 pb-20 bg-black relative overflow-hidden">
-  <NoiseComponent />
-  <div className="container px-4 md:px-0">
-    <h3 className="text-white font-bold text-xl md:text-[45px] text-center mb-20">
-      {bookingPage?.title || "WHAT YOU GET WHEN YOU BOOK THE WHITE ROOMS"}
-    </h3>
-
-    <div>
-      <h3 className="text-white font-bold text-xl md:text-[45px] text-center mb-6 text-capitalize">
-        {bookingProcess?.title || "The Booking Process"}
-      </h3>
-
-  
-      <div className="flex flex-col gap-6 lg:hidden mt-8">
-        <div className="w-full">
-          <Image
-            src="/assets/images/booking-us-img-1.png"
-            alt=""
-            width={700}
-            height={800}
-            className="w-full h-auto img_border"
-            priority
-          />
-        </div>
-
-        {bookingProcess?.booking_steps?.map((step, index) => (
-          <div key={index} className="bg-[#1B1E25] p-5 sm:p-6">
-            <p className="text-[#8F8F8F] text-sm sm:text-base leading-relaxed">
-              {step}
-            </p>
-          </div>
-        ))}
-
-        <div className="w-full">
-          <Image
-            src="/assets/images/rw-2.png"
-            alt=""
-            width={990}
-            height={990}
-            className="w-full h-auto"
-          />
-        </div>
-      </div>
-
-    
-      <div className="relative hidden lg:block h-[938px]">
-        <div className="absolute bottom-[107px] right-[108px] w-[990px]">
-          <Image
-            src="/assets/images/rw-2.png"
-            alt=""
-            width={990}
-            height={990}
-            className="w-full h-auto"
-            priority
-          />
-        </div>
-
-        <div className="absolute top-0 left-[426px] w-[700px]">
-          <Image
-            src="/assets/images/booking-us-img-1.png"
-            alt=""
-            width={700}
-            height={800}
-            className="w-full h-auto img_border"
-            priority
-          />
-        </div>
-
-        {bookingProcess?.booking_steps?.length > 0 &&
-          bookingProcess?.booking_steps?.map((step, index) => {
-            const config = stepPositions[index % stepPositions.length];
-            const isLeft = config.side === "left";
-
-            return (
-              <div
-                key={index}
-                className={`absolute z-10 bg-[#1B1E25] ${
-                  isLeft ? "left-[46px]" : "right-0"
-                } ${config.offset} w-[708px] h-[124px] py-5 px-9`}
-              >
-                <p className="text-[#8F8F8F] text-[18px] leading-relaxed">
-                  {step}
-                </p>
-              </div>
-            );
-          })}
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
     </>
   );
 };
