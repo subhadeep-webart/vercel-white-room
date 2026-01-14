@@ -38,18 +38,18 @@ const WhatDoYouGet = ({ getWithBoking }) => {
         <NoiseComponent />
         <div className="container px-4 md:px-0">
           <div className="relative h-[750px] hidden md:block">
-            <div className="absolute left-[67px] top-0 w-[1010px]">
+            <div className="absolute left-[67px] top-0 w-[725px]">
               <Image
                 src={getWithBoking?.section_image_url}
                 alt=""
-                width={1010}
-                height={747}
-                className="w-full h-auto img_border"
+                width={725}
+                height={578}
+                className="w-full max-w-[725px] h-auto img_border"
                 priority
               />
             </div>
 
-            <div className="w-[875px] h-[600px] bg-[#1B1E25] shadow-xl p-10 absolute bottom-[66px] right-[-372px] transform -translate-x-1/2 z-10">
+            <div className="w-[850px] h-[600px] bg-[#1B1E25] shadow-xl p-10 absolute bottom-[60px] right-[-400px] transform -translate-x-1/2 z-10">
               <h3 className="text-white font-bold text-xl md:text-4xl mb-6">
                 {getWithBoking?.title}
               </h3>

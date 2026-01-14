@@ -14,16 +14,16 @@ const WhatDoYouGet = dynamic(() => import("@/components/bookinguspage/WhatDoYouG
 
 const BookingUs = () => {
   const { data: bookingPage } = useGetBookingPageContent();
-  const bookingBanner = getComponentByType(bookingPage,"banner");
-  const bookingProcess = getComponentByType(bookingPage,"booking_process");
-  const getWithBoking = getComponentByType(bookingPage,"get_with_booking");
-  const optionalAddOn = getComponentByType(bookingPage,"optional_add_on");
-  const largerShows = getComponentByType(bookingPage,"larger_shows");
-  const spokeProduction = getComponentByType(bookingPage,"spoke_production");
+  const bookingBanner = getComponentByType(bookingPage, "banner");
+  const bookingProcess = getComponentByType(bookingPage, "booking_process");
+  const getWithBoking = getComponentByType(bookingPage, "get_with_booking");
+  const optionalAddOn = getComponentByType(bookingPage, "optional_add_on");
+  const largerShows = getComponentByType(bookingPage, "larger_shows");
+  const spokeProduction = getComponentByType(bookingPage, "spoke_production");
 
   return (
     <>
-      <BannerBooking bookingBanner={bookingBanner}/>
+      <BannerBooking bookingBanner={bookingBanner} />
 
       <TheBookingProcess bookingPage={bookingPage} bookingProcess={bookingProcess} />
 
