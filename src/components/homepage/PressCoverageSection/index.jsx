@@ -22,7 +22,7 @@ const PressCoverageSection = ({ pressCoverageData }) => {
             </TickerWrapper>
           </div>
           <div className="relative container z-0">
-            <div className="w-full">
+            <div className="w-full overflow-hidden">
               <CoverageCardSwipper coverageData={pressCoverages} />
             </div>
           </div>

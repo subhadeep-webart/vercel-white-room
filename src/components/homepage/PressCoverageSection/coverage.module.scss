@@ -1,15 +1,19 @@
 .flip_card {
-  height: 600px;
+  height: 400px;
   width: 400px;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
+  perspective: 1000px;
 
   .card_inner {
     position: absolute;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: all 0.5s ease;
+    // transition: all 1s ease;
+    transition: transform 1s ease; // only transform
+    will-change: transform;
 
     &:hover {
       transform: rotateY(180deg);
@@ -20,6 +24,8 @@
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
+      -webkit-backface-visibility: hidden; // Safari fix
+      pointer-events: none;
     }
 
     .card_back {
@@ -27,7 +33,9 @@
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
+      -webkit-backface-visibility: hidden; // Safari fix
       transform: rotateY(180deg);
+      pointer-events: none;
     }
   }
 }

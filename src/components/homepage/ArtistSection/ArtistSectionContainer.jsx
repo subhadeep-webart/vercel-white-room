@@ -36,7 +36,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
 
       tl.to(svg, {
         scale: 60, duration: 1, ease: "none", transformOrigin: "50% 50%",
-        transformBox: "fill-box",xPercent: 140,
+        transformBox: "fill-box", xPercent: 140,
       }, 0)
         .to(maskEl, { opacity: 0, duration: 1, ease: "none" }, 0)
     },

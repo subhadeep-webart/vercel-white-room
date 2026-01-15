@@ -69,16 +69,16 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
   );
   return (
     <section className="w-full bg-[#0F1116] relative">
-      <div className="w-full relative z-10 commonBg">
+      <div className="w-full relative z-10 commonBg py-2">
         <TickerWrapper isRight={false}>
           <h3 className="outline_text text-4xl md:text-[150px] text-center">
-            {`${aboutData?.title} + " " + ${aboutData?.title}`}
+            {`${aboutData?.title} ${aboutData?.title}`}
           </h3>
         </TickerWrapper>
       </div>
       <section
         ref={sectionRef}
-        className={`${styles.aboutsection_container} container py-12`}
+        className={`${styles.aboutsection_container} container pt-4 pb-12`}
       >
         <div className={`grid grid-cols-12 md:gap-4 py-4 px-2`}>
           <div className="py-16 px-12 col-span-12 lg:col-span-5 bg-black about-text">

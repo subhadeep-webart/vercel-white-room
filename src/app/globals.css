@@ -562,6 +562,27 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .outline_text {
+    -webkit-text-stroke: 1.5px #ffffff;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .outline_text {
+    -webkit-text-stroke: 1.2px #ffffff;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .outline_text {
+    -webkit-text-stroke: 0.5px #ffffff;
+  }
+}
+
 .ticker_item {
   display: inline-block;
   margin-right: 20px;
@@ -597,6 +618,7 @@ body {
 }
 
 @keyframes noise {
+
   0%,
   100% {
     -webkit-transform: translate(0, 0);
