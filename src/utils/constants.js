@@ -2,11 +2,11 @@
 export const NAV_MENU_ITEMS = [
     { key: "about-us", label: "ABOUT US", href: "/about-us", imgSrc: "/assets/images/about-us-img-1.png" },
     // { key: "videos", label: "VIDEOS", href: "#", imgSrc: "/assets/images/about-us-img-2.png" },
-    { key: "media", label: "MEDIA", href: "/media-us", imgSrc: "/assets/images/about-us-img-3.png" },
+    { key: "media", label: "MEDIA", href: "/media-us", imgSrc: "/assets/images/about-us-img-1.png" },
     { key: "testimonials", label: "TESTIMONIALS", href: "/testimonials", imgSrc: "/assets/images/about-us-img-1.png" },
-    { key: "shop", label: "SHOP", href: "/shop", imgSrc: "/assets/images/about-us-img-2.png" },
-    { key: "book-us", label: "BOOK US", href: "/book-us", imgSrc: "/assets/images/about-us-img-1.png" }, { key: "on-the-day", label: "ON THE DAY", href: "/on-the-day", imgSrc: "/assets/images/about-us-img-2.png" },
-    { key: "contact-us", label: "CONTACT US", href: "/contact-us", imgSrc: "/assets/images/about-us-img-3.png" }
+    { key: "shop", label: "SHOP", href: "/shop", imgSrc: "/assets/images/about-us-img-1.png" },
+    { key: "book-us", label: "BOOK US", href: "/book-us", imgSrc: "/assets/images/about-us-img-1.png" }, { key: "on-the-day", label: "ON THE DAY", href: "/on-the-day", imgSrc: "/assets/images/about-us-img-1.png" },
+    { key: "contact-us", label: "CONTACT US", href: "/contact-us", imgSrc: "/assets/images/about-us-img-1.png" }
 ];
 
 

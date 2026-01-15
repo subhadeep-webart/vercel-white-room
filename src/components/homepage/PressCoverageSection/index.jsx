@@ -17,7 +17,7 @@ const PressCoverageSection = ({ pressCoverageData }) => {
           <div className="w-full relative z-10">
             <TickerWrapper isRight={true}>
               <h3 className="outline_text text-4xl md:text-[150px] text-center">
-                PRESS & COVERAGE &nbsp;  PRESS & COVERAGE &nbsp; PRESS & COVERAGE &nbsp; PRESS & COVERAGE &nbsp; PRESS & COVERAGE &nbsp; PRESS & COVERAGE &nbsp; PRESS & COVERAGE &nbsp;
+                MUSIC &nbsp;  MUSIC &nbsp; MUSIC &nbsp; MUSIC &nbsp; MUSIC &nbsp; MUSIC &nbsp; MUSIC &nbsp;
               </h3>
             </TickerWrapper>
           </div>
