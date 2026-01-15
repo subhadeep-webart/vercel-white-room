@@ -38,7 +38,7 @@ const TrustedBySection = ({ trustedByData }) => {
                     <div className="flex items-start gap-4 mt-4 lg:mt-24">
                         <div
                             ref={scrollRef}
-                            className="flex gap-2.5 overflow-x-auto scroll-smooth no-scrollbar w-full justify-center items-center"
+                            className="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar w-full justify-center items-center"
                             style={{ scrollBehavior: "smooth" }}
                         >
                             {trustedByData?.images?.length > 0 ? (
@@ -56,15 +56,6 @@ const TrustedBySection = ({ trustedByData }) => {
                                 <p className="text-gray-500">No trusted logos available</p>
                             )}
                         </div>
-
-                        {/* <button onClick={scrollRight}>
-                <Image
-                  src="/assets/icons/right-swipe.svg"
-                  alt="Next"
-                  width={48}
-                  height={45}
-                />
-              </button> */}
                     </div>
                 </div>
             </div>
