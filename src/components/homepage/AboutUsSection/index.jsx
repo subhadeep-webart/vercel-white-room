@@ -91,7 +91,7 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
             <div className="w-[443px] h-[458px] md:w-[745px] lg:w-[879px] lg:h-[526px] relative">
               <Image
                 src={
-                  aboutImages?.images?.[0] ?? "/assets/images/face-home-1.png"
+                  "/assets/images/face-home-1.png"
                 }
                 alt=""
                 fill
