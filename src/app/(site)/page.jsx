@@ -39,7 +39,7 @@ const Home = () => {
     }
   }, [isHomePageLoading, isAboutPageLoading]);
 
-  console.log("Artist Section Data====>", artistSectionData);
+  console.log("Trusted By Data===>", trustedByData);
 
   return (
     <>

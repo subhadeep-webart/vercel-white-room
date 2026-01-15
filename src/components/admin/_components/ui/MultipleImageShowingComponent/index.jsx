@@ -28,7 +28,7 @@ const MultipleImageShowingComponent = ({ imagesData, handleImageDelete }) => {
                     </div>
                 ) : (
                     <div className="grid grid-cols-5 gap-4 w-full">
-                        {imagesData.map((image, index) => (
+                        {imagesData?.map((image, index) => (
                             <ImageDisplayComponent
                                 key={`image-${index + 1}`}
                                 image={image}

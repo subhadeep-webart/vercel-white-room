@@ -13,6 +13,8 @@ const WorkedFor = () => {
   const { data: workedForContent, loading: isWorkedForContentLoading,refetch } = useGetHomePageContent("worked_for");
   const { handlePostTrustedImages, loading } = usePostTrustedByImages();
   const { handleWorkedForImageDelete, loading: isDeletingImage } = useDeleteWorkedForImage();
+
+  console.log("Worked For Content=====>",workedForContent);
   const handleUploadSuccess = async (result) => {
     console.log("Result coming from about us image upload========>", result);
     if (result.event === "success") {
