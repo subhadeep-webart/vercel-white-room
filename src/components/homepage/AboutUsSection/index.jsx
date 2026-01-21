@@ -69,9 +69,9 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
   );
   return (
     <section className="w-full bg-[#0F1116] relative">
-      <div className="w-full relative z-10 commonBg py-2">
+      <div className="w-full relative z-10 commonBg py-4">
         <TickerWrapper isRight={false}>
-          <h3 className="outline_text text-4xl md:text-[150px] text-center">
+          <h3 className="outline_text text-4xl md:text-[150px] text-center uppercase">
             {`${aboutData?.title} ${aboutData?.title}`}
           </h3>
         </TickerWrapper>

@@ -13,13 +13,15 @@ const TheBookingProcess = dynamic(() => import("@/components/bookinguspage/TheBo
 const WhatDoYouGet = dynamic(() => import("@/components/bookinguspage/WhatDoYouGet"), { ssr: false });
 
 const BookingUs = () => {
-  const { data: bookingPage } = useGetBookingPageContent();
+  const { data: bookingPage, loading } = useGetBookingPageContent();
   const bookingBanner = getComponentByType(bookingPage, "banner");
   const bookingProcess = getComponentByType(bookingPage, "booking_process");
   const getWithBoking = getComponentByType(bookingPage, "get_with_booking");
   const optionalAddOn = getComponentByType(bookingPage, "optional_add_on");
   const largerShows = getComponentByType(bookingPage, "larger_shows");
   const spokeProduction = getComponentByType(bookingPage, "spoke_production");
+
+  if (loading) return;
 
   return (
     <>

@@ -7,12 +7,14 @@ import { getComponentByType } from "@/utils/helper";
 
 const OnTheDay = () => {
   const { data: onthedayPage, loading: isOnthedayPageLoading } = useGetOnTheDayPageContent();
-     const onthedayBanner = getComponentByType(onthedayPage,"banner");
-     const onthedayContents = getComponentByType(onthedayPage,"contents");
+  const onthedayBanner = getComponentByType(onthedayPage, "banner");
+  const onthedayContents = getComponentByType(onthedayPage, "contents");
+
+  if (isOnthedayPageLoading) return;
   return (
     <>
-      <BannerSection onthedayBanner={onthedayBanner}/>
-      <WhatToExpectSection onthedayContents={onthedayContents}/>
+      <BannerSection onthedayBanner={onthedayBanner} />
+      <WhatToExpectSection onthedayContents={onthedayContents} />
     </>
   );
 };

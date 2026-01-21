@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BannerShop = ({ shopBanner }) => {
-  console.log("Shop Banner====>",shopBanner);
+  console.log("Shop Banner====>", shopBanner);
   return (
     <>
       <div className="relative">
-        <div className="absolute top-[47px] left-[42px] md:left-[162px] w-[120px] md:w-[187px]" style={{zIndex:999}}>
+        <div className="absolute top-[47px] left-[42px] md:left-[162px] w-[120px] md:w-[187px]" style={{ zIndex: 999 }}>
           <Link href="/">
             <Image
               src="/assets/images/logo.png"
@@ -28,12 +28,11 @@ const BannerShop = ({ shopBanner }) => {
             // transition-transform duration-300 ease-in-out transform hover:scale-110 hover:drop-shadow-lg hover:text-slate-300"
 
             className="
-      text-white font-bold text-2xl md:text-[64px]
       absolute top-2/3 left-1/2
       transform -translate-x-1/2 -translate-y-1/2
       transition-transform duration-300 ease-in-out
       hover:scale-110 hover:drop-shadow-lg hover:text-slate-300
-      whitespace-nowrap
+      whitespace-nowrap inner_banner_text
       "
           >
             {shopBanner?.title}

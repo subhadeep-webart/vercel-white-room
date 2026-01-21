@@ -19,6 +19,7 @@ const Testimonials = () => {
   const testimonialBanner = getComponentByType(testimonialPage,"banner");
   const whatTheySay = getComponentByType(testimonialPage,"what_they_say");
 
+  if(isHomePageLoading || isTestimonialPageLoading) return;
 
   return (
     <>

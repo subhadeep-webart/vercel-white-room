@@ -10,7 +10,7 @@ const MediaUs = () => {
    const mediaBanner = getComponentByType(mediaPage,"banner");
     const mediaAssets = getComponentByType(mediaPage,"media_assets");
 
-    console.log("mediaPage",mediaPage)
+    if(isMediaPageLoading) return;
 
   return (
     <>

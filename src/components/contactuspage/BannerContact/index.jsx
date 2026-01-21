@@ -25,12 +25,11 @@ const BannerContact = () => {
           // className="text-white font-bold text-[64px] absolute top-[510px] left-[600px]
           // transition-transform duration-300 ease-in-out transform hover:scale-110 hover:drop-shadow-lg hover:text-slate-300"
           className="
-      text-white font-bold text-2xl md:text-[64px]
       absolute top-2/3 left-1/2
       transform -translate-x-1/2 -translate-y-1/2
       transition-transform duration-300 ease-in-out
       hover:scale-110 hover:drop-shadow-lg hover:text-slate-300
-      whitespace-nowrap
+      whitespace-nowrap inner_banner_text
       "
         >
           CONTACT US

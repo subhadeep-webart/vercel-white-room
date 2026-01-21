@@ -9,9 +9,11 @@ const AboutUs = () => {
     data: aboutPage,
     loading: isAboutPageLoading,
   } = useGetAboutPageContent();
-  const aboutBanner = getComponentByType(aboutPage,"banner");
-  const aboutData = getComponentByType(aboutPage,"about_us");
-  const aboutImages = getComponentByType(aboutPage,"about_us_images");
+  const aboutBanner = getComponentByType(aboutPage, "banner");
+  const aboutData = getComponentByType(aboutPage, "about_us");
+  const aboutImages = getComponentByType(aboutPage, "about_us_images");
+
+  if (isAboutPageLoading) return;
 
   return (
     <>

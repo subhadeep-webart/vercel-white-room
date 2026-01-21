@@ -10,7 +10,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from "gsap";
 
 const NavMenu = ({ isOpen, toggleNavBar }) => {
-    const [currentImageSrc, setCurrentImageSrc] = useState("/assets/images/menu-img.png");
+    const [currentImageSrc, setCurrentImageSrc] = useState(NAV_MENU_ITEMS[0]?.imgSrc);
     const [hoverImageSrc, setHoverImageSrc] = useState(null);
     const [hoverItem, setHoverItem] = useState(null);
     const containerRef = useRef(null);
