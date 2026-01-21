@@ -1,3 +1,5 @@
+export const SPINDRIFTWEBSITE = "https://www.spindriftmedia.com/"
+
 
 export const NAV_MENU_ITEMS = [
     { key: "about-us", label: "ABOUT US", href: "/about-us", imgSrc: "/assets/images/about-us-img-1.png" },
