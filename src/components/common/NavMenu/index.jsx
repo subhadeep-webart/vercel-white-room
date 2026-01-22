@@ -1,6 +1,6 @@
 "use client"
 
-import { NAV_MENU_ITEMS } from "@/utils/constants";
+import { INSTAGRAM_LINK, NAV_MENU_ITEMS } from "@/utils/constants";
 import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
@@ -91,9 +91,9 @@ const NavMenu = ({ isOpen, toggleNavBar }) => {
                             </li>
                         ))}
                     </ul>
-                    <div className="text-white font-bold text-md flex items-center gap-2">
+                    <Link href={INSTAGRAM_LINK} target="_blank" className="text-white font-bold text-md flex items-center gap-2" onClick={toggleNavBar}>
                         Follow us on <FaInstagram size={23} />
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div>
