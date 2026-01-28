@@ -171,6 +171,14 @@
   }
 }
 
+svg {
+  width: 100%;
+  height: auto;
+  shape-rendering: geometricPrecision;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
 
 .mask {
   position: fixed;
