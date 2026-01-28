@@ -40,6 +40,7 @@ const Preloader = ({ loading }) => {
                         alt="twr_logo"
                         width={150}
                         height={150}
+                        className="w-full"
                         priority
                     />
                 {/* </div> */}

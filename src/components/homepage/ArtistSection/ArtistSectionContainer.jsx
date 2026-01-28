@@ -28,6 +28,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
           end: "+=4000",
           scrub: true,
           pin: true,
+          force3D: false,
           onUpdate: (self) => {
             maskEl.style.zIndex = self.progress > 0.4 ? "1" : "10";
           },
