@@ -183,14 +183,19 @@
   pointer-events: none;
 }
 
-.logo {
+/* .logo {
   width: clamp(120px, 20vw, 250px);
   display: block;
   height: auto;
-  /* aspect-ratio: 5 / 2; */
-  /* will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden; */
+  aspect-ratio: 5 / 2;
+} */
+
+.logo {
+  width: clamp(120px, 20vw, 250px);
+  max-width: 250px;
+  height: auto;
+  display: block;
+  shape-rendering: geometricPrecision;
 }
 
 @media (max-width: 1024px) {
