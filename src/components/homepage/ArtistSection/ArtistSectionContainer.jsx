@@ -57,7 +57,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
     router.push(buttonLink);
   };
   return (
-    <section className="w-full h-[120vh] relative bg-black overflow-hidden" ref={containerRef}>
+    <section className="w-full h-[110vh] relative bg-black overflow-hidden" ref={containerRef}>
       <div className="hero">
         {file_url && <img src={file_url} alt="Hero" className="person-image" />}
 
@@ -131,7 +131,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
         </button>
       </div>
 
-      <div className="mask logo-mask" ref={maskRef}>
+      <div className="mask" ref={maskRef}>
         <svg viewBox="480 800 280 150" className="logo" ref={svgRef}>
           <path
             fill="#fff"

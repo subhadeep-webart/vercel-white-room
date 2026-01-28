@@ -21,7 +21,7 @@ const PressCoverageSection = ({ pressCoverageData }) => {
               </h3>
             </TickerWrapper>
           </div>
-          <div className="relative container z-0">
+          <div className="relative container z-0 !py-12">
             <div className="w-full overflow-hidden">
               <CoverageCardSwipper coverageData={pressCoverages} />
             </div>
