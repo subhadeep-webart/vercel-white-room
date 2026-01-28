@@ -12,7 +12,6 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
   const containerRef = useRef(null);
   const svgRef = useRef(null);
   const maskRef = useRef(null);
-
   // GSAP animation hook
   useGSAP(
     () => {
@@ -29,7 +28,6 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
           end: "+=4000",
           scrub: true,
           pin: true,
-          force3D: false,
           onUpdate: (self) => {
             maskEl.style.zIndex = self.progress > 0.4 ? "1" : "10";
           },
@@ -37,8 +35,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
       });
 
       tl.to(svg, {
-        scale: 60, duration: 1, ease: "none", transformOrigin: "50% 50%",
-        transformBox: "fill-box", xPercent: 110, yPercent: 500
+        scale: 60, duration: 1, ease: "none", xPercent: 110, yPercent: 500
       }, 0)
         .to(maskEl, { opacity: 0, duration: 1, ease: "none" }, 0)
     },

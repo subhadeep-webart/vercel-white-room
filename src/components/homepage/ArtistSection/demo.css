@@ -170,6 +170,7 @@
     letter-spacing: 0.06em;
   }
 }
+
 /* 
 svg {
   width: 100%;
@@ -207,6 +208,7 @@ svg {
   display: block;
   shape-rendering: geometricPrecision;
 }
+
 
 @media (max-width: 1024px) {
   .person-image {
