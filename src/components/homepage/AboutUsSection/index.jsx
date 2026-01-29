@@ -72,7 +72,7 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
       <div className="w-full relative z-10 commonBg py-4 bg-[#0F1116]">
         <TickerWrapper isRight={false}>
           <h3 className="outline_text text-4xl md:text-[150px] text-center uppercase">
-            {`${aboutData?.title} ${aboutData?.title}`}
+            {aboutData?.title}
           </h3>
         </TickerWrapper>
       </div>

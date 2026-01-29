@@ -201,13 +201,32 @@ svg {
   aspect-ratio: 5 / 2;
 } */
 
-.logo {
-  /* width: clamp(120px, 20vw, 250px); */
+/* .logo {
+  width: clamp(120px, 20vw, 250px);
   max-width: 250px;
   height: auto;
   width: 100%;
   display: block;
   shape-rendering: geometricPrecision;
+} */
+
+.logo {
+  max-width: 250px;
+  height: auto;
+  width: 100%;
+  display: block;
+
+  /* Safari fix for crisp SVG rendering */
+  shape-rendering: geometricPrecision;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+
+  /* Ensure SVG renders at high quality during scale */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
