@@ -196,33 +196,13 @@ svg {
   aspect-ratio: 5 / 2;
 } */
 
-/* .logo {
-  width: clamp(120px, 20vw, 250px);
+.logo {
+  /* width: clamp(120px, 20vw, 250px); */
   max-width: 250px;
   height: auto;
   width: 100%;
   display: block;
   shape-rendering: geometricPrecision;
-} */
-
-.logo {
-  width: 200px;
-  height: auto;
-
-  transform-box: fill-box;
-  transform-origin: center center;
-
-  will-change: transform;
-}
-
-.giant-text {
-  font-size: 12vw;
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  color: white;
-
-  mix-blend-mode: difference;
-  will-change: transform;
 }
 
 @media (max-width: 1024px) {
