@@ -20,18 +20,18 @@
 // }
 
 .ticker {
-    display: inline-flex;
-    min-width: max-content;
+    display: flex;
+    // min-width: max-content;
     gap: 20px;
 }
 
 .ticker_right {
-    animation: tickerMove 140s linear infinite;
+    animation: tickerMove 20s linear infinite;
     transition: animation-duration 0.5s linear;
 }
 
 .ticker_left {
-    animation: tickerMoveRight 140s linear infinite;
+    animation: tickerMoveRight 20s linear infinite;
     transition: animation-duration 0.5s linear;
 }
 
