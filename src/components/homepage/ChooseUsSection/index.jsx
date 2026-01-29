@@ -83,7 +83,7 @@ const ChooseUsSection = ({ reviewData }) => {
             </h3>
           </TickerWrapper>
         </div>
-        <div className="container !z-0">
+        <div className="container !z-0 !py-12">
           <div className="w-full mx-auto">
             <Swiper
               slidesPerView={3}

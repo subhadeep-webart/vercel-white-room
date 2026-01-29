@@ -34,7 +34,7 @@ const TrustedBySection = ({ trustedByData }) => {
                         </h3>
                     </TickerWrapper>
                 </div>
-                <div className="container">
+                <div className="container !py-12">
                     <div className="flex items-start gap-4 mt-4 lg:mt-24">
                         <div
                             ref={scrollRef}
