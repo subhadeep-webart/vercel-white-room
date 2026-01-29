@@ -68,7 +68,7 @@
 .text-reverse {
   font-size: 120px;
   font-weight: 900;
-  font-family: 'Arial Black', sans-serif;
+  font-family: "Arial Black", sans-serif;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 0.02em;
@@ -76,7 +76,6 @@
 }
 
 @media (max-width: 1024px) {
-
   .text,
   .text-reverse {
     font-size: 80px;
@@ -84,7 +83,6 @@
 }
 
 @media (max-width: 768px) {
-
   .text,
   .text-reverse {
     font-size: 48px;
@@ -93,14 +91,12 @@
 }
 
 @media (max-width: 480px) {
-
   .text,
   .text-reverse {
     font-size: 32px;
     letter-spacing: 0;
   }
 }
-
 
 .word {
   color: transparent;
@@ -181,7 +177,6 @@ svg {
   transform: scale(1.1);
 } */
 
-
 .mask {
   position: fixed;
   inset: 0;
@@ -201,15 +196,34 @@ svg {
   aspect-ratio: 5 / 2;
 } */
 
-.logo {
-  /* width: clamp(120px, 20vw, 250px); */
+/* .logo {
+  width: clamp(120px, 20vw, 250px);
   max-width: 250px;
   height: auto;
   width: 100%;
   display: block;
   shape-rendering: geometricPrecision;
+} */
+
+.logo {
+  width: 200px;
+  height: auto;
+
+  transform-box: fill-box;
+  transform-origin: center center;
+
+  will-change: transform;
 }
 
+.giant-text {
+  font-size: 12vw;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: white;
+
+  mix-blend-mode: difference;
+  will-change: transform;
+}
 
 @media (max-width: 1024px) {
   .person-image {
