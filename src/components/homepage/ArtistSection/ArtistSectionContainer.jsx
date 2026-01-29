@@ -33,12 +33,17 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
         },
       });
 
-      tl.to(svg, {
-        scale: 60, duration: 1, ease: "none", xPercent: 120, yPercent: 200
-      }, 0)
-        .to(maskEl, { opacity: 0, duration: 1, ease: "none" }, 0)
+      tl.to(
+        svg,
+        {
+          transform: "translate(120%, 200%) scale(60)",
+          duration: 1,
+          ease: "none",
+        },
+        0,
+      ).to(maskEl, { opacity: 0, duration: 1, ease: "none" }, 0);
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   const router = useRouter();
@@ -55,7 +60,10 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
     router.push(buttonLink);
   };
   return (
-    <section className="w-full h-[110vh] relative bg-black overflow-hidden" ref={containerRef}>
+    <section
+      className="w-full h-[110vh] relative bg-black overflow-hidden"
+      ref={containerRef}
+    >
       <div className="hero">
         {file_url && <img src={file_url} alt="Hero" className="person-image" />}
 
@@ -130,12 +138,15 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
       </div>
 
       <div className="mask" ref={maskRef}>
-        {
-          /**
-           *
-           */
-        }
-        <svg viewBox="480 800 280 150" className="logo" ref={svgRef} preserveAspectRatio="xMidYMid meet">
+        {/**
+         *
+         */}
+        <svg
+          viewBox="480 800 280 150"
+          className="logo"
+          ref={svgRef}
+          preserveAspectRatio="xMidYMid meet"
+        >
           <path
             fill="#fff"
             d="M 488.177032 836.022095 L 488.177032 825.24231 L 549 825.24231 L 549 836.022095 L 524.208008 836.022095 L 524.208008 935 L 512.968994 935 L 512.968994 836.022095 L 488.177032 836.022095 Z"
