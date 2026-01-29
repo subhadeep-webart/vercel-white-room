@@ -215,6 +215,16 @@ svg {
   will-change: transform;
 }
 
+.giant-text {
+  font-size: 12vw;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: white;
+
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+
 @media (max-width: 1024px) {
   .person-image {
     width: 650px;
