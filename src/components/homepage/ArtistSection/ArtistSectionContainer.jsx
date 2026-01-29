@@ -40,7 +40,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
           duration: 1,
           ease: "none",
           xPercent: 120,
-          yPercent: 400,
+          yPercent: 250,
         },
         0,
       ).to(maskEl, { opacity: 0, duration: 1, ease: "none" }, 0);
