@@ -197,11 +197,10 @@ svg {
 } */
 
 .logo {
-  /* width: clamp(120px, 20vw, 250px); */
-  max-width: 250px;
-  height: auto;
-  width: 100%;
+  width: clamp(120px, 20vw, 250px);
+  height: 140px;
   display: block;
+  aspect-ratio: 5/2;
   shape-rendering: geometricPrecision;
 }
 
