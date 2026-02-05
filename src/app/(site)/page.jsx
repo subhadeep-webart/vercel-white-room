@@ -16,6 +16,8 @@ import TrustedBySection from "@/components/homepage/TrustedBySection";
 import Preloader from "@/components/loader/Preloader";
 import { useEffect, useState } from "react";
 import ArtistSectionContainer from "@/components/homepage/ArtistSection/ArtistSectionContainer";
+import { useGetInstagramMedia } from "@/hooks/useGetInstagramMedia";
+import InstagramFeedSection from "@/components/homepage/InstagramFeedSection";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +26,7 @@ const Home = () => {
     useGetHomePageContent();
   const { data: aboutPage, loading: isAboutPageLoading } =
     useGetAboutPageContent();
+  const { instagramMediaData, loading: isInstagramLoading } = useGetInstagramMedia();
   console.log("Home Page====>", homePage);
   const bannerData = getComponentByType(homePage, "banner_section");
   const aboutData = getComponentByType(aboutPage, "about_us");
@@ -37,7 +40,7 @@ const Home = () => {
     if (!isHomePageLoading && !isAboutPageLoading) {
       setTimeout(() => setIsLoading(false), 800);
     }
-  }, [isHomePageLoading, isAboutPageLoading]);
+  }, [isHomePageLoading, isAboutPageLoading, isInstagramLoading]);
 
   console.log("Trusted By Data===>", trustedByData);
 
@@ -47,7 +50,7 @@ const Home = () => {
       <HomePageBannerColapse bannerData={bannerData} />
       <ArtistSectionContainer artistSectionData={artistSectionData} />
       <AboutUsSection aboutData={aboutData} aboutImages={aboutImages} />
-      {/* <WRSection /> */}
+      <InstagramFeedSection instagramMediaData={instagramMediaData} />
       <PressCoverageSection
         pressCoverageData={pressCoverageData}
         trustedByData={trustedByData}

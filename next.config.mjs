@@ -8,8 +8,12 @@ const nextConfig = {
         port: "",
         // pathname: "/<cloud-name>/**",
       },
+      {
+        protocol: "https",
+        hostname: "scontent.cdninstagram.com",
+        port: ""
+      }
     ],
-     domains: ['res.cloudinary.com'],
   },
 };
 

@@ -2,6 +2,8 @@ export const SPINDRIFTWEBSITE = "https://www.spindriftmedia.com/"
 
 export const INSTAGRAM_LINK = "https://www.instagram.com/thewhiteroomsband/"
 
+export const INSTAGRAM_TOKEN = process.env.INSTAGRAM_API
+
 export const NAV_MENU_ITEMS = [
     { key: "about-us", label: "ABOUT US", href: "/about-us", imgSrc: "/assets/images/about-us-img-1.png" },
     // { key: "videos", label: "VIDEOS", href: "#", imgSrc: "/assets/images/about-us-img-2.png" },
@@ -215,3 +217,17 @@ export const ALL_REVIEWS_TABLE_COLUMNS = [
         align: "right",
     },
 ];
+
+
+export const INSTAGRAM_CONFIGURATION = {
+    user_id: "17841404064152965",
+    username: "thewhiteroomsband",
+    id: "24827167166959629"
+}
+
+export const MASONARY_BREAKPOINT = {
+    default: 4, // Desktop
+    1100: 3,    // Laptop
+    700: 2,     // Tablet
+    500: 1      // Mobile
+};
