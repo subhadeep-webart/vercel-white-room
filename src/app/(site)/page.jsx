@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import AboutUsSection from "@/components/homepage/AboutUsSection";
 const ChooseUsSection = dynamic(
   () => import("@/components/homepage/ChooseUsSection"),
-  { ssr: false }
+  { ssr: false },
 );
 import HomePageBannerColapse from "@/components/homepage/HomePageBannerColapse";
 import PressCoverageSection from "@/components/homepage/PressCoverageSection";
@@ -26,7 +26,8 @@ const Home = () => {
     useGetHomePageContent();
   const { data: aboutPage, loading: isAboutPageLoading } =
     useGetAboutPageContent();
-  const { instagramMediaData, loading: isInstagramLoading } = useGetInstagramMedia();
+  const { instagramMediaData, loading: isInstagramLoading } =
+    useGetInstagramMedia();
   console.log("Home Page====>", homePage);
   const bannerData = getComponentByType(homePage, "banner_section");
   const aboutData = getComponentByType(aboutPage, "about_us");
@@ -55,7 +56,9 @@ const Home = () => {
         pressCoverageData={pressCoverageData}
         trustedByData={trustedByData}
       />
-      <TrustedBySection trustedByData={trustedByData} />
+      {trustedByData?.images?.length > 0 && (
+        <TrustedBySection trustedByData={trustedByData} />
+      )}
       <ChooseUsSection reviewData={reviewData} />
     </>
   );
