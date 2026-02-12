@@ -6,7 +6,7 @@ const InstagramFeed = ({ instagramPosts = [] }) => {
   console.log("Instagram Posts=====>", instagramPosts);
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1">
-      {instagramPosts.slice(12, 18).map((post) => (
+      {instagramPosts.slice(0,6).map((post) => (
         <Link
           href={post.permalink}
           target="_blank"
