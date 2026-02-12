@@ -1,5 +1,6 @@
 import TickerWrapper from "@/components/common/TickerWrapper";
 import InstagramMasonaryLayout from "./InstagramMasonaryLayout";
+import InstagramFeed from "./InstagramFeed";
 
 const InstagramFeedSection = ({ instagramMediaData }) => {
     console.log("Instagram Media Data=====>", instagramMediaData);
@@ -9,13 +10,15 @@ const InstagramFeedSection = ({ instagramMediaData }) => {
                 <div className="mb-[-40px]">
                     <TickerWrapper isRight={false}>
                         <h3 className="outline_text text-4xl md:text-[150px] text-center">
-                            Follow Us on Instagram
+                            {/* Follow Us on Instagram */}
+                            Instagram Feed
                         </h3>
                     </TickerWrapper>
                 </div>
             </div>
-            <div className="container !py-12">
-                <InstagramMasonaryLayout instagramPosts={instagramMediaData?.data} />
+            <div className="px-2 !py-12">
+                {/* <InstagramMasonaryLayout instagramPosts={instagramMediaData?.data} /> */}
+                <InstagramFeed instagramPosts={instagramMediaData?.data}/>
             </div>
         </section>
 

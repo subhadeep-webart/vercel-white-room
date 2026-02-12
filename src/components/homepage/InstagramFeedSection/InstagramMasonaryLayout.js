@@ -19,7 +19,7 @@ const InstagramMasonaryLayout = ({ instagramPosts = [] }) => {
                     {post?.media_type?.toLowerCase() === "video" ? (
                         <video
                             src={post.media_url}
-                            controls
+                            // controls
                             className="w-full h-[400px] object-cover"
                         />
                     ) : (
