@@ -16,7 +16,7 @@ const ChooseUsAddHeader = ({ refetch }) => {
     reset,
   } = useForm();
   const { handleUpdateReviewHeader, loading } = useUpdateReviewHeader(refetch);
-  const { title } = useGetReviewsSection();
+  const { title ,refetch: refetchHeader} = useGetReviewsSection();
 
   useEffect(() => {
     if (title) {
@@ -31,6 +31,7 @@ const ChooseUsAddHeader = ({ refetch }) => {
     console.log("res choose us header", res);
     if (res?.success) {
       reset();
+      await refetchHeader()
     }
   };
 

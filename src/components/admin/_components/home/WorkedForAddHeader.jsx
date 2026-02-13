@@ -15,7 +15,7 @@ const WorkedForAddHeader = () => {
     reset,
   } = useForm();
   const { handleUpdateWorkedForHeader, loading } = useUpdateWorkedForHeader();
-  const { title, images } = useGetWorkedForSection();
+  const { title, refetch: refetchHeader } = useGetWorkedForSection();
 
   useEffect(() => {
   if (title) {
@@ -30,6 +30,7 @@ const WorkedForAddHeader = () => {
     console.log("res worked for", res);
     if (res?.success) {
       reset();
+      await refetchHeader()
     }
   };
   return (

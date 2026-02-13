@@ -17,23 +17,24 @@ const PressCoverageAddHeader = () => {
   } = useForm();
 
   const { handleUpdateTitle, loading } = useUpdatePressCoverageTitle();
-  const { title } = useGetAllPressCoverages();
-  console.log("title",title)
+  const { title, refetch: refetchHeader } = useGetAllPressCoverages();
+  console.log("title", title);
 
-    useEffect(() => {
-      if (title) {
-        setValue("headerText", title);
-      }
-    }, [title, setValue]);
+  useEffect(() => {
+    if (title) {
+      setValue("headerText", title);
+    }
+  }, [title, setValue]);
 
   const onSubmit = async (data) => {
     if (!data?.headerText) return;
 
     const res = await handleUpdateTitle(data.headerText);
-    console.log("res press coverage",res)
+    console.log("res press coverage", res);
 
     if (res?.success) {
-      reset(); 
+      reset();
+      await refetchHeader();
     }
   };
 
@@ -55,8 +56,7 @@ const PressCoverageAddHeader = () => {
             {...register("headerText", { required: "Header text is required" })}
           />
           {errors.headerText && (
-           
-              <FormErrorText errorText={errors.headerText.message} />
+            <FormErrorText errorText={errors.headerText.message} />
           )}
         </div>
 

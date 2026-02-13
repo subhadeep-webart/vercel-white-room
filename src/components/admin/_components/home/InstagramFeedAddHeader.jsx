@@ -16,7 +16,7 @@ const InstagramFeedAddHeader = ({ refetch }) => {
   } = useForm();
   const { handleUpdateInstagramFeedHeader, loading } =
     useUpdateInstagramFeedHeader(refetch);
-  const { title } = useGetInstagramFeedHeader();
+  const { title,refetch: refetchHeader } = useGetInstagramFeedHeader();
 
   useEffect(() => {
     if (title) {
@@ -31,6 +31,7 @@ const InstagramFeedAddHeader = ({ refetch }) => {
     console.log("res instagram feed header", res);
     if (res?.success) {
       reset();
+      await refetchHeader()
     }
   };
   return (
