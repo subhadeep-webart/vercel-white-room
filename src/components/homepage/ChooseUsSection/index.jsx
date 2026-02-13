@@ -72,14 +72,14 @@ const ChooseUsSection = ({ reviewData }) => {
   return (
     <section className="w-full bg-[#0F1116] relative">
       <section
-        className="bg-no-repeat bg-center py-12 commonBg"
+        className="bg-no-repeat bg-center py-12 commonBg flex flex-col gap-14"
         ref={sectionRef}
       >
         <div className="!z-10 relative">
           <TickerWrapper>
-            <h3 className="outline_text text-4xl md:text-[150px] text-center">
-              WHY CHOOSE US &nbsp; WHY CHOOSE US &nbsp;WHY CHOOSE US &nbsp;WHY CHOOSE US &nbsp;WHY CHOOSE US &nbsp;
-              WHY CHOOSE US &nbsp; WHY CHOOSE US &nbsp;WHY CHOOSE US &nbsp;
+            <h3 className="outline_text text-4xl md:text-[150px] text-center uppercase">
+            {reviewData?.title} &nbsp;  {reviewData?.title} &nbsp; {reviewData?.title} &nbsp; {reviewData?.title} &nbsp; {reviewData?.title} &nbsp;
+               {reviewData?.title} &nbsp;  {reviewData?.title} &nbsp; {reviewData?.title} &nbsp;
             </h3>
           </TickerWrapper>
         </div>

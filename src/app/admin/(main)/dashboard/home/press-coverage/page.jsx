@@ -1,4 +1,5 @@
 "use client"
+import PressCoverageAddHeader from "@/components/admin/_components/home/PressCoverageAddHeader";
 import PressCoverageTable from "@/components/admin/_components/home/PressCoverageTable";
 import AdminPageLoader from "@/components/common/AdminPageLoader";
 import useGetAllPressCoverages from "@/hooks/useGetAllPressCoverages";
@@ -15,6 +16,7 @@ const PressCoveragePage = () => {
 
     return (
         <div className="p-3 bg-[#f0f3f8]">
+            <PressCoverageAddHeader/>
             <div className="flex justify-end items-end">
                 <Link
                     href={"/admin/dashboard/home/press-coverage/add-press-coverage"}

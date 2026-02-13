@@ -62,8 +62,47 @@ export async function POST(request) {
   }
 }
 
+// /**
+//  * ✅ GET Review by ID
+//  */
+// export async function GET(request) {
+//   try {
+//     await dbConnect();
+
+//     const { searchParams } = new URL(request.url);
+//     const id = searchParams.get("_id");
+
+//     if (!id) {
+//       return NextResponse.json({ error: "Missing _id" }, { status: 400 });
+//     }
+
+//     const page = await Page.findOne({ slug: "home" });
+//     if (!page)
+//       return NextResponse.json({ error: "Page not found" }, { status: 404 });
+
+//     const reviewComp = page.components.find((c) => c.type === "review_section");
+//     if (!reviewComp)
+//       return NextResponse.json(
+//         { error: "Review section not found" },
+//         { status: 404 }
+//       );
+
+//     const review = reviewComp.data.reviews.find((r) => r._id === id);
+//     if (!review)
+//       return NextResponse.json({ error: "Review not found" }, { status: 404 });
+
+//     return NextResponse.json({ success: true, review });
+//   } catch (error) {
+//     console.error("Error fetching review:", error);
+//     return NextResponse.json(
+//       { error: "Internal Server Error" },
+//       { status: 500 }
+//     );
+//   }
+// }
+
 /**
- * ✅ GET Review by ID
+ * ✅ GET Reviews (all) OR Single Review by ID
  */
 export async function GET(request) {
   try {
@@ -72,34 +111,64 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const id = searchParams.get("_id");
 
-    if (!id) {
-      return NextResponse.json({ error: "Missing _id" }, { status: 400 });
+    const page = await Page.findOne({ slug: "home" });
+    if (!page) {
+      return NextResponse.json(
+        { error: "Page not found" },
+        { status: 404 }
+      );
     }
 
-    const page = await Page.findOne({ slug: "home" });
-    if (!page)
-      return NextResponse.json({ error: "Page not found" }, { status: 404 });
+    const reviewComp = page.components.find(
+      (c) => c.type === "review_section"
+    );
 
-    const reviewComp = page.components.find((c) => c.type === "review_section");
-    if (!reviewComp)
+    if (!reviewComp) {
       return NextResponse.json(
         { error: "Review section not found" },
         { status: 404 }
       );
+    }
 
-    const review = reviewComp.data.reviews.find((r) => r._id === id);
-    if (!review)
-      return NextResponse.json({ error: "Review not found" }, { status: 404 });
+    const title = reviewComp?.data?.title || "";
+    const reviews = reviewComp?.data?.reviews || [];
 
-    return NextResponse.json({ success: true, review });
+    // ✅ If ID is provided → return single review
+    if (id) {
+      const review = reviews.find(
+        (r) => r._id.toString() === id
+      );
+
+      if (!review) {
+        return NextResponse.json(
+          { error: "Review not found" },
+          { status: 404 }
+        );
+      }
+
+      return NextResponse.json({
+        success: true,
+        title,
+        review,
+      });
+    }
+
+    // ✅ If no ID → return all reviews + title
+    return NextResponse.json({
+      success: true,
+      title,
+      reviews,
+    });
+
   } catch (error) {
-    console.error("Error fetching review:", error);
+    console.error("Error fetching reviews:", error);
     return NextResponse.json(
       { error: "Internal Server Error" },
       { status: 500 }
     );
   }
 }
+
 
 /**
  * ✅ UPDATE Review
@@ -203,6 +272,62 @@ export async function DELETE(request) {
     return NextResponse.json({ success: true, message: "Review deleted" });
   } catch (error) {
     console.error("Error deleting review:", error);
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
+  }
+}
+
+
+
+export async function PATCH(request) {
+  try {
+    await dbConnect();
+
+    const body = await request.json();
+    const { title } = body;
+
+    if (!title) {
+      return NextResponse.json(
+        { error: "Missing title" },
+        { status: 400 }
+      );
+    }
+
+    const page = await Page.findOne({ slug: "home" });
+    if (!page)
+      return NextResponse.json({ error: "Page not found" }, { status: 404 });
+
+    // Find review_section component
+    const reviewCompIndex = page.components.findIndex(
+      (c) => c.type === "review_section"
+    );
+
+    if (reviewCompIndex === -1) {
+      // Create the component if it doesn't exist
+      page.components.push({
+        type: "review_section",
+        data: {
+          title: title,
+          reviews: [],
+        },
+      });
+    } else {
+      // Update the title inside data only
+      page.components[reviewCompIndex].data.title = title;
+    }
+
+    page.markModified("components");
+    await page.save();
+
+    return NextResponse.json({
+      success: true,
+      message: "Review section title updated",
+      page,
+    });
+  } catch (error) {
+    console.error("Error updating review section title:", error);
     return NextResponse.json(
       { error: "Internal Server Error" },
       { status: 500 }

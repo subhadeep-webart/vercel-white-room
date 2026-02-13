@@ -51,21 +51,67 @@ export async function POST(request) {
 }
 
 // GET - Retrieve all concerts
+// export async function GET() {
+//     try {
+//         console.log("Calling========> inside latest concerts")
+//         await dbConnect();
+//         const page = await Page.findOne({ slug: "home" });
+
+//         const component = page?.components.find(c => c.type === "press-coverage");
+//         const coverages = component?.data?.coverages || [];
+
+//         return NextResponse.json({ coverages });
+//     } catch (error) {
+//         console.error("Error fetching coverages:", error);
+//         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+//     }
+// }
+
 export async function GET() {
-    try {
-        console.log("Calling========> inside latest concerts")
-        await dbConnect();
-        const page = await Page.findOne({ slug: "home" });
+  try {
+    console.log("Calling========> inside press coverage");
 
-        const component = page?.components.find(c => c.type === "press-coverage");
-        const coverages = component?.data?.coverages || [];
+    await dbConnect();
 
-        return NextResponse.json({ coverages });
-    } catch (error) {
-        console.error("Error fetching coverages:", error);
-        return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    const page = await Page.findOne({ slug: "home" });
+
+    if (!page) {
+      return NextResponse.json(
+        { error: "Home page not found" },
+        { status: 404 }
+      );
     }
+
+    const component = page.components.find(
+      (c) => c.type === "press-coverage"
+    );
+
+    if (!component) {
+      return NextResponse.json(
+        { error: "Press coverage section not found" },
+        { status: 404 }
+      );
+    }
+
+    const coverages = component?.data?.coverages || [];
+    const title = component?.data?.title || "";
+
+    // ✅ Return BOTH
+    return NextResponse.json({
+      success: true,
+      title,
+      coverages,
+    });
+
+  } catch (error) {
+    console.error("Error fetching coverages:", error);
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
+  }
 }
+
 
 // PUT - Update concert by _id
 export async function PUT(request) {
@@ -138,3 +184,56 @@ export async function DELETE(request) {
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }
+
+// PATCH - Update press-coverage title only
+export async function PATCH(request) {
+    try {
+        await dbConnect();
+        const body = await request.json();
+        const { title } = body;
+
+        if (!title) {
+            return NextResponse.json(
+                { error: "Title is required" },
+                { status: 400 }
+            );
+        }
+
+        const page = await Page.findOne({ slug: "home" });
+        if (!page) {
+            return NextResponse.json(
+                { error: "Page not found" },
+                { status: 404 }
+            );
+        }
+
+        const componentIndex = page.components.findIndex(
+            (c) => c.type === "press-coverage"
+        );
+
+        if (componentIndex === -1) {
+            return NextResponse.json(
+                { error: "Component not found" },
+                { status: 404 }
+            );
+        }
+
+        // Update only the title field
+        page.components[componentIndex].data.title = title;
+
+        page.markModified("components");
+        await page.save();
+
+        return NextResponse.json({
+            success: true,
+            title: page.components[componentIndex].data.title,
+        });
+    } catch (error) {
+        console.error("Error updating title:", error);
+        return NextResponse.json(
+            { error: "Internal Server Error" },
+            { status: 500 }
+        );
+    }
+}
+

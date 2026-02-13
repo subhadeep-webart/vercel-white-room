@@ -28,9 +28,9 @@ const TrustedBySection = ({ trustedByData }) => {
             <div className="py-8">
                 <div className="mb-[-40px]">
                     <TickerWrapper isRight={false}>
-                        <h3 className="outline_text text-4xl md:text-[150px] text-center">
-                            TRUSTED BY &nbsp; TRUSTED BY &nbsp;TRUSTED BY &nbsp;TRUSTED BY &nbsp;TRUSTED BY &nbsp;
-                            TRUSTED BY &nbsp; TRUSTED BY &nbsp;TRUSTED BY &nbsp;
+                        <h3 className="outline_text text-4xl md:text-[150px] text-center uppercase">
+                            {trustedByData.title} &nbsp;  {trustedByData.title} &nbsp; {trustedByData.title} &nbsp; {trustedByData.title} &nbsp; {trustedByData.title} &nbsp;
+                             {trustedByData.title} &nbsp;  {trustedByData.title} &nbsp; {trustedByData.title} &nbsp;
                         </h3>
                     </TickerWrapper>
                 </div>

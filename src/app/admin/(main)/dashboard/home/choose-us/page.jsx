@@ -1,6 +1,7 @@
 "use client";
 
 import AddChooseusContent from "@/components/admin/_components/home/add-chooseus-content";
+import ChooseUsAddHeader from "@/components/admin/_components/home/ChooseUsAddHeader";
 import Tables from "@/components/admin/_components/tables/page";
 import AdminPageLoader from "@/components/common/AdminPageLoader";
 import { Button } from "@/components/ui/button";
@@ -43,6 +44,7 @@ const ChooseUs = () => {
   return (
     <>
       <div className="p-3 bg-[#f0f3f8]">
+         <ChooseUsAddHeader/>
         <div className="flex justify-end items-end">
           <Button
             onClick={handleAdd}
@@ -54,6 +56,7 @@ const ChooseUs = () => {
             <span>Add Content</span>
           </Button>
         </div>
+       
         <Tables
           caption="A list of reviews."
           type="review_sections"

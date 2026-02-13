@@ -11,26 +11,27 @@ const InstagramFeed = ({ instagramPosts = [] }) => {
           href={post.permalink}
           target="_blank"
           rel="noopener noreferrer"
-          className="!mb-4 !relative overflow-hidden aspect-w-4 aspect-h-5 group hover:scale-95 hover:opacity-90 transition-all delay-200"
+          className="!mb-4 !relative overflow-hidden aspect-w-4 aspect-h-5 group hover:scale-95 hover:opacity-90 transition-all delay-200  h-[200px] lg:h-[320px]"
           key={post.id}
         >
-          {post?.media_type?.toLowerCase() === "video" ? (
+          {/* { ? (
             <video
-              src={post.media_url}
+              src={post.thumbnail_url}
               className="w-full h-[200px] lg:h-[320px] object-cover"
             />
-          ) : (
+          ) : ( */}
             <Image
-              src={post.media_url}
+              src={post?.media_type == "VIDEO"? post.thumbnail_url : post.media_url}
+                // src={post.thumbnail_url}
               alt={post.caption || "Instagram Post"}
               fill
               className="object-cover"
               sizes="(max-width: 640px) 30vw,
                        (max-width: 1024px) 33vw,
                        (max-width: 1280px) 25vw,
-                       16vw"
+                       16vw "
             />
-          )}
+          {/* )} */}
 
           <div className="absolute top-2 right-2 bg-white w-6 h-6 flex justify-center items-center rounded-full text-white">
             {post?.media_type?.toLowerCase() === "video" ? (

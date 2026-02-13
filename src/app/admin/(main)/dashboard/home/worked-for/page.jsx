@@ -1,5 +1,6 @@
 "use client";
 
+import WorkedForAddHeader from "@/components/admin/_components/home/WorkedForAddHeader";
 import MultipleImageShowingComponent from "@/components/admin/_components/ui/MultipleImageShowingComponent";
 import AdminPageLoader from "@/components/common/AdminPageLoader";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,7 @@ import { CldUploadWidget } from "next-cloudinary";
 import { IoMdAddCircle } from "react-icons/io";
 
 const WorkedFor = () => {
-  const { data: workedForContent, loading: isWorkedForContentLoading,refetch } = useGetHomePageContent("worked_for");
+  const { data: workedForContent, loading: isWorkedForContentLoading,refetch } = useGetHomePageContent("worked_for")
   const { handlePostTrustedImages, loading } = usePostTrustedByImages();
   const { handleWorkedForImageDelete, loading: isDeletingImage } = useDeleteWorkedForImage();
 
@@ -47,6 +48,7 @@ const WorkedFor = () => {
   return (
     <>
       <div className="p-3 bg-[#f0f3f8]">
+          <WorkedForAddHeader/>
         <div className="flex justify-end items-end">
           {typeof window !== "undefined" && (
             <CldUploadWidget
@@ -75,6 +77,7 @@ const WorkedFor = () => {
             </CldUploadWidget>
           )}
         </div>
+      
         <MultipleImageShowingComponent imagesData={images} handleImageDelete={handleImageDelete}/>
       </div>
     </>

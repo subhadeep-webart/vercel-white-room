@@ -11,13 +11,13 @@ const PressCoverageSection = ({ pressCoverageData }) => {
 
   console.log("Press Coverages======>", pressCoverages);
   return (
-    <section className="w-full relative bg-[#0F1116]">
+    <section className="w-full relative bg-[#0F1116] ">
       <section className="commonBg">
-        <div className="py-8">
+        <div className="py-8 flex flex-col gap-14">
           <div className="w-full relative z-10">
             <TickerWrapper isRight={true}>
-              <h3 className="outline_text text-4xl md:text-[150px] text-center">
-                MUSIC &nbsp;  MUSIC &nbsp; MUSIC &nbsp; MUSIC &nbsp; MUSIC &nbsp; MUSIC &nbsp; MUSIC &nbsp;
+              <h3 className="outline_text text-4xl md:text-[150px] text-center uppercase">
+               {pressCoverageData?.title} &nbsp;  {pressCoverageData?.title} &nbsp;  {pressCoverageData?.title} &nbsp;  {pressCoverageData?.title} &nbsp;  {pressCoverageData?.title} &nbsp;  {pressCoverageData?.title} &nbsp;  {pressCoverageData?.title} &nbsp;
               </h3>
             </TickerWrapper>
           </div>

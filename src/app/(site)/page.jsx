@@ -36,6 +36,9 @@ const Home = () => {
   const trustedByData = getComponentByType(homePage, "worked_for");
   const reviewData = getComponentByType(homePage, "review_section");
   const artistSectionData = getComponentByType(homePage, "artist_section");
+  const instagramFeedData = getComponentByType(homePage, "instagram_feed");
+
+
 
   useEffect(() => {
     if (!isHomePageLoading && !isAboutPageLoading) {
@@ -43,7 +46,7 @@ const Home = () => {
     }
   }, [isHomePageLoading, isAboutPageLoading, isInstagramLoading]);
 
-  console.log("Trusted By Data===>", trustedByData);
+
 
   return (
     <>
@@ -51,7 +54,7 @@ const Home = () => {
       <HomePageBannerColapse bannerData={bannerData} />
       <ArtistSectionContainer artistSectionData={artistSectionData} />
       <AboutUsSection aboutData={aboutData} aboutImages={aboutImages} />
-      <InstagramFeedSection instagramMediaData={instagramMediaData} />
+      <InstagramFeedSection instagramMediaData={instagramMediaData}   instagramFeedData={instagramFeedData} />
       <PressCoverageSection
         pressCoverageData={pressCoverageData}
         trustedByData={trustedByData}
