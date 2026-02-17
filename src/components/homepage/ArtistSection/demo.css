@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  height: 110vh;
+  height: 100vh;
 }
 
 .person-image {
@@ -76,6 +76,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .text,
   .text-reverse {
     font-size: 80px;
@@ -83,6 +84,7 @@
 }
 
 @media (max-width: 768px) {
+
   .text,
   .text-reverse {
     font-size: 48px;
@@ -91,6 +93,7 @@
 }
 
 @media (max-width: 480px) {
+
   .text,
   .text-reverse {
     font-size: 32px;
@@ -205,29 +208,30 @@ svg {
 } */
 
 .logo {
-  contain: layout;
-    min-height: 101%;
-    min-width: 101%;
-    margin: 0 auto;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  min-height: 101%;
+  min-width: 101%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
 }
 
-.svg_container{
-  position: sticky;
-    width: calc(100vw + 4px);
-    height: calc(100vh + 4px);
-    top: -2px;
-    left: -2px;
-    z-index: 20;
-    overflow: hidden;
-    contain: layout;
-    pointer-events: none;
-    margin-top: -1px;
-    max-width: 100vw;
+.svg_container {
+  position: absolute;
+  width: calc(100vw + 4px);
+  height: calc(100vh + 4px);
+  top: 0px;
+  left: 0px;
+  z-index: 20;
+  overflow: hidden;
+  /* contain: layout; */
+  pointer-events: none;
+  margin-top: -1px;
+  max-width: 100vw;
 }
+
 @media (max-width: 1024px) {
   .person-image {
     width: 650px;
