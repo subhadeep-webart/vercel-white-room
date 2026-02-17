@@ -218,7 +218,6 @@ svg {
 } */
 
 .logo {
-  contain: layout;
   min-height: 101%;
   min-width: 101%;
   margin: 0 auto;
@@ -226,6 +225,7 @@ svg {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  backface-visibility: hidden;
 }
 
 .svg_container {
@@ -244,6 +244,8 @@ svg {
 
 .svg_container div {
   transform-origin: center;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 @media (max-width: 1024px) {

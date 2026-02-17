@@ -41,6 +41,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
           ease: "none",
           xPercent: 27,
           yPercent: 120,
+          force3D: true
         },
         0,
       ).to(maskEl, { opacity: 0, duration: 1, ease: "none" }, 0);
