@@ -20,9 +20,11 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
 
       if (!container || !svg || !maskEl) return;
       gsap.set(svg, {
-        scale: 2,      
-        x: 0,           
-        y: 0,           
+        scale: 2,
+        transformBox: "fill-box",
+        transformOrigin: "center center",
+        x: 0,
+        y: 0,
       });
 
       const tl = gsap.timeline({
