@@ -36,11 +36,11 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
       tl.to(
         svg,
         {
-          scale: 60,
+          scale: 120,
           duration: 1,
           ease: "none",
-          xPercent: 15,
-          yPercent: 60,
+          xPercent: 27,
+          yPercent: 120,
         },
         0,
       ).to(maskEl, { opacity: 0, duration: 1, ease: "none" }, 0);
@@ -181,9 +181,9 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
             width="100%"
             height="100%"
             viewBox="0 0 4948 2784"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice"
+            shape-rendering="geometricPrecision"
             className="logo"
           >
             <path
