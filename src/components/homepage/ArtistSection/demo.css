@@ -76,6 +76,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .text,
   .text-reverse {
     font-size: 80px;
@@ -83,6 +84,7 @@
 }
 
 @media (max-width: 768px) {
+
   .text,
   .text-reverse {
     font-size: 48px;
@@ -91,6 +93,7 @@
 }
 
 @media (max-width: 480px) {
+
   .text,
   .text-reverse {
     font-size: 32px;
@@ -180,13 +183,23 @@ svg {
 .mask {
   position: fixed;
   inset: 0;
-  background: #000;
+  /* background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
   pointer-events: none;
-  min-width: 100%;
+  min-width: 100%; */
+  width: calc(100vw + 4px);
+  height: calc(100vh + 4px);
+  top: -2px;
+  left: -2px;
+  z-index: 20;
+  overflow: hidden;
+  contain: layout;
+  pointer-events: none;
+  margin-top: -1px;
+  max-width: 100vw;
 }
 
 /* .logo {
@@ -206,30 +219,30 @@ svg {
 
 .logo {
   contain: layout;
-    min-height: 101%;
-    min-width: 101%;
-    margin: 0 auto;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  min-height: 101%;
+  min-width: 101%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.svg_container{
+.svg_container {
   position: sticky;
-    width: calc(100vw + 4px);
-    height: calc(100vh + 4px);
-    top: -2px;
-    left: -2px;
-    z-index: 20;
-    overflow: hidden;
-    contain: layout;
-    pointer-events: none;
-    margin-top: -1px;
-    max-width: 100vw;
+  width: calc(100vw + 4px);
+  height: calc(100vh + 4px);
+  top: -2px;
+  left: -2px;
+  z-index: 20;
+  overflow: hidden;
+  contain: layout;
+  pointer-events: none;
+  margin-top: -1px;
+  max-width: 100vw;
 }
 
-.svg_container div{
+.svg_container div {
   transform-origin: center;
 }
 
