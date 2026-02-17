@@ -36,12 +36,11 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
       tl.to(
         svg,
         {
-          scale: 120,
+          scale: 60,
           duration: 1,
           ease: "none",
-          xPercent: 27,
-          yPercent: 120,
-          force3D: true
+          xPercent: 15,
+          yPercent: 100,
         },
         0,
       ).to(maskEl, { opacity: 0, duration: 1, ease: "none" }, 0);
@@ -64,10 +63,10 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
   };
   return (
     <section
-      className="w-full h-screen relative overflow-hidden"
+      className="w-full h-screen relative overflow-hidden bg-white"
       ref={containerRef}
     >
-      <div className="hero">
+      {/* <div className="hero">
         {file_url && <img src={file_url} alt="Hero" className="person-image" />}
 
         <div className="text-lines">
@@ -138,7 +137,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
         <button className="btn" onClick={handleButtonClick}>
           {buttonText}
         </button>
-      </div>
+      </div> */}
 
       <div className="mask" ref={maskRef}>
         <div className="svg_container" ref={svgRef}>
