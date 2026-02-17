@@ -19,12 +19,17 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
       const maskEl = maskRef.current;
 
       if (!container || !svg || !maskEl) return;
+      gsap.set(svg, {
+        scale: 2,      
+        x: 0,           
+        y: 0,           
+      });
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container,
           start: "center center",
-          end: "+=4000",
+          end: "+=2000",
           scrub: true,
           pin: true,
           onUpdate: (self) => {
@@ -66,7 +71,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
       className="w-full h-screen relative overflow-hidden bg-white"
       ref={containerRef}
     >
-      {/* <div className="hero">
+      <div className="hero">
         {file_url && <img src={file_url} alt="Hero" className="person-image" />}
 
         <div className="text-lines">
@@ -137,7 +142,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
         <button className="btn" onClick={handleButtonClick}>
           {buttonText}
         </button>
-      </div> */}
+      </div>
 
       <div className="mask" ref={maskRef}>
         <div className="svg_container" ref={svgRef}>

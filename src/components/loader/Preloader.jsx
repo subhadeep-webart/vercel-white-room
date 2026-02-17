@@ -14,9 +14,9 @@ const Preloader = ({ loading }) => {
             gsap.to(preloaderRef.current, {
                 opacity: 0,
                 scale: 20,
-                duration: 1.5,
+                duration: 1,
                 ease: "power2.out",
-                force3D: false,
+                force3D: true,
                 onComplete: () => setShow(false),
             });
         }
@@ -35,14 +35,14 @@ const Preloader = ({ loading }) => {
                     className="animate-pulse"
                 /> */}
                 {/* <div className={styles.logoWrapper}> */}
-                    <Image
-                        src="/assets/images/twr_svg_logo1.svg"
-                        alt="twr_logo"
-                        width={150}
-                        height={150}
-                        className="w-full"
-                        priority
-                    />
+                <Image
+                    src="/assets/images/twr_svg_logo1.svg"
+                    alt="twr_logo"
+                    width={150}
+                    height={150}
+                    className="w-full"
+                    priority
+                />
                 {/* </div> */}
             </div>
         </div>
