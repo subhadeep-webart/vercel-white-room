@@ -229,7 +229,7 @@ svg {
 }
 
 .svg_container {
-  position: sticky;
+  position: fixed;
   width: calc(100vw + 4px);
   height: calc(100vh + 4px);
   top: -2px;
