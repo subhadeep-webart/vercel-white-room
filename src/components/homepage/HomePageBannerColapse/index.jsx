@@ -30,6 +30,7 @@ const HomePageBannerColapse = ({ bannerData }) => {
       });
 
       const finalY = -window.innerHeight / 2 + 60;
+      // const finalY = -window.innerHeight / 2 + 80;
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -43,7 +44,8 @@ const HomePageBannerColapse = ({ bannerData }) => {
       });
       tl.to(video, {
         y: finalY,
-        scale: 0.18,
+        // scale: 0.18,
+        scale: 0.34,
         ease: "power2.inOut",
       });
     },

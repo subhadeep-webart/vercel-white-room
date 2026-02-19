@@ -8,7 +8,7 @@ const BannerSection = ({onthedayBanner}) => {
   return (
     <>
       <div className="relative">
-        <div className="absolute top-[47px] left-[42px] md:left-[162px] w-[120px] md:w-[187px]">
+        <div className="absolute top-[47px] left-[22px] md:left-[120px] w-[120px] md:w-[187px]">
           <Link href="/">
             <Image
               src="/assets/images/logo.png"

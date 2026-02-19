@@ -27,7 +27,11 @@ const ForLargerShows = ({ largerShows }) => {
                   {largerShows?.subsection1_title}
                 </p>
                 <p className="text-sm md:text-[16px] text-[#8F8F8F] font-normal">
-                  {largerShows?.subsection1_description}
+                  {/* {largerShows?.subsection1_description} */}
+                  {largerShows?.subsection1_description?.replace(
+                    /(\d+)\s*x\s*(\d+”?)/g,
+                    "$1\u00A0x\u00A0$2",
+                  )}
                 </p>
               </div>
 
