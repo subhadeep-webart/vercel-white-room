@@ -1,6 +1,7 @@
 "use client";
 import NoiseComponent from "@/components/common/NoiseComponent";
 import Image from "next/image";
+import Link from "next/link";
 
 const WhatDoYouGet = ({ getWithBoking }) => {
   // Function to render list items with blue arrows and paragraphs normally
@@ -92,7 +93,7 @@ const WhatDoYouGet = ({ getWithBoking }) => {
           <div className="mt-4 md:mt-8">
             <p className="text-base md:text-lg font-normal text-white text-center">
               Take a detailed look at how your big night will play out on our
-              ‘how it works on the day’ page.
+              ‘<Link href="/on-the-day">how it works on the day</Link>’ page.
             </p>
           </div>
         </div>
