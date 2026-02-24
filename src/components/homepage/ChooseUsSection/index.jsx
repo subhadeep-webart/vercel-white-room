@@ -78,8 +78,8 @@ const ChooseUsSection = ({ reviewData }) => {
         <div className="!z-10 relative mb-[100px] mt-[200px]">
           <TickerWrapper>
             <h3 className="outline_text text-4xl md:text-[150px] text-center uppercase">
-            {reviewData?.title} &nbsp;  {reviewData?.title} &nbsp; {reviewData?.title} &nbsp; {reviewData?.title} &nbsp; {reviewData?.title} &nbsp;
-               {reviewData?.title} &nbsp;  {reviewData?.title} &nbsp; {reviewData?.title} &nbsp;
+              {reviewData?.title} &nbsp;  {reviewData?.title} &nbsp; {reviewData?.title} &nbsp; {reviewData?.title} &nbsp; {reviewData?.title} &nbsp;
+              {reviewData?.title} &nbsp;  {reviewData?.title} &nbsp; {reviewData?.title} &nbsp;
             </h3>
           </TickerWrapper>
         </div>
@@ -92,6 +92,9 @@ const ChooseUsSection = ({ reviewData }) => {
               freeMode={true}
               style={{ alignItems: "center", display: "flex" }}
               breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
                 320: {
                   slidesPerView: 1,
                 },
