@@ -28,7 +28,7 @@ const CoverageCardSwipper = ({ coverageData }) => {
         breakpoints={{
           320: {
             slidesPerView: 2,
-             spaceBetween: 8
+            spaceBetween: 4
           },
           480: {
             slidesPerView: 2,
