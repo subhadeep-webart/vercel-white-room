@@ -29,7 +29,7 @@ const OptionalAddOns = ({ optionalAddOn }) => {
           </div>
 
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
-            <div className="flex flex-col justify-start items-center bg-[#1B1E25] w-full sm:max-w-[426px] h-auto md:h-[271px] p-6 md:p-12">
+            <div className="flex flex-col justify-start items-center bg-[#1B1E25] w-full sm:max-w-[426px] h-auto md:h-[271px] p-6 md:p-12 border-b-[3px] border-white rounded-[6px]">
               <p className="font-bold text-base md:text-2xl text-white text-center">
                 {optionalAddOn?.subsection1_title}
               </p>
@@ -38,7 +38,7 @@ const OptionalAddOns = ({ optionalAddOn }) => {
               </p>
             </div>
 
-            <div className="flex flex-col justify-start items-center bg-[#1B1E25] w-full sm:max-w-[426px] h-auto md:h-[271px] p-6 md:p-12">
+            <div className="flex flex-col justify-start items-center bg-[#1B1E25] w-full sm:max-w-[426px] h-auto md:h-[271px] p-6 md:p-12 border-b-[3px] border-white rounded-[6px]">
               <p className="font-bold text-base md:text-2xl text-white text-center">
                 {optionalAddOn?.subsection2_title}
               </p>
@@ -47,7 +47,7 @@ const OptionalAddOns = ({ optionalAddOn }) => {
               </p>
             </div>
 
-            <div className="flex flex-col justify-start items-center bg-[#1B1E25] w-full sm:max-w-[426px] h-auto md:h-[271px] p-6 md:p-12">
+            <div className="flex flex-col justify-start items-center bg-[#1B1E25] w-full sm:max-w-[426px] h-auto md:h-[271px] p-6 md:p-12 border-b-[3px] border-white rounded-[6px]">
               <p className="font-bold text-base md:text-2xl text-white text-center">
                 {optionalAddOn?.subsection3_title}
               </p>

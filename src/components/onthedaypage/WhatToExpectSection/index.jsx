@@ -113,7 +113,7 @@ const WhatToExpectSection = ({ onthedayContents }) => {
                 </div>
 
                 <div
-                  className={`relative w-full max-w-[700px] mx-auto
+                  className={`relative w-full max-w-[700px] mx-auto border-b-[3px] border-white rounded-[6px]
               py-8 px-6 bg-[#1B1E25] z-10 shadow-xl
               lg:absolute lg:py-[57px] lg:px-[91px]
               ${isEven

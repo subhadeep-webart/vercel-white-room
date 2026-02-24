@@ -45,6 +45,7 @@ const RatingCard = ({ review }) => {
         bg-[#1B1E25]
         mb-6 md:mb-8
         overflow-hidden
+        border-b-[3px] border-white rounded-[6px]
       "
     >
    

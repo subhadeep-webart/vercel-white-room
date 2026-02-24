@@ -6,14 +6,14 @@ const BespokeProduction = ({ spokeProduction }) => {
       <section className="bg-black relative overflow-hidden">
         <NoiseComponent />
         <div className="container px-4 md:px-0">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center ">
             <div
               className="bg-[#1B1E25] flex flex-col justify-center items-center
                       w-full max-w-[1244px]
                       h-auto md:h-[504px]
                       py-10 md:py-[74px]
                       px-6 md:px-[102px]
-                      space-y-2"
+                      space-y-2 border-b-[3px] border-white rounded-[6px]"
             >
               <h3 className="font-bold text-white text-xl md:text-[45px] text-center">
                 {spokeProduction?.title}

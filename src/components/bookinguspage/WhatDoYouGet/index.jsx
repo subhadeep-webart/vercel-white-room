@@ -49,7 +49,7 @@ const WhatDoYouGet = ({ getWithBoking }) => {
               />
             </div>
 
-            <div className="w-[850px] h-[600px] bg-[#1B1E25] shadow-xl p-10 absolute bottom-[60px] right-[-400px] transform -translate-x-1/2 z-10">
+            <div className="w-[850px] h-[600px] bg-[#1B1E25] shadow-xl p-10 absolute bottom-[60px] right-[-400px] transform -translate-x-1/2 z-10 border-b-[3px] border-white rounded-[6px]">
               <h3 className="text-white font-bold text-xl md:text-4xl mb-6">
                 {getWithBoking?.title}
               </h3>
@@ -75,7 +75,7 @@ const WhatDoYouGet = ({ getWithBoking }) => {
               />
             </div>
 
-            <div className="w-full max-w-[875px] bg-[#1B1E25] shadow-xl p-7 mx-auto">
+            <div className="w-full max-w-[875px] bg-[#1B1E25] shadow-xl p-7 mx-auto border-b-[3px] border-white rounded-[6px]">
               <h3 className="text-white font-bold text-xl mb-6">
                 {getWithBoking?.title}
               </h3>
