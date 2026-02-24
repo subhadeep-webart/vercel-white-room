@@ -33,10 +33,6 @@ const CoverageCardSwipper = ({ coverageData }) => {
             slidesPerView: 2,
             spaceBetween: 12
           },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 12
-          },
           1024: {
             slidesPerView: 3,
             spaceBetween: 12
@@ -44,24 +40,6 @@ const CoverageCardSwipper = ({ coverageData }) => {
         }}
         loop={true}
         centeredSlides={true}
-        // breakpoints={{
-        //   320: {
-        //     slidesPerView: 1,
-        //     spaceBetween: 12
-        //   },
-        //   480: {
-        //     slidesPerView: 2,
-        //     spaceBetween: 16
-        //   },
-        //   768: {
-        //     slidesPerView: 2,
-        //     spaceBetween: 16
-        //   },
-        //   1024: {
-        //     slidesPerView: 3,
-        //     spaceBetween: 12
-        //   },
-        // }}
         // mousewheel={true}
         navigation={{
           prevEl: prevRef.current,
