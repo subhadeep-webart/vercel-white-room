@@ -29,8 +29,21 @@ const HomePageBannerColapse = ({ bannerData }) => {
         willChange: "transform",
       });
 
-      const finalY = -window.innerHeight / 2 + 60;
       // const finalY = -window.innerHeight / 2 + 80;
+
+      let finalY;
+      let finalScale;
+
+      if (window.innerWidth >= 1024) {
+        finalY = -window.innerHeight / 2 + 80;
+        finalScale = 0.18;
+      } else if (window.innerWidth >= 768) {
+        finalY = -window.innerHeight / 2 + 60;
+        finalScale = 0.25;
+      } else {
+        finalY = -window.innerHeight / 2 + 45;
+        finalScale = 0.35;
+      }
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -45,7 +58,7 @@ const HomePageBannerColapse = ({ bannerData }) => {
       tl.to(video, {
         y: finalY,
         // scale: 0.18,
-        scale: 0.34,
+        scale: finalScale,
         ease: "power2.inOut",
       });
     },
