@@ -34,7 +34,7 @@ const Header = () => {
             onMouseLeave={() => setIsHover(false)}
           >
 
-            <span className={`font-bold ${isOpen ? "opacity-0" : "opacity-100"} transition-opacity ease-in-out`}>MENU</span>
+            <span className={`font-bold ${isOpen ? "opacity-0 hidden" : "opacity-100"} transition-opacity ease-in-out`}>MENU</span>
             <div className="relative w-6 h-8 ">
               <div
                 className={`${styles.nav_menu_hamburger_bar} ${styles.top_bar}`}

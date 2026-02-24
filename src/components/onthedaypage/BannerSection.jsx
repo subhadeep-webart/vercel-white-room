@@ -8,16 +8,17 @@ const BannerSection = ({onthedayBanner}) => {
   return (
     <>
       <div className="relative">
-        <div className="absolute top-[47px] left-[22px] md:left-[120px] w-[120px] md:w-[187px]">
+         <div className="absolute top-[7px] left-[22px] md:left-[120px] md:top-[37px] w-[120px] md:w-[187px]" style={{ zIndex: "999999" }}>
           <Link href="/">
-            <Image
-              src="/assets/images/logo.png"
-              alt="Logo"
-              width={187}
-              height={82}
-              className="w-full h-auto"
-              priority
-            />
+            <div className="relative w-[20vw] max-w-[187px] h-[82px]">
+              <Image
+                src="/assets/images/logo.png"
+                alt="Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </Link>
         </div>
         <CommonBanner backgroundImage={onthedayBanner?.file_url ?? "/assets/images/ontheday-bg.png"} />
