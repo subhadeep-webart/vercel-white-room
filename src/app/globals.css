@@ -537,20 +537,20 @@ body {
 
 .coverage_swiper_slider {
   height: 400px !important;
-  width: 400px !important;
+  /* width: 400px !important; */
 }
 
 @media (max-width: 768px) {
   .coverage_swiper_slider {
-    height: 300px !important;
-    width: 250px !important;
+    height: 320px !important;
+    /* width: 250px !important; */
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .coverage_swiper_slider {
-    height: 300px !important;
-    width: 300px !important;
+    height: 320px !important;
+    /* width: 300px !important; */
   }
 }
 

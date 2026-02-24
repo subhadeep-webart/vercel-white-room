@@ -15,8 +15,8 @@ const CoverageCardSwipper = ({ coverageData }) => {
     <div className="w-full flex justify-center relative">
       <Swiper
         modules={[FreeMode, Navigation]}
-        slidesPerView={3}
-        spaceBetween={24}
+        // slidesPerView={3}
+        // spaceBetween={24}
         speed={600}
         grabCursor={true}
         freeMode={{
@@ -29,13 +29,39 @@ const CoverageCardSwipper = ({ coverageData }) => {
           320: {
             slidesPerView: 1,
           },
-          // 768: {
-          //   slidesPerView: 2,
-          // },
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 12
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 12
+          },
           1024: {
             slidesPerView: 3,
+            spaceBetween: 12
           },
         }}
+        loop={true}
+        centeredSlides={true}
+        // breakpoints={{
+        //   320: {
+        //     slidesPerView: 1,
+        //     spaceBetween: 12
+        //   },
+        //   480: {
+        //     slidesPerView: 2,
+        //     spaceBetween: 16
+        //   },
+        //   768: {
+        //     slidesPerView: 2,
+        //     spaceBetween: 16
+        //   },
+        //   1024: {
+        //     slidesPerView: 3,
+        //     spaceBetween: 12
+        //   },
+        // }}
         // mousewheel={true}
         navigation={{
           prevEl: prevRef.current,

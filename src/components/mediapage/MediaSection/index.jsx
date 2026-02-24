@@ -30,19 +30,19 @@ const MediaSection = ({ mediaAssets }) => {
    */
   const getColSpanClass = (isTwoCol, index) => {
     if (!isTwoCol) {
-      return "col-span-12 md:col-span-4";
+      return "col-span-12 sm:col-span-4 md:col-span-4";
     }
 
     return index === 0
-      ? "col-span-12 md:col-span-8"
-      : "col-span-12 md:col-span-4";
+      ? "col-span-12 sm:col-span-8 md:col-span-8"
+      : "col-span-12 sm:col-span-4 md:col-span-4";
   };
 
   /**
    * Render image / video
    */
   const renderMedia = (media) => {
-    const commonClasses = "object-cover w-full h-full img_border";
+    const commonClasses = "sm:object-cover object-contain w-full h-full img_border";
 
     if (media.file_type === "image") {
       return (
