@@ -39,24 +39,23 @@ const Home = () => {
   const artistSectionData = getComponentByType(homePage, "artist_section");
   const instagramFeedData = getComponentByType(homePage, "instagram_feed");
 
-
-
   useEffect(() => {
     if (!isHomePageLoading && !isAboutPageLoading) {
       setTimeout(() => setIsLoading(false), 800);
     }
   }, [isHomePageLoading, isAboutPageLoading, isInstagramLoading]);
 
-
-
   return (
     <>
       <Preloader loading={isLoading} />
       <HomePageBannerColapse bannerData={bannerData} />
       {/* <ArtistSectionContainer artistSectionData={artistSectionData} /> */}
-      <ArtistSectionContainerDemo />
+      <ArtistSectionContainerDemo artistSectionData={artistSectionData} />
       <AboutUsSection aboutData={aboutData} aboutImages={aboutImages} />
-      <InstagramFeedSection instagramMediaData={instagramMediaData} instagramFeedData={instagramFeedData} />
+      <InstagramFeedSection
+        instagramMediaData={instagramMediaData}
+        instagramFeedData={instagramFeedData}
+      />
       <PressCoverageSection
         pressCoverageData={pressCoverageData}
         trustedByData={trustedByData}

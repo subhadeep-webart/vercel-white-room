@@ -2,62 +2,190 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
+import "./demo.css";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ArtistSectionContainerDemo = () => {
-    const containerRef = useRef(null);
-    const maskRef = useRef(null);
+const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
+  const containerRef = useRef(null);
+  const backgroundImageRef = useRef(null);
+  const maskRef = useRef(null);
 
-    useGSAP(() => {
-        const container = containerRef.current;
-        const maskEl = maskRef.current;
+  const router = useRouter();
 
-        if (!container || !maskEl) return;
+  const {
+    file_url = "",
+    buttonText = "",
+    buttonLink = "#",
+    artists = [],
+  } = artistSectionData || {};
 
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: container,
-                start: "top top",
-                end: "+=3000",
-                scrub: true,
-                pin: true,
+  const handleButtonClick = () => {
+    if (buttonLink == "#") return;
+    router.push(buttonLink);
+  };
+
+  useGSAP(
+    () => {
+      const container = containerRef.current;
+      const maskEl = maskRef.current;
+      const bgEl = backgroundImageRef.current;
+
+      if (!container || !maskEl || !bgEl) return;
+
+      gsap.set(bgEl, { autoAlpha: 0 }); // hide bg initially
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: container,
+            start: "top top",
+            end: "+=3000",
+            scrub: true,
+            pin: true,
+            onUpdate: (self) => {
+              if (self.progress >= 0.2) {
+                gsap.to(bgEl, {
+                  autoAlpha: 1,
+                  duration: 0.3,
+                  ease: "power1.out",
+                  overwrite: "auto",
+                });
+              } else {
+                gsap.to(bgEl, {
+                  autoAlpha: 0,
+                  duration: 0.3,
+                  ease: "power1.out",
+                  overwrite: "auto",
+                });
+              }
             },
-        }).fromTo(
-            maskEl,
-            {
-                maskSize: "400px",
-                WebkitMaskSize: "400px",
-            },
-            {
-                maskSize: "14000px",
-                WebkitMaskSize: "14000px",
-                ease: "none",
-            },
-
+          },
+        })
+        .fromTo(
+          maskEl,
+          {
+            maskSize: "400px",
+            WebkitMaskSize: "400px",
+            maskPosition: "50% 50%",
+            WebkitMaskPosition: "50% 50%",
+            opacity: 1,
+          },
+          {
+            maskSize: "14000px",
+            WebkitMaskSize: "14000px",
+            maskPosition: "47.5% 50%",
+            WebkitMaskPosition: "47.5% 50%",
+            opacity: 0,
+            ease: "none",
+          },
         );
-    }, { scope: containerRef });
+    },
+    { scope: containerRef },
+  );
 
-    return (
-        <div ref={containerRef} className="h-[300vh] relative bg-white">
-            {/* Background */}
-            <div className="absolute inset-0 bg-[url('/assets/images/about-us-bg.png')] bg-cover bg-center z-0" />
+  console.log("Artists======>", artistSectionData);
+  return (
+    <div ref={containerRef} className="h-[150vh] relative bg-black">
+      {/* Background */}
+      {/* <div
+        className="absolute inset-0 bg-[url('/assets/images/about-us-bg.png')] bg-cover bg-center z-0"
+        ref={backgroundImageRef}
+      /> */}
+      <div className="hero" ref={backgroundImageRef}>
+        {file_url && <img src={file_url} alt="Hero" className="person-image" />}
 
-            {/* Mask layer */}
-            <div
-                ref={maskRef}
-                className="absolute inset-0 z-10 bg-white"
-                style={{
-                    maskImage: "url('/assets/images/twr_svg_logo.svg')",
-                    WebkitMaskImage: "url('/assets/images/twr_svg_logo.svg')",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                    maskPosition: "center 100px",
-                    WebkitMaskPosition: "center 100px",
-                }}
-            />
+        <div className="text-lines">
+          <div className="scroll-container">
+            <div className="text-group">
+              <h1 className="text">
+                {artists?.map((artist) => (
+                  <span className="word" key={artist?._id}>
+                    {artist?.artist_name}
+                  </span>
+                ))}
+              </h1>
+            </div>
+            <div className="text-group">
+              <h1 className="text">
+                {artists?.map((artist) => (
+                  <span className="word" key={artist?._id}>
+                    {artist?.artist_name}
+                  </span>
+                ))}
+              </h1>
+            </div>
+          </div>
+
+          <div className="scroll-container reverse">
+            <div className="text-group">
+              <h1 className="text-reverse">
+                {artists?.map((artist) => (
+                  <span className="word" key={artist?._id}>
+                    {artist?.artist_name}
+                  </span>
+                ))}
+              </h1>
+            </div>
+            <div className="text-group">
+              <h1 className="text-reverse">
+                {artists?.map((artist) => (
+                  <span className="word" key={artist?._id}>
+                    {artist?.artist_name}
+                  </span>
+                ))}
+              </h1>
+            </div>
+          </div>
+
+          <div className="scroll-container">
+            <div className="text-group">
+              <h1 className="text">
+                {artists?.map((artist) => (
+                  <span className="word" key={artist?._id}>
+                    {artist?.artist_name}
+                  </span>
+                ))}
+              </h1>
+            </div>
+            <div className="text-group">
+              <h1 className="text">
+                {artists?.map((artist) => (
+                  <span className="word" key={artist?._id}>
+                    {artist?.artist_name}
+                  </span>
+                ))}
+              </h1>
+            </div>
+          </div>
         </div>
-    );
+
+        <button className="btn" onClick={handleButtonClick}>
+          {buttonText}
+        </button>
+      </div>
+
+      {/* Mask layer */}
+      <div
+        ref={maskRef}
+        className="absolute inset-0 z-10 bg-white"
+        style={{
+          maskImage: "url('/assets/images/twr_svg_logo.svg')",
+          WebkitMaskImage: "url('/assets/images/twr_svg_logo.svg')",
+          maskRepeat: "no-repeat",
+          WebkitMaskRepeat: "no-repeat",
+          maskPosition: "50% 50%",
+          WebkitMaskPosition: "50% 50%",
+        }}
+      >
+        {/* <div
+          className="sticky inset-0 bg-[url('/assets/images/about-us-bg.png')] bg-cover bg-center z-0"
+          ref={backgroundImageRef}
+        /> */}
+      </div>
+    </div>
+  );
 };
 
 export default ArtistSectionContainerDemo;
