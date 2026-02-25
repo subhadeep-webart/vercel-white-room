@@ -87,7 +87,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
 
   console.log("Artists======>", artistSectionData);
   return (
-    <div ref={containerRef} className="h-[150vh] relative bg-black">
+    <div ref={containerRef} className="h-[140vh] relative bg-black">
       {/* Background */}
       {/* <div
         className="absolute inset-0 bg-[url('/assets/images/about-us-bg.png')] bg-cover bg-center z-0"
