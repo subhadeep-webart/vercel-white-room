@@ -537,6 +537,7 @@ body {
 
 .coverage_swiper_slider {
   height: 400px !important;
+  width: 100% !important;
   /* width: 400px !important; */
 }
 

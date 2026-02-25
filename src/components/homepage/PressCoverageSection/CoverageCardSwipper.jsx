@@ -6,6 +6,7 @@ import FlippingCard from "./FlippingCard";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
+import style from "./coverage.module.scss"
 
 const CoverageCardSwipper = ({ coverageData }) => {
   const prevRef = useRef(null);
@@ -59,7 +60,7 @@ const CoverageCardSwipper = ({ coverageData }) => {
         className="!py-4"
       >
         {coverageData?.map((item) => (
-          <SwiperSlide key={item?._id} className="coverage_swiper_slider">
+          <SwiperSlide key={item?._id} className={style.flip_card}>
             <FlippingCard pressCoverages={item} />
           </SwiperSlide>
         ))}

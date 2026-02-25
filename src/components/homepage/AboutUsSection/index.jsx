@@ -80,7 +80,7 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
         ref={sectionRef}
         className={`${styles.aboutsection_container} container pt-4 pb-12`}
       >
-        <div className={`grid grid-cols-12 md:gap-4 py-4 px-2`}>
+        <div className={`grid grid-cols-12 gap-4 py-4 px-2`}>
           <div className="py-16 px-12 col-span-12 lg:col-span-5 bg-black about-text border-b-[3px] border-white rounded-[6px]">
             <div
               className="text-[#8F8F8F] font-normal text-base md:text-xl mb-6 leading-relaxed"

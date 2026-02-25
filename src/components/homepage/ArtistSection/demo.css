@@ -76,6 +76,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .text,
   .text-reverse {
     font-size: 80px;
@@ -83,6 +84,7 @@
 }
 
 @media (max-width: 768px) {
+
   .text,
   .text-reverse {
     font-size: 48px;
@@ -91,6 +93,7 @@
 }
 
 @media (max-width: 480px) {
+
   .text,
   .text-reverse {
     font-size: 32px;
