@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 import ArtistSectionContainer from "@/components/homepage/ArtistSection/ArtistSectionContainer";
 import { useGetInstagramMedia } from "@/hooks/useGetInstagramMedia";
 import InstagramFeedSection from "@/components/homepage/InstagramFeedSection";
+import ArtistSectionContainerDemo from "@/components/homepage/ArtistSection/ArtistSectionContainerDemo";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -52,9 +53,10 @@ const Home = () => {
     <>
       <Preloader loading={isLoading} />
       <HomePageBannerColapse bannerData={bannerData} />
-      <ArtistSectionContainer artistSectionData={artistSectionData} />
+      {/* <ArtistSectionContainer artistSectionData={artistSectionData} /> */}
+      <ArtistSectionContainerDemo />
       <AboutUsSection aboutData={aboutData} aboutImages={aboutImages} />
-      <InstagramFeedSection instagramMediaData={instagramMediaData}   instagramFeedData={instagramFeedData} />
+      <InstagramFeedSection instagramMediaData={instagramMediaData} instagramFeedData={instagramFeedData} />
       <PressCoverageSection
         pressCoverageData={pressCoverageData}
         trustedByData={trustedByData}
