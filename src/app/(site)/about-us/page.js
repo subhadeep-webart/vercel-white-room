@@ -1,6 +1,7 @@
 "use client";
 import BannerAbout from "@/components/aboutpage/BannerAbout";
 import TheWhiteRoom from "@/components/aboutpage/TheWhiteRoom";
+import Preloader from "@/components/loader/Preloader";
 import { useGetAboutPageContent } from "@/hooks/useGetAboutPageContent";
 import { getComponentByType } from "@/utils/helper";
 
@@ -13,10 +14,11 @@ const AboutUs = () => {
   const aboutData = getComponentByType(aboutPage, "about_us");
   const aboutImages = getComponentByType(aboutPage, "about_us_images");
 
-  if (isAboutPageLoading) return;
+  // if (isAboutPageLoading) return;
 
   return (
     <>
+      <Preloader loading={isAboutPageLoading} />
       <BannerAbout aboutBanner={aboutBanner} />
       <TheWhiteRoom aboutData={aboutData} aboutImages={aboutImages} />
     </>

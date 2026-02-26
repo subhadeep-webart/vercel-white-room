@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { useGetBookingPageContent } from "@/hooks/useGetBookingPageContent";
 import { getComponentByType } from "@/utils/helper";
+import Preloader from "@/components/loader/Preloader";
 
 // Dynamically import all components with SSR disabled
 const BannerBooking = dynamic(() => import("@/components/bookinguspage/BannerBooking"), { ssr: false });
@@ -13,7 +14,7 @@ const TheBookingProcess = dynamic(() => import("@/components/bookinguspage/TheBo
 const WhatDoYouGet = dynamic(() => import("@/components/bookinguspage/WhatDoYouGet"), { ssr: false });
 
 const BookingUs = () => {
-  const { data: bookingPage, loading } = useGetBookingPageContent();
+  const { data: bookingPage, loading: isBookingPageLoading } = useGetBookingPageContent();
   const bookingBanner = getComponentByType(bookingPage, "banner");
   const bookingProcess = getComponentByType(bookingPage, "booking_process");
   const getWithBoking = getComponentByType(bookingPage, "get_with_booking");
@@ -21,10 +22,11 @@ const BookingUs = () => {
   const largerShows = getComponentByType(bookingPage, "larger_shows");
   const spokeProduction = getComponentByType(bookingPage, "spoke_production");
 
-  if (loading) return;
+  // if (loading) return;
 
   return (
     <>
+      <Preloader loading={isBookingPageLoading} />
       <BannerBooking bookingBanner={bookingBanner} />
 
       <TheBookingProcess bookingPage={bookingPage} bookingProcess={bookingProcess} />
