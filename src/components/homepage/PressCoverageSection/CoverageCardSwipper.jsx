@@ -13,7 +13,7 @@ const CoverageCardSwipper = ({ coverageData }) => {
   const nextRef = useRef(null);
 
   return (
-    <div className="w-full flex justify-center relative">
+    <div className="w-full relative">
       <Swiper
         modules={[FreeMode, Navigation]}
         // slidesPerView={3}
@@ -41,7 +41,7 @@ const CoverageCardSwipper = ({ coverageData }) => {
           },
         }}
         loop={true}
-        centeredSlides={true}
+        // centeredSlides={true}
         // mousewheel={true}
         navigation={{
           prevEl: prevRef.current,
