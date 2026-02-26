@@ -615,7 +615,7 @@ body {
   position: absolute;
   top: -150%;
   width: 300%;
-  z-index: 2;
+  z-index: 50;
   pointer-events: none
 }
 

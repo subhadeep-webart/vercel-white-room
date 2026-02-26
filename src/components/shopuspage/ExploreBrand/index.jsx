@@ -1,9 +1,12 @@
 // import Image from "next/image";
 
+import NoiseComponent from "@/components/common/NoiseComponent";
+
 const ExploreBrand = ({ shopContent }) => {
   return (
     <>
-      <section className="pt-20 pb-20 bg-black">
+      <section className="pt-20 pb-20 bg-black relative overflow-hidden">
+        <NoiseComponent />
         <div className="container">
           <div className="flex justify-center items-center ">
             <div className="w-[815px] h-[132px]">
