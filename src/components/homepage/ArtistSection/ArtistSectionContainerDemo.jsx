@@ -135,7 +135,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
                 ease: "none",
                 duration: 3,
                 opacity: 0,
-                x: 180
+                x: 150
             },
             0
         );
