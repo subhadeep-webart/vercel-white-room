@@ -99,7 +99,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: container,
-                start: "top -20%",
+                start: "top -10%",
                 end: "+=3000",
                 scrub: true,
                 pin: true,
@@ -128,21 +128,21 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
                 WebkitMaskPosition: "50% 50%",
             },
             {
-                maskSize: "10000px",
-                WebkitMaskSize: "10000px",
-                maskPosition: "50% 45%",
-                WebkitMaskPosition: "50% 45%",
+                maskSize: "5000px",
+                WebkitMaskSize: "5000px",
+                maskPosition: "47.5% 45%",
+                WebkitMaskPosition: "47.5% 45%",
                 ease: "none",
                 duration: 3,
                 opacity: 0,
-                x: 150
+                // x: 150
             },
             0
         );
     }, { scope: containerRef });
     console.log("Artists======>", artistSectionData);
     return (
-        <div ref={containerRef} className="h-[140vh] relative bg-black">
+        <div ref={containerRef} className="h-[120vh] relative bg-black">
             {/* Background */}
             {/* <div
         className="absolute inset-0 bg-[url('/assets/images/about-us-bg.png')] bg-cover bg-center z-0"
