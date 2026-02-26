@@ -60,7 +60,7 @@ const CoverageCardSwipper = ({ coverageData }) => {
         className="!py-4"
       >
         {coverageData?.map((item) => (
-          <SwiperSlide key={item?._id} className={style.flip_card}>
+          <SwiperSlide key={item?._id}>
             <FlippingCard pressCoverages={item} />
           </SwiperSlide>
         ))}
