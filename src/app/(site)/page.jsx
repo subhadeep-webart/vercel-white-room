@@ -49,8 +49,8 @@ const Home = () => {
     <>
       <Preloader loading={isLoading} />
       <HomePageBannerColapse bannerData={bannerData} />
-      {/* <ArtistSectionContainer artistSectionData={artistSectionData} /> */}
       <ArtistSectionContainerDemo artistSectionData={artistSectionData} />
+      {/* <ArtistSectionContainer artistSectionData={artistSectionData} /> */}
       <AboutUsSection aboutData={aboutData} aboutImages={aboutImages} />
       <InstagramFeedSection
         instagramMediaData={instagramMediaData}
