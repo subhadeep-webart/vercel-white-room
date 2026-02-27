@@ -14,11 +14,61 @@ const HomePageBannerColapse = ({ bannerData }) => {
   const videoRef = useRef(null);
   const videoSectionRef = useRef(null);
 
+  // useGSAP(
+  //   () => {
+  //     const video = videoRef.current;
+
+  //     /* ---------------- INITIAL STATE ---------------- */
+
+  //     gsap.set(video, {
+  //       scale: 1,
+  //       y: 0,
+  //       autoAlpha: 1,
+  //       transformOrigin: "center center",
+  //       force3D: true,
+  //       willChange: "transform",
+  //     });
+
+  //     // const finalY = -window.innerHeight / 2 + 80;
+
+  //     let finalY;
+  //     let finalScale;
+
+  //     if (window.innerWidth >= 1024) {
+  //       finalY = -window.innerHeight / 2 + 45;
+  //       console.log("Final Y========>", finalY);
+  //       finalScale = 0.18;
+  //     } else if (window.innerWidth >= 768) {
+  //       finalY = -window.innerHeight / 2 + 60;
+  //       finalScale = 0.25;
+  //     } else {
+  //       finalY = -window.innerHeight / 2 + 40;
+  //       finalScale = 0.35;
+  //     }
+
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: videoSectionRef.current,
+  //         start: "center center",
+  //         end: "+=200",
+  //         scrub: 3,
+  //         onLeave: () => video.pause(),
+  //         onEnterBack: () => video.play(),
+  //       },
+  //     });
+  //     tl.to(video, {
+  //       y: finalY,
+  //       // scale: 0.18,
+  //       scale: finalScale,
+  //       ease: "power.inOut",
+  //     });
+  //   },
+  //   { scope: bannerRef }
+  // );
+
   useGSAP(
     () => {
       const video = videoRef.current;
-
-      /* ---------------- INITIAL STATE ---------------- */
 
       gsap.set(video, {
         scale: 1,
@@ -28,23 +78,6 @@ const HomePageBannerColapse = ({ bannerData }) => {
         force3D: true,
         willChange: "transform",
       });
-
-      // const finalY = -window.innerHeight / 2 + 80;
-
-      // let finalY;
-      // let finalScale;
-
-      // if (window.innerWidth >= 1024) {
-      //   finalY = -window.innerHeight / 2 + 45;
-      //   console.log("Final Y========>", finalY);
-      //   finalScale = 0.18;
-      // } else if (window.innerWidth >= 768) {
-      //   finalY = -window.innerHeight / 2 + 60;
-      //   finalScale = 0.25;
-      // } else {
-      //   finalY = -window.innerHeight / 2 + 40;
-      //   finalScale = 0.35;
-      // }
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -56,59 +89,72 @@ const HomePageBannerColapse = ({ bannerData }) => {
           onEnterBack: () => video.play(),
         },
       });
-      // tl.to(video, {
-      //   y: finalY,
-      //   // scale: 0.18,
-      //   scale: finalScale,
-      //   ease: "power.inOut",
-      // });
 
       tl.to(video, {
         scale: () => {
-          if (window.innerWidth >= 1024) return 0.18;
-          if (window.innerWidth >= 768) return 0.25;
-          return 0.35;
+          const width = window.innerWidth;
+
+          if (width < 640) return 0.35;       // mobile
+          if (width < 1024) return 0.25;      // tablet
+          return 0.18;                        // desktop
         },
 
+        // y: () => {
+        //   const vh = ScrollTrigger.viewportHeight();
+        //   const elHeight = video.offsetHeight;
+
+        //   // 🔥 Grab header height dynamically
+        //   const header = document.querySelector(".header_nav");
+        //   const headerHeight = header?.offsetHeight || 0;
+
+        //   let scale;
+        //   const width = window.innerWidth;
+
+        //   if (width < 640) scale = 0.35;
+        //   else if (width < 1024) scale = 0.25;
+        //   else scale = 0.18;
+
+        //   const scaledHeight = elHeight * scale;
+
+        //   // 🔥 Correct geometric positioning
+        //   return headerHeight + scaledHeight / 2 - vh / 2;
+        // },
         y: () => {
-          // const vh = ScrollTrigger.viewportHeight();
           const vh = window.visualViewport
             ? window.visualViewport.height
             : window.innerHeight;
+
           const elHeight = video.offsetHeight;
 
-          let scale;
-          let targetTop;
+          const header = document.querySelector(".header_nav");
+          const headerHeight = header?.offsetHeight || 0;
 
-          if (window.innerWidth >= 1024) {
-            scale = 0.18;
-            targetTop = 20;
-          } else if (window.innerWidth >= 768) {
-            scale = 0.25;
-            targetTop = 60;
-          } else {
-            scale = 0.35;
-            targetTop = 40;
-          }
+          let scale;
+          const width = window.innerWidth;
+
+          if (width < 640) scale = 0.35;
+          else if (width < 1024) scale = 0.25;
+          else scale = 0.18;
 
           const scaledHeight = elHeight * scale;
 
-          // 🔥 THIS is the math
-          return targetTop + scaledHeight / 2 - vh / 2;
+          return headerHeight + scaledHeight / 2 - vh / 2 - 40;
         },
 
         ease: "power.inOut",
       });
+
+      ScrollTrigger.refresh();
     },
     { scope: bannerRef }
   );
 
   return (
     <div ref={bannerRef}>
-      <div className="fixed top-0 left-0 w-full h-dvh overflow-hidden">
+      <div className="fixed top-0 left-0 w-full h-screen overflow-hidden">
         <HomeBanner />
       </div>
-      <div className="w-full h-dvh" />
+      <div className="w-full h-screen" />
       <div ref={videoSectionRef} className={styles.home_video_container}>
         <HomeVideo bannerData={bannerData} />
       </div>
@@ -123,7 +169,7 @@ const HomePageBannerColapse = ({ bannerData }) => {
         className="fixed left-1/2 top-1/2
                    w-full h-full object-contain
                    -translate-x-1/2 -translate-y-1/2
-                   pointer-events-none"
+                   pointer-events-none !py-4"
         style={{
           mixBlendMode: "screen",
           zIndex: 999,

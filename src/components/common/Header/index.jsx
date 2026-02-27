@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <>
 
-      <header className={styles.header_container}>
+      <header className={`${styles.header_container} header_nav`}>
         <div className={styles.nav_hamburger}>
           <button
             type="button"
