@@ -105,10 +105,10 @@ const HomePageBannerColapse = ({ bannerData }) => {
 
   return (
     <div ref={bannerRef}>
-      <div className="fixed top-0 left-0 w-full h-screen overflow-hidden">
+      <div className="fixed top-0 left-0 w-full h-dvh overflow-hidden">
         <HomeBanner />
       </div>
-      <div className="w-full h-screen" />
+      <div className="w-full h-dvh" />
       <div ref={videoSectionRef} className={styles.home_video_container}>
         <HomeVideo bannerData={bannerData} />
       </div>
@@ -123,7 +123,7 @@ const HomePageBannerColapse = ({ bannerData }) => {
         className="fixed left-1/2 top-1/2
                    w-full h-full object-contain
                    -translate-x-1/2 -translate-y-1/2
-                   pointer-events-none !py-4"
+                   pointer-events-none"
         style={{
           mixBlendMode: "screen",
           zIndex: 999,
