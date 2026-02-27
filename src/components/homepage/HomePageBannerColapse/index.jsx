@@ -31,19 +31,20 @@ const HomePageBannerColapse = ({ bannerData }) => {
 
       // const finalY = -window.innerHeight / 2 + 80;
 
-      let finalY;
-      let finalScale;
+      // let finalY;
+      // let finalScale;
 
-      if (window.innerWidth >= 1024) {
-        finalY = -window.innerHeight / 2 + 45;
-        finalScale = 0.18;
-      } else if (window.innerWidth >= 768) {
-        finalY = -window.innerHeight / 2 + 60;
-        finalScale = 0.25;
-      } else {
-        finalY = -window.innerHeight / 2 + 40;
-        finalScale = 0.35;
-      }
+      // if (window.innerWidth >= 1024) {
+      //   finalY = -window.innerHeight / 2 + 45;
+      //   console.log("Final Y========>", finalY);
+      //   finalScale = 0.18;
+      // } else if (window.innerWidth >= 768) {
+      //   finalY = -window.innerHeight / 2 + 60;
+      //   finalScale = 0.25;
+      // } else {
+      //   finalY = -window.innerHeight / 2 + 40;
+      //   finalScale = 0.35;
+      // }
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -55,10 +56,47 @@ const HomePageBannerColapse = ({ bannerData }) => {
           onEnterBack: () => video.play(),
         },
       });
+      // tl.to(video, {
+      //   y: finalY,
+      //   // scale: 0.18,
+      //   scale: finalScale,
+      //   ease: "power.inOut",
+      // });
+
       tl.to(video, {
-        y: finalY,
-        // scale: 0.18,
-        scale: finalScale,
+        scale: () => {
+          if (window.innerWidth >= 1024) return 0.18;
+          if (window.innerWidth >= 768) return 0.25;
+          return 0.35;
+        },
+
+        y: () => {
+          // const vh = ScrollTrigger.viewportHeight();
+          const vh = window.visualViewport
+            ? window.visualViewport.height
+            : window.innerHeight;
+          const elHeight = video.offsetHeight;
+
+          let scale;
+          let targetTop;
+
+          if (window.innerWidth >= 1024) {
+            scale = 0.18;
+            targetTop = 20;
+          } else if (window.innerWidth >= 768) {
+            scale = 0.25;
+            targetTop = 60;
+          } else {
+            scale = 0.35;
+            targetTop = 40;
+          }
+
+          const scaledHeight = elHeight * scale;
+
+          // 🔥 THIS is the math
+          return targetTop + scaledHeight / 2 - vh / 2;
+        },
+
         ease: "power.inOut",
       });
     },
