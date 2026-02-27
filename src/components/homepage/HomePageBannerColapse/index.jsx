@@ -138,7 +138,7 @@ const HomePageBannerColapse = ({ bannerData }) => {
 
           const scaledHeight = elHeight * scale;
 
-          return headerHeight + scaledHeight / 2 - vh / 2 - 40;
+          return headerHeight + scaledHeight / 2 - vh / 2 - 70;
         },
 
         ease: "power.inOut",
