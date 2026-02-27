@@ -127,18 +127,19 @@ const HomePageBannerColapse = ({ bannerData }) => {
           const elHeight = video.offsetHeight;
 
           const header = document.querySelector(".header_nav");
+          console.log("Header========>", header);
           const headerHeight = header?.offsetHeight || 0;
-
+          console.log("Header Height=========>", headerHeight);
           let scale;
           const width = window.innerWidth;
 
-          if (width < 640) scale = 0.35;
+          if (width < 640) scale = 0.30;
           else if (width < 1024) scale = 0.25;
-          else scale = 0.18;
+          else scale = 0.25;
 
           const scaledHeight = elHeight * scale;
 
-          return headerHeight + scaledHeight / 2 - vh / 2 - 70;
+          return headerHeight + scaledHeight / 2 - vh / 2 - 96;
         },
 
         ease: "power.inOut",
