@@ -35,13 +35,13 @@ const HomePageBannerColapse = ({ bannerData }) => {
       let finalScale;
 
       if (window.innerWidth >= 1024) {
-        finalY = -window.innerHeight / 2 + 80;
+        finalY = -window.innerHeight / 2 + 45;
         finalScale = 0.18;
       } else if (window.innerWidth >= 768) {
         finalY = -window.innerHeight / 2 + 60;
         finalScale = 0.25;
       } else {
-        finalY = -window.innerHeight / 2 + 45;
+        finalY = -window.innerHeight / 2 + 40;
         finalScale = 0.35;
       }
 
@@ -59,7 +59,7 @@ const HomePageBannerColapse = ({ bannerData }) => {
         y: finalY,
         // scale: 0.18,
         scale: finalScale,
-        ease: "power2.inOut",
+        ease: "power.inOut",
       });
     },
     { scope: bannerRef }
@@ -85,7 +85,7 @@ const HomePageBannerColapse = ({ bannerData }) => {
         className="fixed left-1/2 top-1/2
                    w-full h-full object-contain
                    -translate-x-1/2 -translate-y-1/2
-                   pointer-events-none"
+                   pointer-events-none !py-4"
         style={{
           mixBlendMode: "screen",
           zIndex: 999,

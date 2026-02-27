@@ -5,7 +5,7 @@ const HomeBanner = () => {
     <>
       {/* <section > */}
       <video
-        className=" w-full h-full object-cover"
+        className="w-full h-screen object-cover"
         src="/assets/videos/home-bg-video.mp4"
         autoPlay
         loop
