@@ -31,13 +31,13 @@ const Preloader = ({ loading }) => {
                     preloaderRef.current,
                     {
                         opacity: 0,
-                        duration: 0.6,
+                        duration: 0.8,
                     },
                     "-=1.1"
                 );
             }
         },
-        { dependencies: [loading], scope: preloaderRef }
+        {dependencies:[loading], scope: preloaderRef }
     );
 
     if (!show) return null;
