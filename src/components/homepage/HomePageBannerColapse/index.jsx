@@ -96,7 +96,7 @@ const HomePageBannerColapse = ({ bannerData }) => {
 
           if (width < 640) return 0.35;       // mobile
           if (width < 1024) return 0.25;      // tablet
-          return 0.18;                        // desktop
+          return 0.15;                        // desktop
         },
 
         // y: () => {

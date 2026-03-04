@@ -175,10 +175,14 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
                 {
                     maskSize: "200px",
                     WebkitMaskSize: "200px",
+                    maskPosition: "50% 50%",
+                    WebkitMaskPosition: "50% 50%"
                 },
                 {
                     maskSize: "5000px",
                     WebkitMaskSize: "5000px",
+                    maskPosition: "47.5% 45%",
+                    WebkitMaskPosition: "47.5% 45%",
                     opacity: 0,
                     ease: "none",
                     duration: 3,
