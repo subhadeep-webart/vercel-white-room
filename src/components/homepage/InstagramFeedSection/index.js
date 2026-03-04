@@ -17,7 +17,7 @@ const InstagramFeedSection = ({ instagramMediaData ,instagramFeedData}) => {
                     </TickerWrapper>
                 </div>
             </div>
-            <div className="px-2 !py-20">
+            <div className="px-2">
                 {/* <InstagramMasonaryLayout instagramPosts={instagramMediaData?.data} /> */}
                 <InstagramFeed instagramPosts={instagramMediaData?.data}/>
             </div>
