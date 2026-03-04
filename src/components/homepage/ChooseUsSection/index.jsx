@@ -75,7 +75,7 @@ const ChooseUsSection = ({ reviewData }) => {
         className="bg-no-repeat bg-center py-12 commonBg flex flex-col"
         ref={sectionRef}
       >
-        <div className="!z-10 relative mb-[100px] mt-[200px]">
+        <div className="!z-10 relative mb-[50px] md:mb-[100px] mt-[100px] md:mt-[200px]">
           <TickerWrapper>
             <h3 className="outline_text text-4xl md:text-[150px] text-center uppercase">
               {reviewData?.title} &nbsp;  {reviewData?.title} &nbsp; {reviewData?.title} &nbsp; {reviewData?.title} &nbsp; {reviewData?.title} &nbsp;

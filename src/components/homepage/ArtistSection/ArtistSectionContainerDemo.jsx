@@ -13,7 +13,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
     const maskRef = useRef(null);
 
     const router = useRouter();
-    console.log("Artist section data=====>", artistSectionData)
+
     const {
         file_url = "",
         buttonText = "",
@@ -87,59 +87,6 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
     //     { scope: containerRef },
     // );
 
-    // useGSAP(() => {
-    //     const container = containerRef.current;
-    //     const maskEl = maskRef.current;
-    //     const bgEl = backgroundImageRef.current;
-
-    //     if (!container || !maskEl || !bgEl) return;
-
-    //     gsap.set(bgEl, { autoAlpha: 0 });
-
-    //     const tl = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: container,
-    //             start: "top -10%",
-    //             end: "+=3000",
-    //             scrub: true,
-    //             pin: true,
-    //             onUpdate: (self) => {
-    //                 if (self.progress > 0.2) {
-    //                     gsap.set(maskEl, { pointerEvents: "none" });
-    //                 } else {
-    //                     gsap.set(maskEl, { pointerEvents: "auto" });
-    //                 }
-    //             }
-    //         },
-    //     });
-
-    //     tl.to(bgEl, {
-    //         autoAlpha: 1,
-    //         ease: "none",
-    //         duration: 3,
-    //     }, 0);
-
-    //     tl.fromTo(
-    //         maskEl,
-    //         {
-    //             maskSize: "200px",
-    //             WebkitMaskSize: "200px",
-    //             maskPosition: "50% 50%",
-    //             WebkitMaskPosition: "50% 50%",
-    //         },
-    //         {
-    //             maskSize: "5000px",
-    //             WebkitMaskSize: "5000px",
-    //             maskPosition: "47.5% 45%",
-    //             WebkitMaskPosition: "47.5% 45%",
-    //             ease: "none",
-    //             duration: 3,
-    //             opacity: 0,
-    //             // x: 150
-    //         },
-    //         0
-    //     );
-    // }, { scope: containerRef });
     useGSAP(() => {
         const container = containerRef.current;
         const maskEl = maskRef.current;
@@ -147,70 +94,68 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
 
         if (!container || !maskEl || !bgEl) return;
 
-        const mm = gsap.matchMedia();
+        gsap.set(bgEl, { autoAlpha: 0 });
 
-        // Desktop animation
-        mm.add("(min-width: 768px)", () => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: container,
+                start: "top -10%",
+                end: "+=3000",
+                scrub: true,
+                pin: true,
+                onUpdate: (self) => {
+                    if (self.progress > 0.2) {
+                        gsap.set(maskEl, { pointerEvents: "none" });
+                    } else {
+                        gsap.set(maskEl, { pointerEvents: "auto" });
+                    }
+                }
+            },
+        });
 
-            gsap.set(bgEl, { autoAlpha: 0 });
+        tl.to(bgEl, {
+            autoAlpha: 1,
+            ease: "none",
+            duration: 3,
+        }, 0);
 
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: container,
-                    start: "top -10%",
-                    end: "+=3000",
-                    scrub: true,
-                    pin: true,
-                },
-            });
-
-            tl.to(bgEl, {
-                autoAlpha: 1,
+        tl.fromTo(
+            maskEl,
+            {
+                maskSize: "200px",
+                WebkitMaskSize: "200px",
+                maskPosition: "50% 50%",
+                WebkitMaskPosition: "50% 50%",
+            },
+            {
+                maskSize: "5000px",
+                WebkitMaskSize: "5000px",
+                maskPosition: "47.5% 45%",
+                WebkitMaskPosition: "47.5% 45%",
                 ease: "none",
                 duration: 3,
-            }, 0);
-
-            tl.fromTo(
-                maskEl,
-                {
-                    maskSize: "200px",
-                    WebkitMaskSize: "200px",
-                    maskPosition: "50% 50%",
-                    WebkitMaskPosition: "50% 50%"
-                },
-                {
-                    maskSize: "5000px",
-                    WebkitMaskSize: "5000px",
-                    maskPosition: "47.5% 45%",
-                    WebkitMaskPosition: "47.5% 45%",
-                    opacity: 0,
-                    ease: "none",
-                    duration: 3,
-                },
-                0
-            );
-        });
-
-        // Mobile fallback
-        mm.add("(max-width: 767px)", () => {
-            gsap.set(bgEl, { autoAlpha: 1 });
-
-            if (maskEl) {
-                gsap.set(maskEl, { display: "none" });
-            }
-        });
-
+                opacity: 0,
+                // x: 150
+            },
+            0
+        );
     }, { scope: containerRef });
     console.log("Artists======>", artistSectionData);
     return (
-        <div ref={containerRef} className="h-[43vh] md:h-[120vh] relative bg-black">
+        <div ref={containerRef} className="h-[120vh] relative bg-black !z-[99999]">
             {/* Background */}
             {/* <div
         className="absolute inset-0 bg-[url('/assets/images/about-us-bg.png')] bg-cover bg-center z-0"
         ref={backgroundImageRef}
       /> */}
-            <div className="hero h-[43vh] md:h-[120vh]" ref={backgroundImageRef}>
-                {file_url && <img src={file_url} alt="Hero" className="person-image" />}
+            <div className="hero" ref={backgroundImageRef}>
+                <div className="person-image relative">
+                    {file_url && <img src={file_url} alt="Hero" className="person-image" />}
+                    <button className="btn" onClick={handleButtonClick}>
+                        {buttonText}
+                    </button>
+                </div>
+
 
                 <div className="text-lines">
                     <div className="scroll-container">
@@ -277,9 +222,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
                     </div>
                 </div>
 
-                <button className="btn" onClick={handleButtonClick}>
-                    {buttonText}
-                </button>
+
             </div>
 
             {/* Mask layer */}

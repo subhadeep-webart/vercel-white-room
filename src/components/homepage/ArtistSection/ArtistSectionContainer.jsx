@@ -67,7 +67,13 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
       ref={containerRef}
     >
       <div className="hero">
-        {file_url && <img src={file_url} alt="Hero" className="person-image" />}
+        <div className="person-image relative">
+          {file_url && <img src={file_url} alt="Hero" className="person-image" />}
+          <button className="btn" onClick={handleButtonClick}>
+            {buttonText}
+          </button>
+        </div>
+
 
         <div className="text-lines">
           <div className="scroll-container">
@@ -133,10 +139,6 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
             </div>
           </div>
         </div>
-
-        <button className="btn" onClick={handleButtonClick}>
-          {buttonText}
-        </button>
       </div>
 
       <div className="mask" ref={maskRef}>

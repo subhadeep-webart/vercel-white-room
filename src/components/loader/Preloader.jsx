@@ -21,7 +21,7 @@ const Preloader = ({ loading }) => {
                 tl.to(maskRef.current, {
                     maskSize: "5000px",
                     WebkitMaskSize: "5000px",
-                    maskPosition:"48% 50%",
+                    maskPosition: "48% 50%",
                     duration: 1.3,
                     ease: "expo.out",
                 });
@@ -46,7 +46,7 @@ const Preloader = ({ loading }) => {
         <div ref={preloaderRef} className={styles.preloader}>
             <div
                 ref={maskRef}
-                className="absolute inset-0 z-10 bg-white"
+                className="absolute inset-0 bg-white animate-pulse"
                 style={{
                     maskImage: "url('/assets/images/twr_svg_logo.svg')",
                     WebkitMaskImage: "url('/assets/images/twr_svg_logo.svg')",
