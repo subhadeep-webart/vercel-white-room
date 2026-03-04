@@ -6,8 +6,17 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  height: 120vh;
+  /* height: 120vh; */
 }
+
+/* .person-image {
+  position: relative;
+  width: 808px;
+  height: 540px;
+  opacity: 0.9;
+  z-index: 1;
+  pointer-events: none;
+} */
 
 .person-image {
   position: relative;
@@ -16,6 +25,30 @@
   opacity: 0.9;
   z-index: 1;
   pointer-events: none;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .person-image {
+    width: 600px !important;
+    height: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .person-image {
+    width: 400px !important;
+    height: auto;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .person-image {
+    width: 280px !important;
+    height: auto;
+  }
 }
 
 .text-lines {
@@ -79,7 +112,7 @@
 
   .text,
   .text-reverse {
-    font-size: 80px;
+    font-size: 80px !important;
   }
 }
 
@@ -87,7 +120,7 @@
 
   .text,
   .text-reverse {
-    font-size: 48px;
+    font-size: 48px !important;
     letter-spacing: 0.01em;
   }
 }
@@ -96,10 +129,19 @@
 
   .text,
   .text-reverse {
-    font-size: 32px;
+    font-size: 48px !important;
     letter-spacing: 0;
   }
 }
+
+/* @media (max-width: 320px) {
+  .text,
+  .text-reverse {
+    font-size: 32px !important;
+    letter-spacing: 0;
+  }
+} */
+
 
 .word {
   color: transparent;
@@ -163,7 +205,7 @@
 /* Small Mobile */
 @media (max-width: 480px) {
   .btn {
-    bottom: 20px;
+    bottom: 10px;
     padding: 10px 28px;
     font-size: 0.85rem;
     letter-spacing: 0.06em;

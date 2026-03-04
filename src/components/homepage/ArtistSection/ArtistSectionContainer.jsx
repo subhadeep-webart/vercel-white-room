@@ -63,7 +63,7 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
   };
   return (
     <section
-      className="w-full h-[110vh] relative bg-black overflow-hidden"
+      className="w-full h-[80vh] sm:h-[110vh] relative bg-black overflow-hidden"
       ref={containerRef}
     >
       <div className="hero">
