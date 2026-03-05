@@ -582,7 +582,7 @@ body {
 /* Small Mobile */
 @media (max-width: 480px) {
   .outline_text {
-    -webkit-text-stroke: 0.4px #ffffff;
+    -webkit-text-stroke: 1.2px #ffffff;
     font-size: 100px;
     font-weight: 600;
   }

@@ -72,7 +72,7 @@ const ChooseUsSection = ({ reviewData }) => {
   return (
     <section className="w-full bg-[#0F1116] relative">
       <section
-        className="bg-no-repeat bg-center py-12 commonBg flex flex-col"
+        className="bg-no-repeat bg-center commonBg flex flex-col"
         ref={sectionRef}
       >
         <div className="!z-10 relative mb-[50px] md:mb-[100px] mt-[100px] md:mt-[200px]">
