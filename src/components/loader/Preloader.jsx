@@ -46,7 +46,7 @@ const Preloader = ({ loading }) => {
         <div ref={preloaderRef} className={styles.preloader}>
             <div
                 ref={maskRef}
-                className="absolute inset-0 z-10 bg-white animate-pulse"
+                className="absolute inset-0 !z-[9999999999999999999999] bg-white"
                 style={{
                     maskImage: "url('/assets/images/twr_svg_logo.svg')",
                     WebkitMaskImage: "url('/assets/images/twr_svg_logo.svg')",
