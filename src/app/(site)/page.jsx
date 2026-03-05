@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import AboutUsSection from "@/components/homepage/AboutUsSection";
 const ChooseUsSection = dynamic(
   () => import("@/components/homepage/ChooseUsSection"),
@@ -8,14 +9,11 @@ const ChooseUsSection = dynamic(
 );
 import HomePageBannerColapse from "@/components/homepage/HomePageBannerColapse";
 import PressCoverageSection from "@/components/homepage/PressCoverageSection";
-import WRSection from "@/components/homepage/WRSection";
 import { useGetHomePageContent } from "@/hooks/useGetHomePageContent";
 import { useGetAboutPageContent } from "@/hooks/useGetAboutPageContent";
 import { getComponentByType } from "@/utils/helper";
 import TrustedBySection from "@/components/homepage/TrustedBySection";
 import Preloader from "@/components/loader/Preloader";
-import { useEffect, useState } from "react";
-import ArtistSectionContainer from "@/components/homepage/ArtistSection/ArtistSectionContainer";
 import { useGetInstagramMedia } from "@/hooks/useGetInstagramMedia";
 import InstagramFeedSection from "@/components/homepage/InstagramFeedSection";
 import ArtistSectionContainerDemo from "@/components/homepage/ArtistSection/ArtistSectionContainerDemo";
@@ -29,7 +27,7 @@ const Home = () => {
     useGetAboutPageContent();
   const { instagramMediaData, loading: isInstagramLoading } =
     useGetInstagramMedia();
-  console.log("Home Page====>", homePage);
+
   const bannerData = getComponentByType(homePage, "banner_section");
   const aboutData = getComponentByType(aboutPage, "about_us");
   const aboutImages = getComponentByType(aboutPage, "about_us_images");
@@ -40,7 +38,7 @@ const Home = () => {
   const instagramFeedData = getComponentByType(homePage, "instagram_feed");
 
   useEffect(() => {
-    if (!isHomePageLoading && !isAboutPageLoading) {
+    if (!isHomePageLoading && !isAboutPageLoading && !isInstagramLoading) {
       setTimeout(() => setIsLoading(false), 800);
     }
   }, [isHomePageLoading, isAboutPageLoading, isInstagramLoading]);
