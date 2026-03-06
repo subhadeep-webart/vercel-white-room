@@ -13,7 +13,7 @@ const PressCoverageSection = ({ pressCoverageData }) => {
   return (
     <section className="w-full relative bg-[#0F1116] ">
       <section className="commonBg">
-        <div className="py-8 flex flex-col">
+        <div className="flex flex-col">
           <div className="w-full relative z-10 mb-[50px] md:mb-[100px] mt-[100px] md:mt-[200px]">
             <TickerWrapper isRight={true}>
               <h3 className="outline_text text-4xl md:text-[150px] text-center uppercase">
