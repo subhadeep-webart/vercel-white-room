@@ -88,7 +88,7 @@
 
   .text,
   .text-reverse {
-    font-size: 48px !important;
+    font-size: 80px !important;
     letter-spacing: 0.01em;
   }
 }
@@ -97,7 +97,7 @@
 
   .text,
   .text-reverse {
-    font-size: 48px !important;
+    font-size: 80px !important;
     font-weight: 400 !important;
     letter-spacing: 0;
   }
