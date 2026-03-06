@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { A11y } from "swiper";
 import "swiper/css";
 import TickerWrapper from "@/components/common/TickerWrapper";
+import { poppins } from "@/lib/font";
 
 SwiperCore.use([A11y]);
 
@@ -77,7 +78,7 @@ const ChooseUsSection = ({ reviewData }) => {
       >
         <div className="!z-10 relative mb-[50px] md:mb-[100px] mt-[100px] md:mt-[200px]">
           <TickerWrapper>
-            <h3 className="outline_text text-4xl md:text-[150px] text-center uppercase">
+            <h3 className={`${poppins.className} outline_text text-4xl md:text-[150px] text-center uppercase`}>
               {reviewData?.title} &nbsp;  {reviewData?.title} &nbsp; {reviewData?.title} &nbsp; {reviewData?.title} &nbsp; {reviewData?.title} &nbsp;
               {reviewData?.title} &nbsp;  {reviewData?.title} &nbsp; {reviewData?.title} &nbsp;
             </h3>
