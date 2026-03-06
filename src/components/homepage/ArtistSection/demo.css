@@ -89,7 +89,7 @@
   .text,
   .text-reverse {
     font-size: 80px !important;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.05em;
   }
 }
 
