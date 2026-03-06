@@ -98,8 +98,8 @@
   .text,
   .text-reverse {
     font-size: 80px !important;
-    font-weight: 400 !important;
-    letter-spacing: 0;
+    /* font-weight: 400 !important; */
+    letter-spacing: 0.02em;
   }
 }
 
