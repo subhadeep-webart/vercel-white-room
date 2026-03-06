@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import "./demo.css";
 import { useRouter } from "next/navigation";
+import { poppins } from "@/lib/font";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -170,7 +171,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text">
                 {artists?.map((artist) => (
-                  <span className="word" key={artist?._id}>
+                  <span className={`${poppins.className} word`} key={artist?._id}>
                     {artist?.artist_name}
                   </span>
                 ))}
@@ -179,7 +180,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text">
                 {artists?.map((artist) => (
-                  <span className="word" key={artist?._id}>
+                  <span className={`${poppins.className} word`} key={artist?._id}>
                     {artist?.artist_name}
                   </span>
                 ))}
@@ -191,7 +192,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text-reverse">
                 {artists?.map((artist) => (
-                  <span className="word" key={artist?._id}>
+                  <span className={`${poppins.className} word`} key={artist?._id}>
                     {artist?.artist_name}
                   </span>
                 ))}
@@ -200,7 +201,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text-reverse">
                 {artists?.map((artist) => (
-                  <span className="word" key={artist?._id}>
+                  <span className={`${poppins.className} word`} key={artist?._id}>
                     {artist?.artist_name}
                   </span>
                 ))}
@@ -212,7 +213,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text">
                 {artists?.map((artist) => (
-                  <span className="word" key={artist?._id}>
+                  <span className={`${poppins.className} word`} key={artist?._id}>
                     {artist?.artist_name}
                   </span>
                 ))}
@@ -221,7 +222,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text">
                 {artists?.map((artist) => (
-                  <span className="word" key={artist?._id}>
+                  <span className={`${poppins.className} word`} key={artist?._id}>
                     {artist?.artist_name}
                   </span>
                 ))}
