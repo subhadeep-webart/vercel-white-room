@@ -69,7 +69,7 @@
 .text-reverse {
   font-size: 120px;
   font-weight: 900;
-  font-family: jost;
+  font-family: Arial, sans-serif;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 0.02em;
