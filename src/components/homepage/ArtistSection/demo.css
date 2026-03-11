@@ -38,11 +38,11 @@
   display: flex;
   flex-shrink: 0;
   min-width: 100%;
-  animation: scroll 40s linear infinite;
+  animation: scroll 150s linear infinite;
 }
 
 .reverse .text-group {
-  animation: scrollReverse 40s linear infinite;
+  animation: scrollReverse 150s linear infinite;
 }
 
 @keyframes scroll {

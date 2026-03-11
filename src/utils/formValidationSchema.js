@@ -105,7 +105,7 @@ export const commonBannerValidationSchema = yup.object().shape({
 });
 
 export const artistSectionValidationSchema = yup.object().shape({
-    file_url: yup.string().required("File URL is required"),
+    // file_url: yup.string().required("File URL is required"),
     buttonText: yup.string().required("Button text is required"),
     buttonLink: yup.string().url('Invalid URL format').required('URL is required'),
 })
