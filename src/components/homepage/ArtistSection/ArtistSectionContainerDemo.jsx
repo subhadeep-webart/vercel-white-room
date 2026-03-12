@@ -171,7 +171,10 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text">
                 {artists?.map((artist) => (
-                  <span className={`${poppins.className} word`} key={artist?._id}>
+                  <span
+                    className={`${poppins.className} word`}
+                    key={artist?._id}
+                  >
                     {artist?.artist_name}
                   </span>
                 ))}
@@ -180,7 +183,10 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text">
                 {artists?.map((artist) => (
-                  <span className={`${poppins.className} word`} key={artist?._id}>
+                  <span
+                    className={`${poppins.className} word`}
+                    key={artist?._id}
+                  >
                     {artist?.artist_name}
                   </span>
                 ))}
@@ -192,7 +198,10 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text-reverse">
                 {artists?.map((artist) => (
-                  <span className={`${poppins.className} word`} key={artist?._id}>
+                  <span
+                    className={`${poppins.className} word`}
+                    key={artist?._id}
+                  >
                     {artist?.artist_name}
                   </span>
                 ))}
@@ -201,7 +210,10 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text-reverse">
                 {artists?.map((artist) => (
-                  <span className={`${poppins.className} word`} key={artist?._id}>
+                  <span
+                    className={`${poppins.className} word`}
+                    key={artist?._id}
+                  >
                     {artist?.artist_name}
                   </span>
                 ))}
@@ -213,7 +225,10 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text">
                 {artists?.map((artist) => (
-                  <span className={`${poppins.className} word`} key={artist?._id}>
+                  <span
+                    className={`${poppins.className} word`}
+                    key={artist?._id}
+                  >
                     {artist?.artist_name}
                   </span>
                 ))}
@@ -222,7 +237,10 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             <div className="text-group">
               <h1 className="text">
                 {artists?.map((artist) => (
-                  <span className={`${poppins.className} word`} key={artist?._id}>
+                  <span
+                    className={`${poppins.className} word`}
+                    key={artist?._id}
+                  >
                     {artist?.artist_name}
                   </span>
                 ))}
