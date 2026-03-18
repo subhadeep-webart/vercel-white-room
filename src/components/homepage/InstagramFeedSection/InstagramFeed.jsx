@@ -11,7 +11,7 @@ const InstagramFeed = ({ instagramPosts = [] }) => {
           href={post.permalink}
           target="_blank"
           rel="noopener noreferrer"
-          className="!mb-4 !relative overflow-hidden group hover:scale-95 hover:opacity-90 transition-all delay-200  h-[200px] lg:h-[320px]"
+          className="!mb-4 !relative overflow-hidden group hover:scale-95 hover:opacity-90 transition-all delay-200  h-[250px] sm:h-[320px]"
           key={post.id}
         >
           {/* { ? (
@@ -31,6 +31,7 @@ const InstagramFeed = ({ instagramPosts = [] }) => {
           //            (max-width: 1280px) 25vw,
           //            16vw "
           />
+        
           {/* )} */}
 
           <div className="absolute top-2 right-2 bg-white w-6 h-6 flex justify-center items-center rounded-full text-white">
