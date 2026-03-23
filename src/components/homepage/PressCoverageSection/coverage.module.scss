@@ -1,5 +1,5 @@
 .flip_card {
-  height: 400px;
+  height: 330px;
   width: 100%;
   position: relative;
   cursor: pointer;
@@ -40,16 +40,34 @@
   }
 }
 
-// @media (max-width: 768px) {
-//   .flip_card {
-//     height: 330px;
-//     width: 275px;
-//   }
-// }
+@media (max-width: 768px) {
+  .flip_card {
+    height: 360px;
+  }
+}
 
-// @media (min-width: 769px) and (max-width: 1024px) {
-//   .flip_card {
-//     height: 330px;
-//     width: 300px;
-//   }
-// }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .flip_card {
+    height: 330px;
+  }
+}
+
+
+
+.grid_card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem; /* gap-4 = 16px */
+}
+
+@media (min-width: 640px) {
+  .grid_card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid_card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

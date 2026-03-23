@@ -19,3 +19,14 @@
     padding-block: 24px;
     padding-inline: 18px;
 }
+
+@media (max-width : 640px) {
+    .img_border {
+  border: 3px solid;
+  border-inline-color: #63a9f5;
+  border-block-color: #ed7eee;
+  box-shadow: -14px -9px 19px 0px rgba(237, 126, 238, 0.48);
+  -webkit-box-shadow: -14px -9px 19px 0px rgba(237, 126, 238, 0.48);
+  -moz-box-shadow: -14px -9px 19px 0px rgba(237, 126, 238, 0.48);
+}
+}

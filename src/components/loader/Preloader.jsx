@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import styles from "./preloader.module.scss";
@@ -21,7 +21,7 @@ const Preloader = ({ loading }) => {
                 tl.to(maskRef.current, {
                     maskSize: "5000px",
                     WebkitMaskSize: "5000px",
-                    maskPosition:"48% 50%",
+                    maskPosition: "48% 50%",
                     duration: 1.3,
                     ease: "expo.out",
                 });
@@ -39,6 +39,37 @@ const Preloader = ({ loading }) => {
         },
         { dependencies: [loading], scope: preloaderRef }
     );
+
+
+    useEffect(() => {
+        if (show) {
+            const scrollY = window.scrollY;
+
+            // lock scroll
+            document.body.style.overflow = "hidden";
+            document.body.style.position = "fixed";
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.width = "100%";
+        } else {
+            // restore scroll
+            const scrollY = document.body.style.top;
+
+            document.body.style.overflow = "";
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.width = "";
+
+            // restore scroll position
+            window.scrollTo(0, parseInt(scrollY || "0") * -1);
+        }
+
+        return () => {
+            document.body.style.overflow = "";
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.width = "";
+        };
+    }, [show]);
 
     if (!show) return null;
 

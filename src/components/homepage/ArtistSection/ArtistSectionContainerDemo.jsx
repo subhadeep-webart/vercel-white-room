@@ -102,7 +102,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
         scrollTrigger: {
           trigger: container,
           start: "top -10%",
-          end: "+=2000",
+          end: "+=1000",
           scrub: true,
           pin: true,
           onUpdate: (self) => {
@@ -136,8 +136,10 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
         {
           maskSize: "5000px",
           WebkitMaskSize: "5000px",
-          maskPosition: "47.5% 45%",
-          WebkitMaskPosition: "47.5% 45%",
+          // maskPosition: "47.5% 45%",
+          // WebkitMaskPosition: "47.5% 45%",
+          maskPosition: "48% 48%",
+          WebkitMaskPosition: "48% 48%",
           ease: "none",
           duration: 3,
           opacity: 0,

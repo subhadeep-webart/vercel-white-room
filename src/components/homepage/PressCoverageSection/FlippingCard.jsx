@@ -31,7 +31,7 @@ const FlippingCard = ({ pressCoverages }) => {
             /> */}
           </div>
           <div className="absolute inset-0 flex flex-col justify-center items-center z-10">
-            <h3 className="text-xl font-bold mb-4">
+            <h3 className="text-xl font-bold mb-2">
               {pressCoverages?.poster_title || "Music Player"}
             </h3>
             <div
