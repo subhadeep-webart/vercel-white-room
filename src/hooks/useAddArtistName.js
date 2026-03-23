@@ -8,15 +8,15 @@ const useAddArtistName = (refetch) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const handleSubmitArtistName = async ({ artist_name }) => {
+    const handleSubmitArtistName = async (payload) => {
         setLoading(true);
         setError(null);
 
         try {
-            const payload = {
-                artist_name
-            }
-
+            // const payload = {
+            //     artist_name
+            // }
+            console.log("Payload====>",payload);
 
             const res = await fetch("/api/pages/home/artist-section", {
                 method: "POST",

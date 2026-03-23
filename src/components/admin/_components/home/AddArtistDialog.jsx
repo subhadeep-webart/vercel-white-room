@@ -18,12 +18,13 @@ import { Input } from "@/components/ui/input";
 import { Loader } from "@/components/common/Loader";
 
 const schema = yup.object().shape({
+    section: yup.string().required(),
     artist_name: yup
         .string()
         .required("Artist Name is required"),
 });
 
-const AddArtistDialog = ({ openAddContent, setOpenAddContent, submitHandler, isAddArtistLoading }) => {
+const AddArtistDialog = ({ openAddContent, setOpenAddContent, submitHandler, isAddArtistLoading, section }) => {
     const {
         register,
         handleSubmit,
@@ -32,9 +33,12 @@ const AddArtistDialog = ({ openAddContent, setOpenAddContent, submitHandler, isA
     } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
-            artist_name: ""
+            artist_name: "",
+            section: section
         },
     });
+
+    console.log("Errors====>", section);
 
     const onSubmit = async (data) => {
         console.log("Form submitted with data:", data);

@@ -6,7 +6,7 @@ export default function useDeleteArtist(refetch) {
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
 
-    const handleDeleteArtist = useCallback(async (_id) => {
+    const handleDeleteArtist = useCallback(async (payload) => {
         setLoading(true);
         setError(null);
         setSuccess(false);
@@ -15,7 +15,7 @@ export default function useDeleteArtist(refetch) {
             const res = await fetch("/api/pages/home/artist-section", {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ _id }),
+                body: JSON.stringify(payload),
             });
 
             const json = await res.json();

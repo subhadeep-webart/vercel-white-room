@@ -30,8 +30,7 @@ const TrustedBySection = ({ trustedByData }) => {
                 <div className="mb-[50px] md:mb-[100px] mt-[100px] md:mt-[200px]">
                     <TickerWrapper isRight={false}>
                         <h3 className={`${poppins.className} outline_text text-4xl md:text-[150px] text-center uppercase`}>
-                            {trustedByData.title} &nbsp;  {trustedByData.title} &nbsp; {trustedByData.title} &nbsp; {trustedByData.title} &nbsp; {trustedByData.title} &nbsp;
-                             {trustedByData.title} &nbsp;  {trustedByData.title} &nbsp; {trustedByData.title} &nbsp;
+                            {trustedByData.title}
                         </h3>
                     </TickerWrapper>
                 </div>

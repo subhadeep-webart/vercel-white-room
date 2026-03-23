@@ -27,67 +27,6 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
     router.push(buttonLink);
   };
 
-  // useGSAP(
-  //     () => {
-  //         const container = containerRef.current;
-  //         const maskEl = maskRef.current;
-  //         const bgEl = backgroundImageRef.current;
-
-  //         if (!container || !maskEl || !bgEl) return;
-
-  //         gsap.set(bgEl, { autoAlpha: 0 }); // hide bg initially
-
-  //         gsap
-  //             .timeline({
-  //                 scrollTrigger: {
-  //                     trigger: container,
-  //                     start: "top -20%",
-  //                     end: "+=3000",
-  //                     scrub: true,
-  //                     pin: true,
-  //                     // onUpdate: (self) => {
-  //                     //     if (self.progress >= 0.1) {
-  //                     //         gsap.to(bgEl, {
-  //                     //             autoAlpha: 1,
-  //                     //             duration: 0.3,
-  //                     //             ease: "power1.out",
-  //                     //             overwrite: "auto",
-  //                     //         });
-  //                     //     } else {
-  //                     //         gsap.to(bgEl, {
-  //                     //             autoAlpha: 0,
-  //                     //             duration: 0.3,
-  //                     //             ease: "power1.out",
-  //                     //             overwrite: "auto",
-  //                     //         });
-  //                     //     }
-  //                     // },
-  //                 },
-  //             }).to(bgEl, {
-  //                 autoAlpha: 1,
-  //                 ease: "none",
-  //                 duration: 1, // relative to timeline
-  //             }, 0)
-  //             .fromTo(
-  //                 maskEl,
-  //                 {
-  //                     maskSize: "200px",
-  //                     WebkitMaskSize: "400px",
-  //                     maskPosition: "50% 50%",
-  //                     WebkitMaskPosition: "50% 50%",
-  //                 },
-  //                 {
-  //                     maskSize: "14000px",
-  //                     WebkitMaskSize: "14000px",
-  //                     maskPosition: "47.5% 50%",
-  //                     WebkitMaskPosition: "47.5% 50%",
-  //                     ease: "none",
-  //                 },
-  //             );
-  //     },
-  //     { scope: containerRef },
-  // );
-
   useGSAP(
     () => {
       const container = containerRef.current;
@@ -172,7 +111,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
           <div className="scroll-container">
             <div className="text-group">
               <h1 className="text">
-                {artists?.map((artist) => (
+                {artists?.header1?.map((artist) => (
                   <span
                     className={`${poppins.className} word`}
                     key={artist?._id}
@@ -184,7 +123,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             </div>
             <div className="text-group">
               <h1 className="text">
-                {artists?.map((artist) => (
+                {artists?.header1?.map((artist) => (
                   <span
                     className={`${poppins.className} word`}
                     key={artist?._id}
@@ -199,7 +138,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
           <div className="scroll-container reverse">
             <div className="text-group">
               <h1 className="text-reverse">
-                {artists?.map((artist) => (
+                {artists?.header2?.map((artist) => (
                   <span
                     className={`${poppins.className} word`}
                     key={artist?._id}
@@ -211,7 +150,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             </div>
             <div className="text-group">
               <h1 className="text-reverse">
-                {artists?.map((artist) => (
+                {artists?.header2?.map((artist) => (
                   <span
                     className={`${poppins.className} word`}
                     key={artist?._id}
@@ -226,7 +165,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
           <div className="scroll-container">
             <div className="text-group">
               <h1 className="text">
-                {artists?.map((artist) => (
+                {artists?.header3?.map((artist) => (
                   <span
                     className={`${poppins.className} word`}
                     key={artist?._id}
@@ -238,7 +177,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
             </div>
             <div className="text-group">
               <h1 className="text">
-                {artists?.map((artist) => (
+                {artists?.header3?.map((artist) => (
                   <span
                     className={`${poppins.className} word`}
                     key={artist?._id}
