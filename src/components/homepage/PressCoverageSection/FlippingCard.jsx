@@ -15,7 +15,7 @@ const FlippingCard = ({ pressCoverages }) => {
             }
             alt="Front of card"
             fill
-            className="object-cover lg:object-contain"
+            className="object-cover"
           />
         </div>
         <div className="relative w-full h-full rotate-y-180 backface-hidden bg-gray-800 p-6 flex flex-col justify-center items-center text-white">
