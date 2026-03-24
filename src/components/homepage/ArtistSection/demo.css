@@ -38,11 +38,11 @@
   display: flex;
   flex-shrink: 0;
   min-width: 100%;
-  animation: scroll 150s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .reverse .text-group {
-  animation: scrollReverse 150s linear infinite;
+  animation: scrollReverse 30s linear infinite;
 }
 
 .aboutSectBtn {
@@ -140,6 +140,8 @@
   cursor: pointer;
   z-index: 3;
   transition: 0.3s;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .btn:hover {
