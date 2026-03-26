@@ -73,14 +73,13 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
           WebkitMaskPosition: "50% 50%",
         },
         {
-          maskSize: "3000px",
-          WebkitMaskSize: "3000px",
-          maskPosition: "50% 50%",
-          WebkitMaskPosition: "50% 50%",
+          maskSize: "2500px",
+          WebkitMaskSize: "2500px",
+          maskPosition: "43% 55%",
+          WebkitMaskPosition: "43% 55%",
           ease: "none",
           duration: 2,
           opacity: 0,
-          x: 55
         },
         0,
       );
