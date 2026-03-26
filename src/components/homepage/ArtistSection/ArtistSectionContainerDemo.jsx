@@ -73,10 +73,10 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
           WebkitMaskPosition: "50% 50%",
         },
         {
-          maskSize: "2500px",
-          WebkitMaskSize: "2500px",
-          maskPosition: "46% 50%",
-          WebkitMaskPosition: "46% 50%",
+          maskSize: "2000px",
+          WebkitMaskSize: "2000px",
+          maskPosition: "45% 50%",
+          WebkitMaskPosition: "45% 50%",
           ease: "none",
           duration: 2,
           opacity: 0,
@@ -88,7 +88,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
   );
   console.log("Artists======>", artistSectionData);
   return (
-    <div ref={containerRef} className="h-[120vh] relative bg-black !z-[999]">
+    <div ref={containerRef} className="h-[110vh] relative bg-black !z-[999]">
       {/* Background */}
       {/* <div
         className="absolute inset-0 bg-[url('/assets/images/about-us-bg.png')] bg-cover bg-center z-0"
