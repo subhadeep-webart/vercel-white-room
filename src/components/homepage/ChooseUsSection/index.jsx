@@ -77,7 +77,7 @@ const ChooseUsSection = ({ reviewData }) => {
         ref={sectionRef}
       >
         <div className="!z-10 relative mb-[50px] md:mb-[100px] mt-[100px] md:mt-[200px]">
-          <TickerWrapper>
+          <TickerWrapper isRight={false}>
             <h3 className={`${poppins.className} outline_text text-4xl md:text-[150px] text-center uppercase`}>
               {reviewData?.title}
             </h3>

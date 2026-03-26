@@ -69,20 +69,18 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
         {
           maskSize: "200px",
           WebkitMaskSize: "200px",
-          maskPosition: "49% 50%",
-          WebkitMaskPosition: "49% 50%",
+          maskPosition: "50% 50%",
+          WebkitMaskPosition: "50% 50%",
         },
         {
-          maskSize: "5000px",
-          WebkitMaskSize: "5000px",
-          // maskPosition: "47.5% 45%",
-          // WebkitMaskPosition: "47.5% 45%",
-          maskPosition: "47.5% 50%",
-          WebkitMaskPosition: "47.5% 50%",
+          maskSize: "3000px",
+          WebkitMaskSize: "3000px",
+          maskPosition: "50% 50%",
+          WebkitMaskPosition: "50% 50%",
           ease: "none",
-          duration: 3,
+          duration: 2,
           opacity: 0,
-          // x: 150
+          x: 55
         },
         0,
       );

@@ -32,12 +32,14 @@
 .scroll-container {
   display: flex;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .text-group {
   display: flex;
   flex-shrink: 0;
-  min-width: 100%;
+  /* min-width: 100%; */
+  width: max-content;
   animation: scroll 30s linear infinite;
 }
 
