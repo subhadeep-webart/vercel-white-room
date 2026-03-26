@@ -59,7 +59,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
         {
           autoAlpha: 1,
           ease: "none",
-          duration: 3,
+          duration: 2,
         },
         0,
       );
