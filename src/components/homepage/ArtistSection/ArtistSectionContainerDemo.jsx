@@ -41,7 +41,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
         scrollTrigger: {
           trigger: container,
           start: "top -10%",
-          end: "+=800",
+          end: "+=300",
           scrub: true,
           pin: true,
           onUpdate: (self) => {
