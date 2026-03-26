@@ -59,7 +59,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
         {
           autoAlpha: 1,
           ease: "none",
-          duration: 2,
+          duration: 3,
         },
         0,
       );
@@ -67,18 +67,18 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
       tl.fromTo(
         maskEl,
         {
-          maskSize: "200px",
-          WebkitMaskSize: "200px",
+          maskSize: "150px",
+          WebkitMaskSize: "150px",
           maskPosition: "50% 50%",
           WebkitMaskPosition: "50% 50%",
         },
         {
-          maskSize: "2000px",
-          WebkitMaskSize: "2000px",
-          maskPosition: "45% 50%",
-          WebkitMaskPosition: "45% 50%",
+          maskSize: "4000px",
+          WebkitMaskSize: "4000px",
+          maskPosition: "46% 50%",
+          WebkitMaskPosition: "46% 50%",
           ease: "none",
-          duration: 2,
+          duration: 3,
           opacity: 0,
         },
         0,
@@ -88,7 +88,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
   );
   console.log("Artists======>", artistSectionData);
   return (
-    <div ref={containerRef} className="h-[110vh] relative bg-black !z-[999]">
+    <div ref={containerRef} className="h-[118vh] relative bg-black !z-[999]">
       {/* Background */}
       {/* <div
         className="absolute inset-0 bg-[url('/assets/images/about-us-bg.png')] bg-cover bg-center z-0"
