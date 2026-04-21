@@ -9,44 +9,44 @@ export const NAV_MENU_ITEMS = [
     key: "about-us",
     label: "ABOUT US",
     href: "/about-us",
-    imgSrc: "/assets/images/about-us-img-1.png",
+    imgSrc: "/assets/images/white_room_menu_image.jpg",
   },
   // { key: "videos", label: "VIDEOS", href: "#", imgSrc: "/assets/images/about-us-img-2.png" },
   {
     key: "media",
     label: "MEDIA",
     href: "/media-us",
-    imgSrc: "/assets/images/about-us-img-1.png",
+    imgSrc: "/assets/images/white_room_menu_image.jpg",
   },
   {
     key: "testimonials",
     label: "TESTIMONIALS",
     href: "/testimonials",
-    imgSrc: "/assets/images/about-us-img-1.png",
+    imgSrc: "/assets/images/white_room_menu_image.jpg",
   },
   {
     key: "shop",
     label: "SHOP",
     href: "/shop",
-    imgSrc: "/assets/images/about-us-img-1.png",
+    imgSrc: "/assets/images/white_room_menu_image.jpg",
   },
   {
     key: "book-us",
     label: "BOOK US",
     href: "/book-us",
-    imgSrc: "/assets/images/about-us-img-1.png",
+    imgSrc: "/assets/images/white_room_menu_image.jpg",
   },
   {
     key: "on-the-day",
     label: "ON THE DAY",
     href: "/on-the-day",
-    imgSrc: "/assets/images/about-us-img-1.png",
+    imgSrc: "/assets/images/white_room_menu_image.jpg",
   },
   {
     key: "contact-us",
     label: "CONTACT US",
     href: "/contact-us",
-    imgSrc: "/assets/images/about-us-img-1.png",
+    imgSrc: "/assets/images/white_room_menu_image.jpg",
   },
 ];
 
@@ -58,6 +58,7 @@ import {
   BookOpen,
   Bot,
   Calendar,
+  Contact,
   GalleryVerticalEnd,
   Music,
   SquareTerminal,
@@ -225,6 +226,15 @@ export const ADMIN_CONFIG_DATA = {
         },
       ],
     },
+    {
+      title: "Contact us",
+      url: "#",
+      icon: Contact,
+      items: [{
+        title: "Banner",
+        url: "/admin/dashboard/contact-us/banner"
+      }]
+    }
   ],
 };
 
