@@ -57,7 +57,7 @@ const ChooseUsSection = ({ reviewData }) => {
         const p = Math.pow(t, 2);
         card.style.backgroundColor = mix(CARD_DARK, CARD_LIGHT, p);
         card.style.boxShadow = `0 20px 60px rgba(0,0,0,${0.15 + p * 0.35})`;
-        card.style.zIndex = isCenter ? "10" : "1";
+        card.style.zIndex = isCenter ? "500" : "1";
 
         const comment = card.querySelector(".choose-comment");
         const author = card.querySelector(".choose-author");
@@ -107,7 +107,9 @@ const ChooseUsSection = ({ reviewData }) => {
               <Swiper
                 modules={[Autoplay]}
                 slidesPerView="auto"
-                // centeredSlides={true}
+                centeredSlides={true}
+                // loopedSlides={reviews.length}
+                // loopAdditionalSlides={reviews.length}
                 spaceBetween={24}
                 loop={true}
                 grabCursor={true}
@@ -122,7 +124,7 @@ const ChooseUsSection = ({ reviewData }) => {
                 }}
                 className="!ease-linear w-full"
               >
-                {reviews.map((review, index) => (
+                {[...reviews, ...reviews].map((review, index) => (
                   <SwiperSlide
                     key={review?._id ?? index}
                     className="!w-[350px] flex items-center justify-center"
