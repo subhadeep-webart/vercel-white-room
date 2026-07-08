@@ -1,11 +1,11 @@
 import NoiseComponent from "@/components/common/NoiseComponent";
 
 const WhatTheySaySection = ({ whatTheySay }) => {
-  console.log("whatTheySay",whatTheySay)
+  console.log("whatTheySay", whatTheySay);
   return (
     <>
       <section className="pt-20 pb-20 bg-black relative overflow-hidden">
-        <NoiseComponent/>
+        <NoiseComponent />
         <div className="container">
           <div className="flex flex-col items-center gap-1">
             <h3 className="text-white font-bold text-xl md:text-[45px] ">
@@ -17,12 +17,10 @@ const WhatTheySaySection = ({ whatTheySay }) => {
           </div>
 
           <div
-          
             className={`flex flex-col md:flex-row space-y-2 md:space-x-2 items-center justify-between py-12 md:py-16 ${
               whatTheySay?.clients?.length <= 2 ? "justify-center" : ""
             }`}
           >
-         
             {whatTheySay?.clients?.map((client, index) => {
               const isMiddle =
                 index === Math.floor(whatTheySay?.clients?.length / 2);
@@ -51,7 +49,10 @@ const WhatTheySaySection = ({ whatTheySay }) => {
           </div>
 
           <div className="flex items-center justify-center md:pb-20">
-            <button onClick={() => window.open(whatTheySay?.button_url, "_blank")} className="btn-11 relative inline-block bg-white text-[#0F1116] font-medium text-[17px] w-[163px] h-[54px] overflow-hidden transition-all duration-300 hover:text-white">
+            <button
+              onClick={() => window.open(whatTheySay?.button_url, "_blank")}
+              className="btn-11 relative inline-block bg-white text-[#0F1116] font-medium text-[17px] w-[163px] h-[54px] overflow-hidden transition-all duration-300 hover:text-white"
+            >
               {whatTheySay?.button_text}
             </button>
           </div>

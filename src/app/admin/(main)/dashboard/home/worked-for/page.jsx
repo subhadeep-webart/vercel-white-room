@@ -11,11 +11,16 @@ import { CldUploadWidget } from "next-cloudinary";
 import { IoMdAddCircle } from "react-icons/io";
 
 const WorkedFor = () => {
-  const { data: workedForContent, loading: isWorkedForContentLoading,refetch } = useGetHomePageContent("worked_for")
+  const {
+    data: workedForContent,
+    loading: isWorkedForContentLoading,
+    refetch,
+  } = useGetHomePageContent("worked_for");
   const { handlePostTrustedImages, loading } = usePostTrustedByImages();
-  const { handleWorkedForImageDelete, loading: isDeletingImage } = useDeleteWorkedForImage();
+  const { handleWorkedForImageDelete, loading: isDeletingImage } =
+    useDeleteWorkedForImage();
 
-  console.log("Worked For Content=====>",workedForContent);
+  console.log("Worked For Content=====>", workedForContent);
   const handleUploadSuccess = async (result) => {
     console.log("Result coming from about us image upload========>", result);
     if (result.event === "success") {
@@ -32,23 +37,22 @@ const WorkedFor = () => {
 
   console.log("Worked For Data=====>", workedForContent);
 
-  const handleImageDelete=async(imageUrl)=>{
-
-    await handleWorkedForImageDelete(imageUrl,refetch)
-  }
+  const handleImageDelete = async (imageUrl) => {
+    await handleWorkedForImageDelete(imageUrl, refetch);
+  };
 
   if (isWorkedForContentLoading) {
-    return <AdminPageLoader content={"Loading Worked For Component Data"} />
+    return <AdminPageLoader content={"Loading Worked For Component Data"} />;
   }
 
   const { images } = workedForContent;
 
-  console.log("Images Data worked for", images)
+  console.log("Images Data worked for", images);
 
   return (
     <>
       <div className="p-3 bg-[#f0f3f8]">
-          <WorkedForAddHeader/>
+        <WorkedForAddHeader />
         <div className="flex justify-end items-end">
           {typeof window !== "undefined" && (
             <CldUploadWidget
@@ -77,11 +81,14 @@ const WorkedFor = () => {
             </CldUploadWidget>
           )}
         </div>
-      
-        <MultipleImageShowingComponent imagesData={images} handleImageDelete={handleImageDelete}/>
+
+        <MultipleImageShowingComponent
+          imagesData={images}
+          handleImageDelete={handleImageDelete}
+        />
       </div>
     </>
-  )
+  );
 };
 
 export default WorkedFor;

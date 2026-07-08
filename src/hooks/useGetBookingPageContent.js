@@ -15,7 +15,7 @@ export function useGetBookingPageContent(type) {
       if (!res.ok) throw new Error("Failed to fetch booking page");
       const page = await res.json();
 
-     if (type) {
+      if (type) {
         const requiredSection = page.components.find((c) => c.type === type);
         setData(requiredSection ? requiredSection.data : null);
       } else {

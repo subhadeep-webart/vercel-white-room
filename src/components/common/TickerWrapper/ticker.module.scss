@@ -1,55 +1,55 @@
 .ticker_wrapper {
-    overflow: hidden;
-    width: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 
 .ticker {
-    display: flex;
-    width: max-content;
+  display: flex;
+  width: max-content;
 }
 
 /* group wrapper */
 .ticker_group {
-    display: flex;
+  display: flex;
 }
 
 /* content */
 .ticker_content {
-    flex-shrink: 0;
-    white-space: nowrap;
-    font-size: 80px;
-    font-weight: bold;
-    color: white;
-    padding-right: 40px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  padding-right: 40px;
 }
 
 /* LEFT → RIGHT */
 .ticker_left {
-    animation: scrollLeft var(--duration) linear infinite;
+  animation: scrollLeft var(--duration) linear infinite;
 }
 
 /* RIGHT → LEFT */
 .ticker_right {
-    animation: scrollRight var(--duration) linear infinite;
+  animation: scrollRight var(--duration) linear infinite;
 }
 
 /* 🔥 KEY FIX: pixel-based movement */
 @keyframes scrollLeft {
-    from {
-        transform: translateX(0);
-    }
+  from {
+    transform: translateX(0);
+  }
 
-    to {
-        transform: translateX(calc(-1 * var(--move)));
-    }
+  to {
+    transform: translateX(calc(-1 * var(--move)));
+  }
 }
 
 @keyframes scrollRight {
-    from {
-        transform: translateX(calc(-1 * var(--move)));
-    }
+  from {
+    transform: translateX(calc(-1 * var(--move)));
+  }
 
-    to {
-        transform: translateX(0);
-    }
+  to {
+    transform: translateX(0);
+  }
 }

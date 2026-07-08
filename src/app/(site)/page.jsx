@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import AboutUsSection from "@/components/homepage/AboutUsSection";
 const ChooseUsSection = dynamic(
   () => import("@/components/homepage/ChooseUsSection"),
-  { ssr: false },
+  { ssr: false }
 );
 import HomePageBannerColapse from "@/components/homepage/HomePageBannerColapse";
 import PressCoverageSection from "@/components/homepage/PressCoverageSection";

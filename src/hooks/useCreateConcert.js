@@ -24,7 +24,7 @@ export default function useCreateConcert() {
       toast.success("Concert Created Successfully");
       return json;
     } catch (err) {
-        toast.error(`Concert Creation Failed ${err?.message}`)
+      toast.error(`Concert Creation Failed ${err?.message}`);
       setError(err.message);
     } finally {
       setLoading(false);

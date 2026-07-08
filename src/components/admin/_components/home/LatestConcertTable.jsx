@@ -28,8 +28,9 @@ const LatestConcertTable = ({ columns, data, refetch }) => {
             {columns.map((col, idx) => (
               <TableHead
                 key={idx}
-                className={`px-6 py-4 text-sm font-semibold text-slate-200 border-b border-gray-300 ${col.align === "right" ? "text-right" : "text-left"
-                  }`}
+                className={`px-6 py-4 text-sm font-semibold text-slate-200 border-b border-gray-300 ${
+                  col.align === "right" ? "text-right" : "text-left"
+                }`}
               >
                 {col.header}
               </TableHead>
@@ -48,8 +49,9 @@ const LatestConcertTable = ({ columns, data, refetch }) => {
                   {columns.map((col, colIndex) => (
                     <TableCell
                       key={colIndex}
-                      className={`px-6 py-4 border-b border-gray-200 whitespace-nowrap truncate max-w-[200px] ${col.align === "right" ? "text-right" : "text-left"
-                        }`}
+                      className={`px-6 py-4 border-b border-gray-200 whitespace-nowrap truncate max-w-[200px] ${
+                        col.align === "right" ? "text-right" : "text-left"
+                      }`}
                     >
                       {col.accessorKey === "actions" ? (
                         <div className="flex justify-end gap-2">
@@ -67,7 +69,7 @@ const LatestConcertTable = ({ columns, data, refetch }) => {
                       ) : col.accessorKey === "concert_image_url" ? (
                         <SmallImageCard imageUrl={row[col.accessorKey]} />
                       ) : (
-                        row[col.accessorKey] ?? "-"
+                        (row[col.accessorKey] ?? "-")
                       )}
                     </TableCell>
                   ))}

@@ -12,7 +12,11 @@ const ShopPageContentUpdateForm = dynamic(
 );
 
 const Content = () => {
-  const { data: shopPageData, loading: isShopPageLoading ,refetch} = useGetShopPage();
+  const {
+    data: shopPageData,
+    loading: isShopPageLoading,
+    refetch,
+  } = useGetShopPage();
 
   const contents = getComponentByType(shopPageData, "contents");
   console.log("contents", contents);

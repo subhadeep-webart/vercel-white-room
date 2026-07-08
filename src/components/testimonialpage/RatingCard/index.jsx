@@ -34,8 +34,8 @@ const RatingCard = ({ review }) => {
           </div>
         </div>
       </div> */}
-        <div
-      className="
+      <div
+        className="
         w-full
         max-w-full
         md:max-w-[1209px]
@@ -47,35 +47,34 @@ const RatingCard = ({ review }) => {
         overflow-hidden
         border-b-[3px] border-white rounded-[6px]
       "
-    >
-   
-      <div className="absolute top-4 left-4 md:top-[25px] md:left-[22px]">
-        <Image
-          src="/assets/icons/inverted-colon.svg"
-          alt="InvertedColon"
-          width={90}
-          height={140}
-          className="md:w-[171px] md:h-[268px]"
-        />
-      </div>
-
-      <p className="text-[#8F8F8F] text-sm md:text-xl font-normal mb-6 text-justify">
-        {review?.comment}
-      </p>
-
-      <div className="flex flex-col sm:flex-row sm:justify-between gap-4">
-        <div>
-          <p className="text-[#F6B3F7] text-sm md:text-xl font-bold">
-            {review?.name}
-          </p>
-          <p className="text-[#8F8F8F] text-sm md:text-xl">
-            {review?.position}
-          </p>
+      >
+        <div className="absolute top-4 left-4 md:top-[25px] md:left-[22px]">
+          <Image
+            src="/assets/icons/inverted-colon.svg"
+            alt="InvertedColon"
+            width={90}
+            height={140}
+            className="md:w-[171px] md:h-[268px]"
+          />
         </div>
 
-        <FiveStarTestimonial rating={review?.rating} />
+        <p className="text-[#8F8F8F] text-sm md:text-xl font-normal mb-6 text-justify">
+          {review?.comment}
+        </p>
+
+        <div className="flex flex-col sm:flex-row sm:justify-between gap-4">
+          <div>
+            <p className="text-[#F6B3F7] text-sm md:text-xl font-bold">
+              {review?.name}
+            </p>
+            <p className="text-[#8F8F8F] text-sm md:text-xl">
+              {review?.position}
+            </p>
+          </div>
+
+          <FiveStarTestimonial rating={review?.rating} />
+        </div>
       </div>
-    </div>
     </>
   );
 };

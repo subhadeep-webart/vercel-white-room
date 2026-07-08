@@ -33,7 +33,10 @@ const Forms = ({ fields = [], onSubmit, initialValues = {} }) => {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {fields.map((field, index) => (
-            <div key={index}   className={field.type === "textarea" ? "md:col-span-2" : ""}>
+            <div
+              key={index}
+              className={field.type === "textarea" ? "md:col-span-2" : ""}
+            >
               <Label htmlFor={field.name} className="mb-1 block">
                 {field.label}
               </Label>

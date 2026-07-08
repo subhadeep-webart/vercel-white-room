@@ -54,7 +54,10 @@ const WRSection = () => {
           <div className={styles.centerBox} ref={centerBoxRef}></div>
         </div>
       </section>
-      <section className="w-full bg-white h-[500px] md:h-[160%] relative" ref={buttonRef}>
+      <section
+        className="w-full bg-white h-[500px] md:h-[160%] relative"
+        ref={buttonRef}
+      >
         <div
           className="flex flex-col justify-center items-center gap-4 pb-4 container lg:px-48 lg:py-24"
           ref={buttonRef}

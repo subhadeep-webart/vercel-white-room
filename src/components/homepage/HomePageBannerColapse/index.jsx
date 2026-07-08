@@ -94,9 +94,9 @@ const HomePageBannerColapse = ({ bannerData }) => {
         scale: () => {
           const width = window.innerWidth;
 
-          if (width < 640) return 0.35;       // mobile
-          if (width < 1024) return 0.25;      // tablet
-          return 0.15;                        // desktop
+          if (width < 640) return 0.35; // mobile
+          if (width < 1024) return 0.25; // tablet
+          return 0.15; // desktop
         },
 
         // y: () => {
@@ -133,7 +133,7 @@ const HomePageBannerColapse = ({ bannerData }) => {
           let scale;
           const width = window.innerWidth;
 
-          if (width < 640) scale = 0.30;
+          if (width < 640) scale = 0.3;
           else if (width < 1024) scale = 0.25;
           else scale = 0.25;
 

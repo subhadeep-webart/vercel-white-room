@@ -1,46 +1,48 @@
 .nav_menu_background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: 99999;
-    background-color: "#0F1116";
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    color: white;
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 99999;
+  background-color: "#0F1116";
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 }
 
 .nav_menu_background::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(rgba(15, 17, 22, 0.9), rgba(15, 17, 22, 0.9)), url('/assets/images/home-banner-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(2px);
-    z-index: 0;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(15, 17, 22, 0.9), rgba(15, 17, 22, 0.9)),
+    url("/assets/images/home-banner-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  z-index: 0;
 }
 
-.nav_menu_background>* {
-    position: relative;
-    z-index: 1;
+.nav_menu_background > * {
+  position: relative;
+  z-index: 1;
 }
 
 .nav_menu_link_text {
-    width: 100%;
-    font-size: 30px;
-    font-weight: bold;
-    border-bottom: 1px solid #3C3F47;
-    display: inline-block;
-    position: relative;
-    color: white;
-    /* or your preferred text color */
-    padding-bottom: 5px;
-    cursor: pointer;
-    text-decoration: none;
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 1px solid #3c3f47;
+  display: inline-block;
+  position: relative;
+  color: white;
+  /* or your preferred text color */
+  padding-bottom: 5px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 @media (max-width: 480px) {
@@ -50,19 +52,21 @@
 }
 
 .nav_menu_link_text::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: white;
-    /* Lightning-like color */
-    box-shadow: 0 0 5px white, 0 0 10px white;
-    transition: width 0.3s ease-out;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: white;
+  /* Lightning-like color */
+  box-shadow:
+    0 0 5px white,
+    0 0 10px white;
+  transition: width 0.3s ease-out;
 }
 
 /* Hover effect: animate border left to right */
 .nav_menu_link_text:hover::after {
-    width: 100%;
+  width: 100%;
 }

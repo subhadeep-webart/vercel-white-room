@@ -11,9 +11,7 @@ const AboutUsFormContainer = dynamic(
   { ssr: false }
 );
 import { CldUploadWidget } from "next-cloudinary";
-import {
-  usePostAboutUsImages,
-} from "@/hooks/usePostAboutUsImages";
+import { usePostAboutUsImages } from "@/hooks/usePostAboutUsImages";
 
 const AboutUs = () => {
   const [openAddContent, setOpenAddContent] = useState(false);

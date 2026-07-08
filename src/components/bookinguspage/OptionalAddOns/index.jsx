@@ -7,8 +7,6 @@ const OptionalAddOns = ({ optionalAddOn }) => {
       <section className="bg-black relative overflow-hidden">
         <NoiseComponent />
         <div className="container px-4 md:px-0">
-
-
           <div className="flex flex-col justify-center items-center">
             <h3 className="text-white font-bold text-xl md:text-[45px] text-center mb-4 mt-5">
               {optionalAddOn?.title}
@@ -58,7 +56,6 @@ const OptionalAddOns = ({ optionalAddOn }) => {
           </div>
         </div>
       </section>
-
     </>
   );
 };

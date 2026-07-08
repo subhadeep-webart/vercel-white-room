@@ -18,10 +18,10 @@ const WorkedForAddHeader = () => {
   const { title, refetch: refetchHeader } = useGetWorkedForSection();
 
   useEffect(() => {
-  if (title) {
-    setValue("headerText", title);
-  }
-}, [title, setValue]);
+    if (title) {
+      setValue("headerText", title);
+    }
+  }, [title, setValue]);
 
   const onSubmit = async (data) => {
     if (!data?.headerText) return;
@@ -30,7 +30,7 @@ const WorkedForAddHeader = () => {
     console.log("res worked for", res);
     if (res?.success) {
       reset();
-      await refetchHeader()
+      await refetchHeader();
     }
   };
   return (
@@ -51,8 +51,7 @@ const WorkedForAddHeader = () => {
             {...register("headerText", { required: "Header text is required" })}
           />
           {errors.headerText && (
-           
-              <FormErrorText errorText={errors.headerText.message} />
+            <FormErrorText errorText={errors.headerText.message} />
           )}
         </div>
 

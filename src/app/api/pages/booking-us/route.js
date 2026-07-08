@@ -3,13 +3,16 @@ import { Page } from "@/model/page";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-    await dbConnect();
+  await dbConnect();
 
-    const page = await Page.findOne({ slug: "booking-us", status: "published" }).lean();
-    console.log("Page Data found conlose=====>", page);
-    if (!page) {
-        return NextResponse.json({ error: "Page not found" }, { status: 404 });
-    }
+  const page = await Page.findOne({
+    slug: "booking-us",
+    status: "published",
+  }).lean();
+  console.log("Page Data found conlose=====>", page);
+  if (!page) {
+    return NextResponse.json({ error: "Page not found" }, { status: 404 });
+  }
 
-    return NextResponse.json(page);
+  return NextResponse.json(page);
 }

@@ -16,8 +16,11 @@ export function useGetAboutPageContent(type = "") {
       const page = await res.json();
 
       if (type) {
-        console.log("Entry point")
-        const requiredSection = page?.components.find((c) => { console.log("aaa", c); return c.type === type });
+        console.log("Entry point");
+        const requiredSection = page?.components.find((c) => {
+          console.log("aaa", c);
+          return c.type === type;
+        });
         console.log("required section==>", requiredSection);
         setData(requiredSection ? requiredSection.data : page);
       } else {

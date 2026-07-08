@@ -76,7 +76,7 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
               </div>
             </div>
 
-              <div className="flex flex-col gap-4 lg:hidden">
+            <div className="flex flex-col gap-4 lg:hidden">
               <div className="">
                 <Image
                   src={
@@ -86,7 +86,7 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
                   alt=""
                   width={300}
                   height={500}
-                 className="w-full h-auto img_border"
+                  className="w-full h-auto img_border"
                 />
               </div>
 
@@ -99,7 +99,7 @@ const TheWhiteRoom = ({ aboutData, aboutImages }) => {
                   alt=""
                   width={350}
                   height={700}
-                   className="w-full h-auto img_border"
+                  className="w-full h-auto img_border"
                 />
               </div>
 

@@ -14,7 +14,7 @@ const GetWithBooking = () => {
   const {
     data: getWithBookingContent,
     loding: isGetWithBookingContentLoading,
-    refetch
+    refetch,
   } = useGetBookingUsPageContent("get_with_booking");
 
   console.log({ getWithBookingContent });
@@ -25,8 +25,13 @@ const GetWithBooking = () => {
 
   return (
     <div className="p-3 bg-[#f0f3f8] min-h-screen">
-      <p className="text-black text-xl font-semibold my-4">Get With Section Content</p>
-      <GetWithBookingForm defaultValues={getWithBookingContent} refetch={refetch} />
+      <p className="text-black text-xl font-semibold my-4">
+        Get With Section Content
+      </p>
+      <GetWithBookingForm
+        defaultValues={getWithBookingContent}
+        refetch={refetch}
+      />
     </div>
   );
 };

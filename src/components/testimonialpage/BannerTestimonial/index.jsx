@@ -7,7 +7,10 @@ const BannerTestimonial = ({ testimonialBanner }) => {
   return (
     <>
       <div className="relative">
-        <div className="absolute top-[7px] left-[22px] md:left-[120px] md:top-[37px] w-[120px] md:w-[187px]" style={{ zIndex: "999999" }}>
+        <div
+          className="absolute top-[7px] left-[22px] md:left-[120px] md:top-[37px] w-[120px] md:w-[187px]"
+          style={{ zIndex: "999999" }}
+        >
           <Link href="/">
             <div className="relative w-[20vw] max-w-[187px] h-[82px]">
               <Image
@@ -20,7 +23,11 @@ const BannerTestimonial = ({ testimonialBanner }) => {
             </div>
           </Link>
         </div>
-        <CommonBanner backgroundImage={testimonialBanner?.file_url ?? "/assets/images/testimonials-bg.png"} />
+        <CommonBanner
+          backgroundImage={
+            testimonialBanner?.file_url ?? "/assets/images/testimonials-bg.png"
+          }
+        />
         <h1
           className={`
       absolute top-2/3 left-1/2

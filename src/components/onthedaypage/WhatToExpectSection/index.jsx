@@ -77,15 +77,15 @@ const WhatToExpectSection = ({ onthedayContents }) => {
                 key={content?._id}
                 className="relative flex flex-col lg:block h-auto lg:h-[700px] mb-16 lg:mb-0"
               >
-
                 <div
                   className={`absolute mt-6 lg:mt-0
     top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
     w-full max-w-[578px] mx-auto lg:mx-0
-    ${isEven
-                      ? "lg:top-[40px] lg:right-[45px] lg:left-auto lg:-translate-x-0 lg:-translate-y-0"
-                      : "lg:bottom-[40px] lg:left-[45px] lg:right-auto lg:-translate-x-0 lg:-translate-y-0"
-                    }`}
+    ${
+      isEven
+        ? "lg:top-[40px] lg:right-[45px] lg:left-auto lg:-translate-x-0 lg:-translate-y-0"
+        : "lg:bottom-[40px] lg:left-[45px] lg:right-auto lg:-translate-x-0 lg:-translate-y-0"
+    }`}
                 >
                   <Image
                     src="/assets/images/rw-bg.png"
@@ -96,7 +96,6 @@ const WhatToExpectSection = ({ onthedayContents }) => {
                     priority
                   />
                 </div>
-
 
                 <div
                   className={`relative mb-6 lg:absolute w-full max-w-[650px] mx-auto lg:mx-0
@@ -116,10 +115,11 @@ const WhatToExpectSection = ({ onthedayContents }) => {
                   className={`relative w-full max-w-[700px] mx-auto border-b-[3px] border-white rounded-[6px]
               py-8 px-6 bg-[#1B1E25] z-10 shadow-xl
               lg:absolute lg:py-[57px] lg:px-[91px]
-              ${isEven
-                      ? "lg:bottom-[48px] lg:right-[-276px] lg:transform lg:-translate-x-1/2"
-                      : "lg:top-[50px] lg:left-[453px] lg:transform lg:-translate-x-1/2"
-                    }`}
+              ${
+                isEven
+                  ? "lg:bottom-[48px] lg:right-[-276px] lg:transform lg:-translate-x-1/2"
+                  : "lg:top-[50px] lg:left-[453px] lg:transform lg:-translate-x-1/2"
+              }`}
                 >
                   <h3 className="text-white font-bold text-xl md:text-3xl mb-6 lg:mb-8">
                     {content?.title}

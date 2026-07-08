@@ -78,7 +78,9 @@ const ChooseUsSection = ({ reviewData }) => {
       >
         <div className="!z-10 relative mb-[50px] md:mb-[100px] mt-[100px] md:mt-[200px]">
           <TickerWrapper isRight={false}>
-            <h3 className={`${poppins.className} outline_text text-center uppercase`}>
+            <h3
+              className={`${poppins.className} outline_text text-center uppercase`}
+            >
               {reviewData?.title}
             </h3>
           </TickerWrapper>
@@ -128,15 +130,17 @@ const ChooseUsSection = ({ reviewData }) => {
                         </div>
 
                         <p
-                          className={`text-center text-sm md:text-[16px] choose-line ${isDark ? "text-[#9E9E9E]" : "text-[#3D3D3D]"
-                            }`}
+                          className={`text-center text-sm md:text-[16px] choose-line ${
+                            isDark ? "text-[#9E9E9E]" : "text-[#3D3D3D]"
+                          }`}
                         >
                           {review?.comment}
                         </p>
 
                         <p
-                          className={`font-bold text-base md:text-lg choose-line text-center ${isDark ? "text-white" : "text-[#3D3D3D]"
-                            }`}
+                          className={`font-bold text-base md:text-lg choose-line text-center ${
+                            isDark ? "text-white" : "text-[#3D3D3D]"
+                          }`}
                         >
                           {review?.name} ,<span> {review?.position} </span>
                         </p>

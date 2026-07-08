@@ -30,7 +30,7 @@ const ChooseUs = () => {
   };
 
   const handleEditReview = (values) => {
-    console.log("Calling edit content====>")
+    console.log("Calling edit content====>");
     setDefaultValues(values);
     setOpenEditContent(true);
   };
@@ -44,7 +44,7 @@ const ChooseUs = () => {
   return (
     <>
       <div className="p-3 bg-[#f0f3f8]">
-         <ChooseUsAddHeader/>
+        <ChooseUsAddHeader />
         <div className="flex justify-end items-end">
           <Button
             onClick={handleAdd}
@@ -56,7 +56,7 @@ const ChooseUs = () => {
             <span>Add Content</span>
           </Button>
         </div>
-       
+
         <Tables
           caption="A list of reviews."
           type="review_sections"

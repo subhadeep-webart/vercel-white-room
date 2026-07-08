@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Preloader from "@/components/loader/Preloader";
 import BannerShop from "@/components/shopuspage/BannerShop";
 import ExploreBrand from "@/components/shopuspage/ExploreBrand";
@@ -16,7 +16,7 @@ const ShopUs = () => {
       <BannerShop shopBanner={shopPage} />
       <ExploreBrand shopContent={shopContent} />
     </>
-  )
+  );
 };
 
 export default ShopUs;

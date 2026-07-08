@@ -22,7 +22,6 @@ export default function useGetReviewsSection() {
 
       setTitle(json.title || "");
       setReviews(json.reviews || []);
-
     } catch (err) {
       toast?.error(err.message || "Something went wrong");
       setError(err.message);

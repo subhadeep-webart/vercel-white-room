@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/table";
 import { SquarePen, Trash2 } from "lucide-react";
 
-const Tables = ({ caption, columns, data, type, onDelete,onUpdate }) => {
+const Tables = ({ caption, columns, data, type, onDelete, onUpdate }) => {
   return (
     <div className="overflow-auto rounded-xl shadow-md border border-gray-200 bg-white">
       <Table className="w-full text-sm text-gray-700">
@@ -24,8 +24,9 @@ const Tables = ({ caption, columns, data, type, onDelete,onUpdate }) => {
             {columns.map((col, idx) => (
               <TableHead
                 key={idx}
-                className={`px-6 py-4 text-sm font-semibold text-slate-200 border-b border-gray-300 ${col.align === "right" ? "text-right" : "text-left"
-                  }`}
+                className={`px-6 py-4 text-sm font-semibold text-slate-200 border-b border-gray-300 ${
+                  col.align === "right" ? "text-right" : "text-left"
+                }`}
               >
                 {col.header}
               </TableHead>
@@ -37,12 +38,16 @@ const Tables = ({ caption, columns, data, type, onDelete,onUpdate }) => {
             data.map((row, rowIndex) => {
               console.log("Row Data=======>abc", row);
               return (
-                <TableRow key={rowIndex} className="hover:bg-gray-50 transition-colors duration-200">
+                <TableRow
+                  key={rowIndex}
+                  className="hover:bg-gray-50 transition-colors duration-200"
+                >
                   {columns.map((col, colIndex) => (
                     <TableCell
                       key={colIndex}
-                      className={`px-6 py-4 border-b border-gray-200 whitespace-nowrap truncate max-w-[200px] ${col.align === "right" ? "text-right" : "text-left"
-                        }`}
+                      className={`px-6 py-4 border-b border-gray-200 whitespace-nowrap truncate max-w-[200px] ${
+                        col.align === "right" ? "text-right" : "text-left"
+                      }`}
                     >
                       {col.accessorKey === "actions" ? (
                         <div className="flex justify-end gap-2">
@@ -51,17 +56,20 @@ const Tables = ({ caption, columns, data, type, onDelete,onUpdate }) => {
                             title="Edit"
                             className="cursor-pointer"
                           >
-                            <SquarePen size={18} className="text-blue-600 hover:text-blue-800" />
+                            <SquarePen
+                              size={18}
+                              className="text-blue-600 hover:text-blue-800"
+                            />
                           </button>
                           <AlertBox onDelete={onDelete} rowData={row} />
                         </div>
                       ) : (
-                        row[col.accessorKey] ?? "-"
+                        (row[col.accessorKey] ?? "-")
                       )}
                     </TableCell>
                   ))}
                 </TableRow>
-              )
+              );
             })
           ) : (
             <TableRow>
@@ -76,7 +84,6 @@ const Tables = ({ caption, columns, data, type, onDelete,onUpdate }) => {
         </TableBody>
       </Table>
     </div>
-
   );
 };
 

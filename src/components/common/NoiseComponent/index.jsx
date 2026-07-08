@@ -1,7 +1,5 @@
 const NoiseComponent = () => {
-    return (
-        <div className="noise" />
-    )
-}
+  return <div className="noise" />;
+};
 
 export default NoiseComponent;

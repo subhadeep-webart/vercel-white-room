@@ -108,7 +108,9 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   /* fallback bg if image doesn't load */
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 @media (max-width: 780px) {
@@ -116,7 +118,6 @@
     width: 350px;
     height: 200px;
   }
-  
 }
 .image_masking {
   // background: url('/assets/images/concert_image.png') no-repeat center center;
@@ -151,4 +152,3 @@
   align-items: center;
   flex-direction: column;
 }
-

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Preloader from "@/components/loader/Preloader";
 import BannerTestimonial from "@/components/testimonialpage/BannerTestimonial";
 import RatingSection from "@/components/testimonialpage/RatingSection";
@@ -8,15 +8,11 @@ import { useGetTestimonialPageContent } from "@/hooks/useGetTestimonialPageConte
 import { getComponentByType } from "@/utils/helper";
 
 const Testimonials = () => {
-  const {
-    data: homePage,
-    loading: isHomePageLoading,
-  } = useGetHomePageContent();
+  const { data: homePage, loading: isHomePageLoading } =
+    useGetHomePageContent();
   const reviewData = getComponentByType(homePage, "review_section");
-  const {
-    data: testimonialPage,
-    loading: isTestimonialPageLoading,
-  } = useGetTestimonialPageContent();
+  const { data: testimonialPage, loading: isTestimonialPageLoading } =
+    useGetTestimonialPageContent();
   const testimonialBanner = getComponentByType(testimonialPage, "banner");
   const whatTheySay = getComponentByType(testimonialPage, "what_they_say");
 
@@ -29,7 +25,7 @@ const Testimonials = () => {
       <WhatTheySaySection whatTheySay={whatTheySay} />
       <RatingSection reviewData={reviewData} />
     </>
-  )
+  );
 };
 
 export default Testimonials;

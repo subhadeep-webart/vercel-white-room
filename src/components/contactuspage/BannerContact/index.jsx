@@ -3,11 +3,14 @@ import { poppins } from "@/lib/font";
 import Image from "next/image";
 import Link from "next/link";
 
-const BannerContact = ({contactBanner={}}) => {
+const BannerContact = ({ contactBanner = {} }) => {
   return (
     <>
       <div className="relative">
-         <div className="absolute top-[7px] left-[22px] md:left-[120px] md:top-[37px] w-[120px] md:w-[187px]" style={{ zIndex: "999999" }}>
+        <div
+          className="absolute top-[7px] left-[22px] md:left-[120px] md:top-[37px] w-[120px] md:w-[187px]"
+          style={{ zIndex: "999999" }}
+        >
           <Link href="/">
             <div className="relative w-[20vw] max-w-[187px] h-[82px]">
               <Image
@@ -20,7 +23,11 @@ const BannerContact = ({contactBanner={}}) => {
             </div>
           </Link>
         </div>
-        <CommonBanner backgroundImage={contactBanner?.file_url ?? "/assets/images/contact-us-bg.png"} />
+        <CommonBanner
+          backgroundImage={
+            contactBanner?.file_url ?? "/assets/images/contact-us-bg.png"
+          }
+        />
         <h1
           // className="text-white font-bold text-[64px] absolute top-[510px] left-[600px]
           // transition-transform duration-300 ease-in-out transform hover:scale-110 hover:drop-shadow-lg hover:text-slate-300"

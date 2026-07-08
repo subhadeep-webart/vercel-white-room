@@ -11,8 +11,8 @@ export default function useUpdateReview(refetch) {
         rating: Number(reviewData?.ratings),
         comment: reviewData?.reviews,
         position: reviewData?.reviewer_position,
-        _id: reviewData?._id
-      }
+        _id: reviewData?._id,
+      };
 
       const res = await fetch("/api/pages/home/reviews", {
         method: "PUT",

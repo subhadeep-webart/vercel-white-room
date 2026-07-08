@@ -44,6 +44,3 @@ export function useUpdateWorkedForHeader() {
 
   return { handleUpdateWorkedForHeader, loading, error, success };
 }
-
-
-

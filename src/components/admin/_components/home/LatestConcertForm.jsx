@@ -85,7 +85,6 @@ const LatestConcertForm = ({ isEdited = false, defaultValues = {} }) => {
 
   return (
     <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
-
       <div className="grid grid-cols-1 gap-6">
         {/* Label outside */}
         <Label htmlFor="file_url" className="mb-1 block">

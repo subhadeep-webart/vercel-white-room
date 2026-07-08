@@ -15,8 +15,10 @@ const LatestConcert = ({ latestConcertData }) => {
   const stackCardContainerRef = useRef(null);
 
   const stackCardImages = useMemo(() => {
-    if (!latestConcertData?.concerts) return []
-    return latestConcertData?.concerts?.map((latestConcertDetails) => (latestConcertDetails?.concert_image_url))
+    if (!latestConcertData?.concerts) return [];
+    return latestConcertData?.concerts?.map(
+      (latestConcertDetails) => latestConcertDetails?.concert_image_url
+    );
   }, [latestConcertData]);
 
   console.log("Stack CARDD iMAGES=====>", stackCardImages);
@@ -71,12 +73,19 @@ const LatestConcert = ({ latestConcertData }) => {
     }
   );
 
-
   return (
     <section className="w-full relative bg-[#0F1116]">
-      <section className={`${styles.latestconcert_container} container commonBg py-20 relative`} ref={latestConcertRef}>
-        <div className="md:flex md:justify-between md:items-start md:gap-10 z-10 relative" ref={stackCardContainerRef}>
-          <div className={`stacking-cards !relative w-full md:w-1/2 h-[482px] md:h-[652px] mb-10 md:mb-0`}>
+      <section
+        className={`${styles.latestconcert_container} container commonBg py-20 relative`}
+        ref={latestConcertRef}
+      >
+        <div
+          className="md:flex md:justify-between md:items-start md:gap-10 z-10 relative"
+          ref={stackCardContainerRef}
+        >
+          <div
+            className={`stacking-cards !relative w-full md:w-1/2 h-[482px] md:h-[652px] mb-10 md:mb-0`}
+          >
             {stackCardImages.map((src, index) => (
               <div
                 key={index}
@@ -99,8 +108,8 @@ const LatestConcert = ({ latestConcertData }) => {
                 LATEST CONCERTS
               </h3>
               <p className="text-[#8F8F8F] font-normal text-base md:text-xl mb-6">
-                Integer et pretium libero. Donec in arcu mollis, consectetur
-                leo id, mollis leo. Mauris sit amet nunc
+                Integer et pretium libero. Donec in arcu mollis, consectetur leo
+                id, mollis leo. Mauris sit amet nunc
               </p>
               <p className="text-[#8F8F8F] font-normal text-base md:text-xl mb-6">
                 {" "}

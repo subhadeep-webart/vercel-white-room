@@ -32,7 +32,7 @@ const AddChooseusContent = ({
       reviewer_name: "",
       ratings: "",
       reviews: "",
-      reviewer_position: ""
+      reviewer_position: "",
     },
   });
 
@@ -123,7 +123,9 @@ const AddChooseusContent = ({
                 <Input
                   id="reviewer_position"
                   placeholder="Enter Reviewer Position"
-                  {...register("reviewer_position", { required: "Reviewer Position is required" })}
+                  {...register("reviewer_position", {
+                    required: "Reviewer Position is required",
+                  })}
                 />
                 {errors.reviewer_position && (
                   <FormErrorText errorText={errors.reviewer_position.message} />

@@ -5,50 +5,50 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 const useAddArtistName = (refetch) => {
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-    const handleSubmitArtistName = async (payload) => {
-        setLoading(true);
-        setError(null);
+  const handleSubmitArtistName = async (payload) => {
+    setLoading(true);
+    setError(null);
 
-        try {
-            // const payload = {
-            //     artist_name
-            // }
-            console.log("Payload====>",payload);
+    try {
+      // const payload = {
+      //     artist_name
+      // }
+      console.log("Payload====>", payload);
 
-            const res = await fetch("/api/pages/home/artist-section", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload),
-            });
+      const res = await fetch("/api/pages/home/artist-section", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-            if (!res.ok) {
-                const errData = await res.json();
-                toast.error("Failed to submit artist")
-                throw new Error(errData.error || "Failed to submit artist");
-            }
+      if (!res.ok) {
+        const errData = await res.json();
+        toast.error("Failed to submit artist");
+        throw new Error(errData.error || "Failed to submit artist");
+      }
 
-            const result = await res.json();
-            toast.success(`Artist Submission Successfully`);
-            refetch();
-            return { success: true, data: result };
-        } catch (err) {
-            console.error("Artist submission error:", err);
-            setError(err.message);
-            toast.error(`Artist Submission Failed ${err.message}`)
-            return { success: false, error: err.message };
-        } finally {
-            setLoading(false);
-        }
-    };
+      const result = await res.json();
+      toast.success(`Artist Submission Successfully`);
+      refetch();
+      return { success: true, data: result };
+    } catch (err) {
+      console.error("Artist submission error:", err);
+      setError(err.message);
+      toast.error(`Artist Submission Failed ${err.message}`);
+      return { success: false, error: err.message };
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    return {
-        handleSubmitArtistName,
-        loading,
-        error,
-    };
+  return {
+    handleSubmitArtistName,
+    loading,
+    error,
+  };
 };
 
 export default useAddArtistName;

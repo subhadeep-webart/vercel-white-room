@@ -22,7 +22,6 @@ export function useGetWorkedForSection() {
 
       setTitle(json.title || "");
       setImages(json.images || []);
-
     } catch (err) {
       toast.error(err?.message || "Something went wrong");
       setError(err?.message);

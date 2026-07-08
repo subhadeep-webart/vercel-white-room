@@ -5,11 +5,9 @@ import CoverageCardSwipper from "./CoverageCardSwipper";
 import TickerWrapper from "@/components/common/TickerWrapper";
 import { poppins } from "@/lib/font";
 import FlippingCard from "./FlippingCard";
-import styles from "./coverage.module.scss"
+import styles from "./coverage.module.scss";
 
 const PressCoverageSection = ({ pressCoverageData }) => {
-
-
   const pressCoverages = pressCoverageData?.coverages;
 
   console.log("Press Coverages======>", pressCoverages);
@@ -19,7 +17,9 @@ const PressCoverageSection = ({ pressCoverageData }) => {
         <div className="flex flex-col">
           <div className="w-full relative z-10 mb-[50px] md:mb-[100px] mt-[100px] md:mt-[200px]">
             <TickerWrapper isRight={true}>
-              <h3 className={`${poppins.className} outline_text text-center uppercase`}>
+              <h3
+                className={`${poppins.className} outline_text text-center uppercase`}
+              >
                 {pressCoverageData?.title}
               </h3>
             </TickerWrapper>

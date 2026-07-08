@@ -32,20 +32,25 @@ export function NavMain({ items }) {
             key={item.title}
             asChild
             defaultOpen={isItemActive(item, pathname)}
-            className="group/collapsible">
+            className="group/collapsible"
+          >
             <SidebarMenuItem>
               <CollapsibleTrigger asChild className="cursor-pointer">
                 <SidebarMenuButton tooltip={item.title}>
                   {item.icon && <item.icon />}
                   <span>{item.title}</span>
-                  <ChevronRight
-                    className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                  <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                 </SidebarMenuButton>
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <SidebarMenuSub>
                   {item.items?.map((subItem) => (
-                    <SidebarMenuSubItem key={subItem.title} className={pathname == subItem.url ? "bg-[#374768] rounded-md" : ""}>
+                    <SidebarMenuSubItem
+                      key={subItem.title}
+                      className={
+                        pathname == subItem.url ? "bg-[#374768] rounded-md" : ""
+                      }
+                    >
                       <SidebarMenuSubButton asChild>
                         <Link href={subItem.url}>
                           <span>{subItem.title}</span>

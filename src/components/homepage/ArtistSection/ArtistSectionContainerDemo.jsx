@@ -61,7 +61,7 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
           ease: "none",
           duration: 3,
         },
-        0,
+        0
       );
 
       tl.fromTo(
@@ -81,10 +81,10 @@ const ArtistSectionContainerDemo = ({ artistSectionData = {} }) => {
           duration: 3,
           opacity: 0,
         },
-        0,
+        0
       );
     },
-    { scope: containerRef },
+    { scope: containerRef }
   );
   console.log("Artists======>", artistSectionData);
   return (

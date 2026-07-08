@@ -4,7 +4,6 @@ import styles from "./bookingprocess.module.scss";
 import BookingStepsTimeline from "./BookingStepsTimeline";
 
 const TheBookingProcess = ({ bookingPage, bookingProcess }) => {
-
   return (
     <>
       <section className="pt-20 pb-20 bg-black relative overflow-hidden">
@@ -18,7 +17,9 @@ const TheBookingProcess = ({ bookingPage, bookingProcess }) => {
             <h3 className="text-white font-bold text-xl md:text-[45px] text-center mb-6 text-capitalize">
               {bookingProcess?.title || "The Booking Process"}
             </h3>
-            <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 ${styles.timeline_container}`}>
+            <div
+              className={`grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 ${styles.timeline_container}`}
+            >
               <div className="self-center">
                 <div className={`${styles.booking_us_image_container}`}>
                   <Image
@@ -30,7 +31,9 @@ const TheBookingProcess = ({ bookingPage, bookingProcess }) => {
                   />
                 </div>
               </div>
-              <BookingStepsTimeline bookingProcess={bookingProcess?.booking_steps ?? []} />
+              <BookingStepsTimeline
+                bookingProcess={bookingProcess?.booking_steps ?? []}
+              />
             </div>
           </div>
         </div>

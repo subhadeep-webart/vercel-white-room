@@ -14,8 +14,6 @@ import {
 } from "@/components/ui/sidebar";
 import { ADMIN_CONFIG_DATA } from "@/utils/constants";
 
-
-
 export function AppSidebar({ ...props }) {
   return (
     <Sidebar collapsible="icon" {...props}>

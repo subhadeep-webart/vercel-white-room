@@ -7,7 +7,8 @@ import { useGetOnTheDayPageContent } from "@/hooks/useGetOnTheDayPageContent";
 import { getComponentByType } from "@/utils/helper";
 
 const OnTheDay = () => {
-  const { data: onthedayPage, loading: isOnthedayPageLoading } = useGetOnTheDayPageContent();
+  const { data: onthedayPage, loading: isOnthedayPageLoading } =
+    useGetOnTheDayPageContent();
   const onthedayBanner = getComponentByType(onthedayPage, "banner");
   const onthedayContents = getComponentByType(onthedayPage, "contents");
 

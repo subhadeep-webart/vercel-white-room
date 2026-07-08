@@ -14,7 +14,7 @@ const ForLargerShow = () => {
   const {
     data: forLargerShowContent,
     loding: isLargerShowLoading,
-    refetch
+    refetch,
   } = useGetBookingUsPageContent("larger_shows");
 
   console.log({ forLargerShowContent });
@@ -25,8 +25,13 @@ const ForLargerShow = () => {
 
   return (
     <div className="p-3 bg-[#f0f3f8] min-h-screen">
-      <p className="text-black text-xl font-semibold my-4">Larger Show Section Content</p>
-      <ForLargerShowsForm defaultValues={forLargerShowContent} refetch={refetch} />
+      <p className="text-black text-xl font-semibold my-4">
+        Larger Show Section Content
+      </p>
+      <ForLargerShowsForm
+        defaultValues={forLargerShowContent}
+        refetch={refetch}
+      />
     </div>
   );
 };

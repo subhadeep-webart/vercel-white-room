@@ -1,6 +1,6 @@
-import { LoaderIcon } from "lucide-react"
+import { LoaderIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 function Loader({ className, ...props }) {
   return (
@@ -10,7 +10,7 @@ function Loader({ className, ...props }) {
       className={cn("size-4 animate-spin", className)}
       {...props}
     />
-  )
+  );
 }
 
-export { Loader }
+export { Loader };

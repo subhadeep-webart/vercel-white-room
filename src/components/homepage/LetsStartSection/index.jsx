@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 const LetsStartSection = () => {
-    const sectionRef = useRef(null);
+  const sectionRef = useRef(null);
   const letsRef = useRef(null);
   const startRef = useRef(null);
   const journeyRef = useRef(null);
@@ -65,29 +65,35 @@ const LetsStartSection = () => {
 
   return (
     <>
-      <section className="bg-black h-full p-8 md:p-20"  ref={sectionRef}>
-      <div className="flex justify-center items-center mb-10 md:mb-20">
-        <Image
-          src="/assets/icons/logo-1.svg"
-          alt="Logo"
-          width={311}
-          height={175}
-          className="w-[150px] md:w-[311px] h-auto"
-        />
-      </div>
+      <section className="bg-black h-full p-8 md:p-20" ref={sectionRef}>
+        <div className="flex justify-center items-center mb-10 md:mb-20">
+          <Image
+            src="/assets/icons/logo-1.svg"
+            alt="Logo"
+            width={311}
+            height={175}
+            className="w-[150px] md:w-[311px] h-auto"
+          />
+        </div>
 
-      <div className="text-white font-bold">
-        <p className="text-4xl md:text-9xl mb-6 md:mb-20"  ref={letsRef}>
-          LETS
-        </p>
-        <p className="text-4xl md:text-9xl mb-6 md:mb-20 pl-[60px] md:pl-[250px]"  ref={startRef}>
-          START
-        </p>
-        <p className="text-4xl md:text-9xl whitespace-nowrap pl-[118px] md:pl-[550px]"  ref={journeyRef}>
-          THE JOURNEY
-        </p>
-      </div>
-    </section>
+        <div className="text-white font-bold">
+          <p className="text-4xl md:text-9xl mb-6 md:mb-20" ref={letsRef}>
+            LETS
+          </p>
+          <p
+            className="text-4xl md:text-9xl mb-6 md:mb-20 pl-[60px] md:pl-[250px]"
+            ref={startRef}
+          >
+            START
+          </p>
+          <p
+            className="text-4xl md:text-9xl whitespace-nowrap pl-[118px] md:pl-[550px]"
+            ref={journeyRef}
+          >
+            THE JOURNEY
+          </p>
+        </div>
+      </section>
     </>
   );
 };

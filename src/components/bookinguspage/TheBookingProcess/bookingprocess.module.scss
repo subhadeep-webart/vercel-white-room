@@ -1,30 +1,30 @@
 .timeline_container {
-    position: relative;
-    z-index: 0;
-    min-height: 450px;
+  position: relative;
+  z-index: 0;
+  min-height: 450px;
 
-    &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        background-image: url("/assets/images/rw-bg.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/images/rw-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
-        z-index: -1; // stays behind timeline
-        pointer-events: none; // safe for clicks
-    }
+    z-index: -1; // stays behind timeline
+    pointer-events: none; // safe for clicks
+  }
 }
 
 .booking_us_image_container {
-    position: relative;
-    width: 100%;
-    // height: 650px;
-    height: clamp(320px, 45vw, 650px);
-    // aspect-ratio: 3/4;
+  position: relative;
+  width: 100%;
+  // height: 650px;
+  height: clamp(320px, 45vw, 650px);
+  // aspect-ratio: 3/4;
 }

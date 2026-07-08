@@ -11,9 +11,7 @@ const AdminLogin = () => {
             <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
               <GalleryVerticalEnd className="size-4" />
             </div>
-            <span className="!text-white">
-              The White Rooms
-            </span>
+            <span className="!text-white">The White Rooms</span>
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-center">

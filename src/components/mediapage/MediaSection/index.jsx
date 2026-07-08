@@ -42,7 +42,8 @@ const MediaSection = ({ mediaAssets }) => {
    * Render image / video
    */
   const renderMedia = (media) => {
-    const commonClasses = "sm:object-cover object-contain w-full h-full img_border";
+    const commonClasses =
+      "sm:object-cover object-contain w-full h-full img_border";
 
     if (media.file_type === "image") {
       return (

@@ -71,8 +71,10 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
   return (
     <section className="w-full bg-[#0F1116] relative">
       <div className="w-full relative z-10 commonBg !py-12 bg-[#0F1116]">
-        <TickerWrapper isRight={true} >
-          <h3 className={`${poppins.className} outline_text text-center uppercase mb-[50px] md:mb-[100px] mt-[100px] md:mt-[200px]`}>
+        <TickerWrapper isRight={true}>
+          <h3
+            className={`${poppins.className} outline_text text-center uppercase mb-[50px] md:mb-[100px] mt-[100px] md:mt-[200px]`}
+          >
             {aboutData?.title}
           </h3>
         </TickerWrapper>
@@ -82,7 +84,9 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
         className={`${styles.aboutsection_container} container pt-4 pb-12`}
       >
         <div className={`grid grid-cols-12 gap-4 py-4 px-2`}>
-          <div className={`${styles.img_border} py-16 px-12 col-span-12 lg:col-span-5 bg-black about-text border-b-[3px] border-white rounded-[6px]`}>
+          <div
+            className={`${styles.img_border} py-16 px-12 col-span-12 lg:col-span-5 bg-black about-text border-b-[3px] border-white rounded-[6px]`}
+          >
             <div
               className="text-[#8F8F8F] font-normal text-base md:text-xl mb-6 leading-relaxed"
               dangerouslySetInnerHTML={{ __html: aboutData?.description }}
@@ -91,9 +95,7 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
           <div className="col-span-12 lg:col-span-7 flex items-center about-image">
             <div className="w-[443px] h-[458px] md:w-[745px] lg:w-[879px] lg:h-[526px] relative">
               <Image
-                src={
-                  "/assets/images/face-home-1.png"
-                }
+                src={"/assets/images/face-home-1.png"}
                 alt=""
                 fill
                 className="object-cover"
@@ -102,40 +104,40 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
           </div>
         </div>
 
-        {aboutImages?.images?.length > 0 && <div className="flex items-center w-full mx-auto z-10">
-          <div className="flex flex-col space-y-4 lg:mr-64 mr-6">
-            <button
-              onClick={scrollLeft}
-              className="bg-black bg-opacity-50 text-white rounded-full cursor-pointer"
-            >
-              <Image
-                src="/assets/icons/left-swipe.svg"
-                alt="Previous"
-                width={94}
-                height={94}
-              />
-            </button>
+        {aboutImages?.images?.length > 0 && (
+          <div className="flex items-center w-full mx-auto z-10">
+            <div className="flex flex-col space-y-4 lg:mr-64 mr-6">
+              <button
+                onClick={scrollLeft}
+                className="bg-black bg-opacity-50 text-white rounded-full cursor-pointer"
+              >
+                <Image
+                  src="/assets/icons/left-swipe.svg"
+                  alt="Previous"
+                  width={94}
+                  height={94}
+                />
+              </button>
 
-            <button
-              onClick={scrollRight}
-              className="bg-black bg-opacity-50 text-white rounded-full cursor-pointer"
-            >
-              <Image
-                src="/assets/icons/right-swipe.svg"
-                alt="Next"
-                width={94}
-                height={94}
-              />
-            </button>
-          </div>
+              <button
+                onClick={scrollRight}
+                className="bg-black bg-opacity-50 text-white rounded-full cursor-pointer"
+              >
+                <Image
+                  src="/assets/icons/right-swipe.svg"
+                  alt="Next"
+                  width={94}
+                  height={94}
+                />
+              </button>
+            </div>
 
-          <div
-            ref={scrollRef}
-            className="flex space-x-4 overflow-x-auto scroll-smooth no-scrollbar about-image"
-            style={{ scrollBehavior: "smooth" }}
-          >
-            {
-              aboutImages?.images?.map((img, index) => (
+            <div
+              ref={scrollRef}
+              className="flex space-x-4 overflow-x-auto scroll-smooth no-scrollbar about-image"
+              style={{ scrollBehavior: "smooth" }}
+            >
+              {aboutImages?.images?.map((img, index) => (
                 <div
                   key={index}
                   className="flex-shrink-0 w-[190px] h-[160px] md:w-[365px] md:h-[262px] rounded overflow-hidden"
@@ -148,10 +150,10 @@ const AboutUsSection = ({ aboutData, aboutImages }) => {
                     className="object-cover w-full h-full"
                   />
                 </div>
-              ))
-            }
+              ))}
+            </div>
           </div>
-        </div>}
+        )}
       </section>
     </section>
   );

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const ComponentSchema = new mongoose.Schema(
   {
@@ -16,12 +16,12 @@ const PageSchema = new mongoose.Schema(
     type: { type: String },
     status: {
       type: String,
-      enum: ['draft', 'published'],
-      default: 'draft',
+      enum: ["draft", "published"],
+      default: "draft",
     },
     components: [ComponentSchema],
   },
   { timestamps: true }
 );
 
-export const Page = mongoose.models.Page || mongoose.model('Page', PageSchema);
+export const Page = mongoose.models.Page || mongoose.model("Page", PageSchema);

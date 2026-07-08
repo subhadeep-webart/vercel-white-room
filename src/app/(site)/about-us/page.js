@@ -6,10 +6,8 @@ import { useGetAboutPageContent } from "@/hooks/useGetAboutPageContent";
 import { getComponentByType } from "@/utils/helper";
 
 const AboutUs = () => {
-  const {
-    data: aboutPage,
-    loading: isAboutPageLoading,
-  } = useGetAboutPageContent();
+  const { data: aboutPage, loading: isAboutPageLoading } =
+    useGetAboutPageContent();
   const aboutBanner = getComponentByType(aboutPage, "banner");
   const aboutData = getComponentByType(aboutPage, "about_us");
   const aboutImages = getComponentByType(aboutPage, "about_us_images");

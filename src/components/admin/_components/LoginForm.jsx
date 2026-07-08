@@ -12,7 +12,6 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 export function LoginForm({ className, ...props }) {
-
   const router = useRouter();
 
   const {
@@ -21,7 +20,8 @@ export function LoginForm({ className, ...props }) {
     formState: { errors },
   } = useForm();
 
-  const { handleLoginFormSubmit, isSubmitting, errorMessage, successMessage } = useLoginHandler();
+  const { handleLoginFormSubmit, isSubmitting, errorMessage, successMessage } =
+    useLoginHandler();
 
   const onSubmit = async (data) => {
     const result = await handleLoginFormSubmit(data);
@@ -33,12 +33,16 @@ export function LoginForm({ className, ...props }) {
     } else {
       //error message coming
       console.log("Executed the log");
-      toast.error(errorMessage || "Login Failed")
+      toast.error(errorMessage || "Login Failed");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={cn("flex flex-col gap-6", className)} {...props}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={cn("flex flex-col gap-6", className)}
+      {...props}
+    >
       <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-2xl font-bold text-white">Login to your account</h1>
         <p className="text-muted-foreground text-sm text-balance">
@@ -47,8 +51,13 @@ export function LoginForm({ className, ...props }) {
       </div>
       <div className="grid gap-6">
         <div className="grid gap-3 relative my-1">
-          <Label htmlFor="email" className={"text-white"}>Email</Label>
-          <Input id="email" type="email" placeholder="m@example.com"
+          <Label htmlFor="email" className={"text-white"}>
+            Email
+          </Label>
+          <Input
+            id="email"
+            type="email"
+            placeholder="m@example.com"
             {...register("email", { required: "Email is required" })}
             className={"bg-white"}
           />
@@ -59,9 +68,13 @@ export function LoginForm({ className, ...props }) {
         </div>
         <div className="grid gap-3 relative my-1">
           <div className="flex items-center">
-            <Label htmlFor="password" className={"text-white"}>Password</Label>
+            <Label htmlFor="password" className={"text-white"}>
+              Password
+            </Label>
           </div>
-          <Input id="password" type="password"
+          <Input
+            id="password"
+            type="password"
             placeholder="Enter Your Password"
             {...register("password", { required: "Password is required" })}
             className={"bg-white"}

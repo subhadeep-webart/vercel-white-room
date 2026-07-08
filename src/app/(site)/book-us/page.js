@@ -6,15 +6,34 @@ import { getComponentByType } from "@/utils/helper";
 import Preloader from "@/components/loader/Preloader";
 
 // Dynamically import all components with SSR disabled
-const BannerBooking = dynamic(() => import("@/components/bookinguspage/BannerBooking"), { ssr: false });
-const BespokeProduction = dynamic(() => import("@/components/bookinguspage/BespokeProduction"), { ssr: false });
-const ForLargerShows = dynamic(() => import("@/components/bookinguspage/ForLargerShows"), { ssr: false });
-const OptionalAddOns = dynamic(() => import("@/components/bookinguspage/OptionalAddOns"), { ssr: false });
-const TheBookingProcess = dynamic(() => import("@/components/bookinguspage/TheBookingProcess"), { ssr: false });
-const WhatDoYouGet = dynamic(() => import("@/components/bookinguspage/WhatDoYouGet"), { ssr: false });
+const BannerBooking = dynamic(
+  () => import("@/components/bookinguspage/BannerBooking"),
+  { ssr: false }
+);
+const BespokeProduction = dynamic(
+  () => import("@/components/bookinguspage/BespokeProduction"),
+  { ssr: false }
+);
+const ForLargerShows = dynamic(
+  () => import("@/components/bookinguspage/ForLargerShows"),
+  { ssr: false }
+);
+const OptionalAddOns = dynamic(
+  () => import("@/components/bookinguspage/OptionalAddOns"),
+  { ssr: false }
+);
+const TheBookingProcess = dynamic(
+  () => import("@/components/bookinguspage/TheBookingProcess"),
+  { ssr: false }
+);
+const WhatDoYouGet = dynamic(
+  () => import("@/components/bookinguspage/WhatDoYouGet"),
+  { ssr: false }
+);
 
 const BookingUs = () => {
-  const { data: bookingPage, loading: isBookingPageLoading } = useGetBookingPageContent();
+  const { data: bookingPage, loading: isBookingPageLoading } =
+    useGetBookingPageContent();
   const bookingBanner = getComponentByType(bookingPage, "banner");
   const bookingProcess = getComponentByType(bookingPage, "booking_process");
   const getWithBoking = getComponentByType(bookingPage, "get_with_booking");
@@ -29,7 +48,10 @@ const BookingUs = () => {
       <Preloader loading={isBookingPageLoading} />
       <BannerBooking bookingBanner={bookingBanner} />
 
-      <TheBookingProcess bookingPage={bookingPage} bookingProcess={bookingProcess} />
+      <TheBookingProcess
+        bookingPage={bookingPage}
+        bookingProcess={bookingProcess}
+      />
 
       <WhatDoYouGet getWithBoking={getWithBoking} />
 

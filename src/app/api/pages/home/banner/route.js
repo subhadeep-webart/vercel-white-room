@@ -3,45 +3,45 @@ import dbConnect from "@/lib/mongodb";
 import { Page } from "@/model/page";
 
 export async function PUT(request) {
-    await dbConnect();
+  await dbConnect();
 
-    const body = await request.json();
-    const { type, data } = body;
+  const body = await request.json();
+  const { type, data } = body;
 
-    console.log("Data========>",data);
+  console.log("Data========>", data);
 
-    if (!type || !data) {
-        return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
-    }
+  if (!type || !data) {
+    return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
+  }
 
-    // Find the "home" page, or create it if it doesn't exist
-    let page = await Page.findOne({ slug: "home" });
+  // Find the "home" page, or create it if it doesn't exist
+  let page = await Page.findOne({ slug: "home" });
 
-    if (!page) {
-        page = new Page({
-            title: "Home Page",
-            slug: "home",
-            status: "published",
-            components: [],
-        });
-    }
+  if (!page) {
+    page = new Page({
+      title: "Home Page",
+      slug: "home",
+      status: "published",
+      components: [],
+    });
+  }
 
-    // Find if the component already exists
-    const existingComponentIndex = page.components.findIndex(
-        (component) => component.type === type
-    );
+  // Find if the component already exists
+  const existingComponentIndex = page.components.findIndex(
+    (component) => component.type === type
+  );
 
-    console.log("Existing Component",existingComponentIndex);
+  console.log("Existing Component", existingComponentIndex);
 
-    if (existingComponentIndex > -1) {
-        // Update existing component
-        page.components[existingComponentIndex].data = data;
-    } else {
-        // Add new component
-        page.components.push({ type, data });
-    }
+  if (existingComponentIndex > -1) {
+    // Update existing component
+    page.components[existingComponentIndex].data = data;
+  } else {
+    // Add new component
+    page.components.push({ type, data });
+  }
 
-    await page.save();
+  await page.save();
 
-    return NextResponse.json({ success: true, page });
+  return NextResponse.json({ success: true, page });
 }

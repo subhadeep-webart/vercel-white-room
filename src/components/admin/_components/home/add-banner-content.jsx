@@ -1,7 +1,12 @@
 "use client";
 
 import Forms from "@/components/admin/_components/forms/page";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import Link from "next/link";
 import { IoMdArrowBack } from "react-icons/io";
 
@@ -38,7 +43,7 @@ const formFields = [
   },
 ];
 
-const AddBannerContent = ({openAddContent,setOpenAddContent}) => {
+const AddBannerContent = ({ openAddContent, setOpenAddContent }) => {
   const handleFormSubmit = (data) => {
     console.log("Received form data:", data);
   };

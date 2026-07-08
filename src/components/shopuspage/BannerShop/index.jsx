@@ -8,7 +8,10 @@ const BannerShop = ({ shopBanner }) => {
   return (
     <>
       <div className="relative">
-         <div className="absolute top-[7px] left-[22px] md:left-[120px] md:top-[37px] w-[120px] md:w-[187px]" style={{ zIndex: "999999" }}>
+        <div
+          className="absolute top-[7px] left-[22px] md:left-[120px] md:top-[37px] w-[120px] md:w-[187px]"
+          style={{ zIndex: "999999" }}
+        >
           <Link href="/">
             <div className="relative w-[20vw] max-w-[187px] h-[82px]">
               <Image
@@ -23,7 +26,9 @@ const BannerShop = ({ shopBanner }) => {
         </div>
         <section
           className="w-full h-[50vh] md:h-screen bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${shopBanner?.file_url ?? "/assets/images/shop-bg.png"})` }}
+          style={{
+            backgroundImage: `url(${shopBanner?.file_url ?? "/assets/images/shop-bg.png"})`,
+          }}
         >
           <h1
             // className="text-white font-bold text-[64px] absolute top-[510px] left-[482px]
@@ -41,7 +46,6 @@ const BannerShop = ({ shopBanner }) => {
           </h1>
         </section>
         {/* <CommonBanner backgroundImage={shopBanner?.file_url ?? "/assets/images/shop-bg.png"} /> */}
-
       </div>
     </>
   );

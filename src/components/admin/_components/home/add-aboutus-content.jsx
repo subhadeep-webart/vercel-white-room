@@ -1,7 +1,12 @@
 "use client";
 
 import Forms from "@/components/admin/_components/forms/page";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import Link from "next/link";
 
 const formFields = [
@@ -37,7 +42,7 @@ const formFields = [
   },
 ];
 
-const AddAboutusContent = ({openAddContent,setOpenAddContent,refetch}) => {
+const AddAboutusContent = ({ openAddContent, setOpenAddContent, refetch }) => {
   const handleFormSubmit = (data) => {
     console.log("Received form data:", data);
   };

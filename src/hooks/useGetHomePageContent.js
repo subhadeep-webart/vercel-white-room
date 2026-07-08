@@ -15,13 +15,15 @@ export function useGetHomePageContent(type) {
       if (!res.ok) throw new Error("Failed to fetch home page");
       const page = await res.json();
 
-       if (type) {
-                const requiredSection = page?.components.find((c) => { return c.type === type });
-                console.log("required section==>", requiredSection);
-                setData(requiredSection ? requiredSection.data : page);
-            } else {
-                setData(page ?? {});
-            }
+      if (type) {
+        const requiredSection = page?.components.find((c) => {
+          return c.type === type;
+        });
+        console.log("required section==>", requiredSection);
+        setData(requiredSection ? requiredSection.data : page);
+      } else {
+        setData(page ?? {});
+      }
     } catch (err) {
       setError(err.message);
     } finally {
@@ -75,4 +77,3 @@ export function useGetHomePageContent(type) {
 
 //   return { data, loading, error, refetch };
 // }
-

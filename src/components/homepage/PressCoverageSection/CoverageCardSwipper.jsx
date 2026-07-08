@@ -6,7 +6,7 @@ import FlippingCard from "./FlippingCard";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
-import style from "./coverage.module.scss"
+import style from "./coverage.module.scss";
 
 const CoverageCardSwipper = ({ coverageData }) => {
   const prevRef = useRef(null);
@@ -29,15 +29,15 @@ const CoverageCardSwipper = ({ coverageData }) => {
         breakpoints={{
           320: {
             slidesPerView: 1,
-            spaceBetween: 12
+            spaceBetween: 12,
           },
           480: {
             slidesPerView: 2,
-            spaceBetween: 18
+            spaceBetween: 18,
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 18
+            spaceBetween: 18,
           },
         }}
         loop={true}

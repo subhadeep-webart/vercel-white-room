@@ -113,15 +113,10 @@ export async function GET(request) {
 
     const page = await Page.findOne({ slug: "home" });
     if (!page) {
-      return NextResponse.json(
-        { error: "Page not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Page not found" }, { status: 404 });
     }
 
-    const reviewComp = page.components.find(
-      (c) => c.type === "review_section"
-    );
+    const reviewComp = page.components.find((c) => c.type === "review_section");
 
     if (!reviewComp) {
       return NextResponse.json(
@@ -135,9 +130,7 @@ export async function GET(request) {
 
     // ✅ If ID is provided → return single review
     if (id) {
-      const review = reviews.find(
-        (r) => r._id.toString() === id
-      );
+      const review = reviews.find((r) => r._id.toString() === id);
 
       if (!review) {
         return NextResponse.json(
@@ -159,7 +152,6 @@ export async function GET(request) {
       title,
       reviews,
     });
-
   } catch (error) {
     console.error("Error fetching reviews:", error);
     return NextResponse.json(
@@ -168,7 +160,6 @@ export async function GET(request) {
     );
   }
 }
-
 
 /**
  * ✅ UPDATE Review
@@ -279,8 +270,6 @@ export async function DELETE(request) {
   }
 }
 
-
-
 export async function PATCH(request) {
   try {
     await dbConnect();
@@ -289,10 +278,7 @@ export async function PATCH(request) {
     const { title } = body;
 
     if (!title) {
-      return NextResponse.json(
-        { error: "Missing title" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Missing title" }, { status: 400 });
     }
 
     const page = await Page.findOne({ slug: "home" });

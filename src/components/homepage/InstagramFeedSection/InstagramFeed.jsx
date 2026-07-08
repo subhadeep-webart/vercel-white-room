@@ -21,17 +21,19 @@ const InstagramFeed = ({ instagramPosts = [] }) => {
             />
           ) : ( */}
           <Image
-            src={post?.media_type == "VIDEO" ? post.thumbnail_url : post.media_url}
+            src={
+              post?.media_type == "VIDEO" ? post.thumbnail_url : post.media_url
+            }
             // src={post.thumbnail_url}
             alt={post.caption || "Instagram Post"}
             fill
             className="object-cover"
-          // sizes="(max-width: 640px) 40vw,
-          //            (max-width: 1024px) 33vw,
-          //            (max-width: 1280px) 25vw,
-          //            16vw "
+            // sizes="(max-width: 640px) 40vw,
+            //            (max-width: 1024px) 33vw,
+            //            (max-width: 1280px) 25vw,
+            //            16vw "
           />
-        
+
           {/* )} */}
 
           <div className="absolute top-2 right-2 bg-white w-6 h-6 flex justify-center items-center rounded-full text-white">

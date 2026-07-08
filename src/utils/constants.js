@@ -230,11 +230,13 @@ export const ADMIN_CONFIG_DATA = {
       title: "Contact us",
       url: "#",
       icon: Contact,
-      items: [{
-        title: "Banner",
-        url: "/admin/dashboard/contact-us/banner"
-      }]
-    }
+      items: [
+        {
+          title: "Banner",
+          url: "/admin/dashboard/contact-us/banner",
+        },
+      ],
+    },
   ],
 };
 

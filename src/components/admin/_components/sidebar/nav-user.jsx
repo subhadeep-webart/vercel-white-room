@@ -39,7 +39,8 @@ export function NavUser({ user }) {
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
+              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+            >
               <Avatar className="h-8 w-8 rounded-lg">
                 <AvatarImage src={user.avatar} alt={user.name} />
                 <AvatarFallback className="rounded-lg">TWR</AvatarFallback>
@@ -55,7 +56,8 @@ export function NavUser({ user }) {
             className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
             side={isMobile ? "bottom" : "right"}
             align="end"
-            sideOffset={4}>
+            sideOffset={4}
+          >
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
@@ -92,14 +94,19 @@ export function NavUser({ user }) {
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <Button onClick={handleLogout} variant={"ghost"} className={"w-full flex justify-start items-center !px-0 cursor-pointer"}>
+              <Button
+                onClick={handleLogout}
+                variant={"ghost"}
+                className={
+                  "w-full flex justify-start items-center !px-0 cursor-pointer"
+                }
+              >
                 <LogOut />
                 Log out
               </Button>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-
       </SidebarMenuItem>
     </SidebarMenu>
   );

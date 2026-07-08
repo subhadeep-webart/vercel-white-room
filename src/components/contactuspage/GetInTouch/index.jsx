@@ -1,19 +1,18 @@
-import NoiseComponent from '@/components/common/NoiseComponent';
-import Image from 'next/image';
-import React from 'react'
+import NoiseComponent from "@/components/common/NoiseComponent";
+import Image from "next/image";
+import React from "react";
 
 const GetInTouch = () => {
   return (
     <>
-      <section className='bg-black relative overflow-hidden'>
+      <section className="bg-black relative overflow-hidden">
         <NoiseComponent />
-        <div className='container'>
-          <div className='py-96'>
-            <div className='bg-[#1B1E25] h-[341px]'>
-            </div>
+        <div className="container">
+          <div className="py-96">
+            <div className="bg-[#1B1E25] h-[341px]"></div>
           </div>
 
-          <div className='flex justify-center items-center mb-[60px] mt-[-1024px] md:mt-[-945px]'>
+          <div className="flex justify-center items-center mb-[60px] mt-[-1024px] md:mt-[-945px]">
             {/* <div className='bg-[#2E3136] w-[787px] h-[753px] py-[64px] px-[56px]'>
               <h3 className="font-bold text-white text-xl md:text-[45px] mb-8">GET IN TOUCH WITH US</h3>
               <form className="grid grid-cols-2 gap-8 ">
@@ -79,7 +78,7 @@ const GetInTouch = () => {
                 </div>
               </form>
             </div> */}
-             <div className="bg-[#2E3136] w-full max-w-[787px] md:h-[753px] py-16 px-8 md:py-[64px] md:px-[56px] border-b-[3px] border-white rounded-[6px]">
+            <div className="bg-[#2E3136] w-full max-w-[787px] md:h-[753px] py-16 px-8 md:py-[64px] md:px-[56px] border-b-[3px] border-white rounded-[6px]">
               <h3 className="font-bold text-white text-xl md:text-[45px] mb-8">
                 GET IN TOUCH WITH US
               </h3>
@@ -205,7 +204,7 @@ const GetInTouch = () => {
             </div>
 
           </div> */}
-           <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10">
             <div className="bg-[#2E3136] w-full max-w-[430px] flex flex-col md:flex-row items-center md:items-start py-6 px-6 md:px-10 h-auto md:h-[125px] border-b-[3px] border-white rounded-[6px]">
               <div className="mb-4 md:mb-0 md:mr-6 flex-shrink-0">
                 <Image
@@ -247,7 +246,7 @@ const GetInTouch = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
 export default GetInTouch;

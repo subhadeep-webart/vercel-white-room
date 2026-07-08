@@ -42,10 +42,10 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
           xPercent: 120,
           yPercent: 250,
         },
-        0,
+        0
       ).to(maskEl, { opacity: 0, duration: 1, ease: "none" }, 0);
     },
-    { scope: containerRef },
+    { scope: containerRef }
   );
 
   const router = useRouter();
@@ -68,12 +68,13 @@ const ArtistSectionContainer = ({ artistSectionData = {} }) => {
     >
       <div className="hero">
         <div className="person-image relative">
-          {file_url && <img src={file_url} alt="Hero" className="person-image" />}
+          {file_url && (
+            <img src={file_url} alt="Hero" className="person-image" />
+          )}
           <button className="btn" onClick={handleButtonClick}>
             {buttonText}
           </button>
         </div>
-
 
         <div className="text-lines">
           <div className="scroll-container">
