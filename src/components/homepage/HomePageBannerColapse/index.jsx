@@ -14,58 +14,6 @@ const HomePageBannerColapse = ({ bannerData }) => {
   const videoRef = useRef(null);
   const videoSectionRef = useRef(null);
 
-  // useGSAP(
-  //   () => {
-  //     const video = videoRef.current;
-
-  //     /* ---------------- INITIAL STATE ---------------- */
-
-  //     gsap.set(video, {
-  //       scale: 1,
-  //       y: 0,
-  //       autoAlpha: 1,
-  //       transformOrigin: "center center",
-  //       force3D: true,
-  //       willChange: "transform",
-  //     });
-
-  //     // const finalY = -window.innerHeight / 2 + 80;
-
-  //     let finalY;
-  //     let finalScale;
-
-  //     if (window.innerWidth >= 1024) {
-  //       finalY = -window.innerHeight / 2 + 45;
-  //       console.log("Final Y========>", finalY);
-  //       finalScale = 0.18;
-  //     } else if (window.innerWidth >= 768) {
-  //       finalY = -window.innerHeight / 2 + 60;
-  //       finalScale = 0.25;
-  //     } else {
-  //       finalY = -window.innerHeight / 2 + 40;
-  //       finalScale = 0.35;
-  //     }
-
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: videoSectionRef.current,
-  //         start: "center center",
-  //         end: "+=200",
-  //         scrub: 3,
-  //         onLeave: () => video.pause(),
-  //         onEnterBack: () => video.play(),
-  //       },
-  //     });
-  //     tl.to(video, {
-  //       y: finalY,
-  //       // scale: 0.18,
-  //       scale: finalScale,
-  //       ease: "power.inOut",
-  //     });
-  //   },
-  //   { scope: bannerRef }
-  // );
-
   useGSAP(
     () => {
       const video = videoRef.current;
@@ -99,26 +47,6 @@ const HomePageBannerColapse = ({ bannerData }) => {
           return 0.15; // desktop
         },
 
-        // y: () => {
-        //   const vh = ScrollTrigger.viewportHeight();
-        //   const elHeight = video.offsetHeight;
-
-        //   // 🔥 Grab header height dynamically
-        //   const header = document.querySelector(".header_nav");
-        //   const headerHeight = header?.offsetHeight || 0;
-
-        //   let scale;
-        //   const width = window.innerWidth;
-
-        //   if (width < 640) scale = 0.35;
-        //   else if (width < 1024) scale = 0.25;
-        //   else scale = 0.18;
-
-        //   const scaledHeight = elHeight * scale;
-
-        //   // 🔥 Correct geometric positioning
-        //   return headerHeight + scaledHeight / 2 - vh / 2;
-        // },
         y: () => {
           const vh = window.visualViewport
             ? window.visualViewport.height
@@ -133,13 +61,13 @@ const HomePageBannerColapse = ({ bannerData }) => {
           let scale;
           const width = window.innerWidth;
 
-          if (width < 640) scale = 0.3;
+          if (width < 640) scale = 0.25;
           else if (width < 1024) scale = 0.25;
           else scale = 0.25;
 
           const scaledHeight = elHeight * scale;
 
-          return headerHeight + scaledHeight / 2 - vh / 2 - 96;
+          return headerHeight + scaledHeight / 2 - vh / 2 - 108;
         },
 
         ease: "power.inOut",

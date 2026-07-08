@@ -126,7 +126,7 @@ const ChooseUsSection = ({ reviewData }) => {
               >
                 {[...reviews, ...reviews].map((review, index) => (
                   <SwiperSlide
-                    key={review?._id ?? index}
+                    key={index}
                     className="!w-[350px] flex items-center justify-center"
                   >
                     <div className="choose-card relative w-full h-[340px] flex flex-col gap-4 md:gap-6 justify-center items-center bg-[#1B1E25] text-white py-10 px-9 will-change-transform overflow-hidden">
