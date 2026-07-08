@@ -106,10 +106,10 @@ export const ADMIN_CONFIG_DATA = {
           url: "/admin/dashboard/home/press-coverage",
         },
 
-        {
-          title: "Worked For",
-          url: "/admin/dashboard/home/worked-for",
-        },
+        // {
+        //   title: "Worked For",
+        //   url: "/admin/dashboard/home/worked-for",
+        // },
         {
           title: "Choose Us",
           url: "/admin/dashboard/home/choose-us",
