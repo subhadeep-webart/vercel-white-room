@@ -1,29 +1,15 @@
 "use client";
-import { useRef } from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import TickerWrapper from "@/components/common/TickerWrapper";
 import { poppins } from "@/lib/font";
+import "swiper/css";
+
 const TrustedBySection = ({ trustedByData }) => {
-  const scrollRef = useRef(null);
-  const sectionRef = useRef(null);
+  const logos =
+    trustedByData?.clients?.filter((client) => client?.client_logo) || [];
 
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: -250,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: 250,
-        behavior: "smooth",
-      });
-    }
-  };
   return (
     <section className="w-full relative bg-[#0F1116] commonBg">
       <div className="py-8">
@@ -32,32 +18,48 @@ const TrustedBySection = ({ trustedByData }) => {
             <h3
               className={`${poppins.className} outline_text text-center uppercase`}
             >
-              {trustedByData.title}
+              {trustedByData?.home_page_title || trustedByData?.title}
             </h3>
           </TickerWrapper>
         </div>
         <div className="container !py-12">
-          <div className="flex items-start gap-4 mt-4 lg:mt-24">
-            <div
-              ref={scrollRef}
-              className="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar w-full justify-center items-center"
-              style={{ scrollBehavior: "smooth" }}
-            >
-              {trustedByData?.images?.length > 0 ? (
-                trustedByData?.images?.map((imgSrc, index) => (
-                  <Image
-                    key={index}
-                    src={imgSrc}
-                    alt={`Trusted by logo ${index + 1}`}
-                    width={210}
-                    height={135}
-                    className="flex-shrink-0 object-contain w-[210px] h-[135px]"
-                  />
-                ))
-              ) : (
-                <p className="text-gray-500">No trusted logos available</p>
-              )}
-            </div>
+          <div className="mt-4 lg:mt-24">
+            {logos.length > 0 ? (
+              <Swiper
+                modules={[Autoplay]}
+                slidesPerView="auto"
+                spaceBetween={24}
+                loop={true}
+                grabCursor={true}
+                speed={2000}
+                autoplay={{
+                  delay: 0,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                  reverseDirection: true,
+                }}
+                allowTouchMove={true}
+                className="!ease-linear w-full trusted-swiper"
+              >
+                {logos.map((client, index) => (
+                  <SwiperSlide key={index} className="!w-[350px] flex-shrink-0">
+                    <Image
+                      src={client.client_logo}
+                      alt={
+                        client?.client_name || `Trusted by logo ${index + 1}`
+                      }
+                      width={350}
+                      height={160}
+                      className="object-contain w-[350px] h-[160px]"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            ) : (
+              <p className="text-gray-500 text-center">
+                No trusted logos available
+              </p>
+            )}
           </div>
         </div>
       </div>

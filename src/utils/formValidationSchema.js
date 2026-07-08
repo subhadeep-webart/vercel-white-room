@@ -98,6 +98,7 @@ export const optionalAddOnValidationSchema = yup.object().shape({
 
 export const whatTheySayValidationSchema = yup.object().shape({
   title: yup.string().required("Section title is required"),
+  home_page_title: yup.string(),
   description: yup.string().required("Section description is required"),
   button_text: yup.string().required("Button text is required"),
   button_link: yup

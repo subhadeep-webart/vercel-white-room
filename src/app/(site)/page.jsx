@@ -11,6 +11,7 @@ import HomePageBannerColapse from "@/components/homepage/HomePageBannerColapse";
 import PressCoverageSection from "@/components/homepage/PressCoverageSection";
 import { useGetHomePageContent } from "@/hooks/useGetHomePageContent";
 import { useGetAboutPageContent } from "@/hooks/useGetAboutPageContent";
+import { useGetTestimonialPageContent } from "@/hooks/useGetTestimonialPageContent";
 import { getComponentByType } from "@/utils/helper";
 import TrustedBySection from "@/components/homepage/TrustedBySection";
 import Preloader from "@/components/loader/Preloader";
@@ -25,6 +26,7 @@ const Home = () => {
     useGetHomePageContent();
   const { data: aboutPage, loading: isAboutPageLoading } =
     useGetAboutPageContent();
+  const { data: testimonialPage } = useGetTestimonialPageContent();
   const { instagramMediaData, loading: isInstagramLoading } =
     useGetInstagramMedia();
 
@@ -32,7 +34,7 @@ const Home = () => {
   const aboutData = getComponentByType(aboutPage, "about_us");
   const aboutImages = getComponentByType(aboutPage, "about_us_images");
   const pressCoverageData = getComponentByType(homePage, "press-coverage");
-  const trustedByData = getComponentByType(homePage, "worked_for");
+  const trustedByData = getComponentByType(testimonialPage, "what_they_say");
   const reviewData = getComponentByType(homePage, "review_section");
   const artistSectionData = getComponentByType(homePage, "artist_section");
   const instagramFeedData = getComponentByType(homePage, "instagram_feed");
@@ -58,7 +60,7 @@ const Home = () => {
         pressCoverageData={pressCoverageData}
         trustedByData={trustedByData}
       />
-      {trustedByData?.images?.length > 0 && (
+      {trustedByData?.clients?.some((client) => client?.client_logo) && (
         <TrustedBySection trustedByData={trustedByData} />
       )}
       <ChooseUsSection reviewData={reviewData} />

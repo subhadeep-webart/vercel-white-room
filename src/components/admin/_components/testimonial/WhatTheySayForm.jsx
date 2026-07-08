@@ -10,15 +10,13 @@ import { Loader } from "@/components/common/Loader";
 import { Input } from "@/components/ui/input";
 import { whatTheySayValidationSchema } from "@/utils/formValidationSchema";
 import { Textarea } from "@/components/ui/textarea";
-import WhatTheySectionClientCard from "./WhatTheySectionClientCard";
-import AddClientModal from "./AddClientModal";
+import ClientRow from "./ClientRow";
 import useUpdateTestimonialPage from "@/hooks/useUpdateTestimonialPage";
 import { toast } from "sonner";
 
 const WhatTheySayForm = ({ defaultValues = {}, refetch }) => {
   const { handleUpdateTestimonialPage, loading: isUpdatingTestimonial } =
     useUpdateTestimonialPage(refetch);
-  const [openAddClientModal, setOpenAddClientModal] = useState(false);
   const [clientDetails, setClientDetails] = useState([]);
 
   const {
@@ -30,6 +28,7 @@ const WhatTheySayForm = ({ defaultValues = {}, refetch }) => {
     resolver: yupResolver(whatTheySayValidationSchema),
     defaultValues: {
       title: defaultValues?.title || "",
+      home_page_title: defaultValues?.home_page_title || "",
       description: defaultValues?.description || "",
       button_text: defaultValues?.button_text || "",
       button_link: defaultValues?.button_link || "",
@@ -40,6 +39,7 @@ const WhatTheySayForm = ({ defaultValues = {}, refetch }) => {
     if (defaultValues && Object.keys(defaultValues).length > 0) {
       reset({
         title: defaultValues?.title || "",
+        home_page_title: defaultValues?.home_page_title || "",
         description: defaultValues?.description || "",
         button_text: defaultValues?.button_text || "",
         button_link: defaultValues?.button_link || "",
@@ -67,9 +67,21 @@ const WhatTheySayForm = ({ defaultValues = {}, refetch }) => {
     }
   };
 
-  const handleAddClient = (clientData) => {
-    setClientDetails((prev) => [...prev, clientData]);
-    setOpenAddClientModal(false);
+  const handleAddNewClient = () => {
+    setClientDetails((prev) => [
+      ...prev,
+      { client_name: "", client_location: "", client_logo: "" },
+    ]);
+  };
+
+  const handleClientChange = (index, updatedClient) => {
+    setClientDetails((prev) =>
+      prev.map((client, i) => (i === index ? updatedClient : client))
+    );
+  };
+
+  const handleDeleteClient = (index) => {
+    setClientDetails((prev) => prev.filter((_, i) => i !== index));
   };
 
   return (
@@ -86,6 +98,22 @@ const WhatTheySayForm = ({ defaultValues = {}, refetch }) => {
               {...register("title")}
             />
             {errors.title && <FormErrorText errorText={errors.title.message} />}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6">
+          <div className="w-full relative">
+            <Label htmlFor="home_page_title" className="mb-1 block">
+              Home Page Title
+            </Label>
+            <Input
+              id="home_page_title"
+              placeholder="Add Home Page Title"
+              {...register("home_page_title")}
+            />
+            {errors.home_page_title && (
+              <FormErrorText errorText={errors.home_page_title.message} />
+            )}
           </div>
         </div>
 
@@ -136,22 +164,31 @@ const WhatTheySayForm = ({ defaultValues = {}, refetch }) => {
         </div>
 
         <div className="w-full">
-          <div className="w-full flex justify-end items-center">
+          <div className="w-full flex justify-between items-center">
+            <Label className="text-base font-semibold">Clients</Label>
             <Button
               type="button"
               className="w-32 border-black"
               variant="outline"
-              onClick={() => setOpenAddClientModal(true)}
+              onClick={handleAddNewClient}
             >
               Add Client
             </Button>
           </div>
 
-          <div className="grid grid-cols-4 gap-6 mt-4">
+          <div className="flex flex-col gap-4 mt-4">
+            {clientDetails.length === 0 && (
+              <p className="text-sm text-gray-500 text-center py-6 border border-dashed rounded-md">
+                No clients yet. Click &quot;Add Client&quot; to create one.
+              </p>
+            )}
             {clientDetails.map((clientDetail, index) => (
-              <WhatTheySectionClientCard
+              <ClientRow
                 key={index}
-                clientDetail={clientDetail}
+                index={index}
+                client={clientDetail}
+                onChange={handleClientChange}
+                onDelete={handleDeleteClient}
               />
             ))}
           </div>
@@ -167,14 +204,6 @@ const WhatTheySayForm = ({ defaultValues = {}, refetch }) => {
           </Button>
         </div>
       </form>
-
-      {openAddClientModal && (
-        <AddClientModal
-          openAddClientModal={openAddClientModal}
-          setOpenAddClientModal={setOpenAddClientModal}
-          onClientAdd={handleAddClient}
-        />
-      )}
     </>
   );
 };
